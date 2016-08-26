@@ -135,7 +135,21 @@ Prove the following version of the Division Algorithm, which holds for both posi
 
 Solution: 
 \begin{addmargin}[1em]{0em}
-
+\begin{proof} \hfill \break
+Let $a$ and $b$ be integers with $b \neq 0$.
+\\If $b > 0$, then the Division Algorithm applies.
+\\Thus there exist a unique $r$, $q$ such that $a = bq + r$ and $0 \leq r < b$
+\\Because $b > 0$, $b = |b|$.
+\\Therefore, $a = |b|q + r$ and $0 \leq r < |b|$
+\\Then $a = (-|b|)(-q) + r$ and $0 \leq r < |b|$
+\\However, $-|b| = -b$ when $b>0$ and thus $-b < 0$
+\\Redefine $b$ as $-b$ by looking at negative values of $b$.
+\\Thus, $a = b(-q) + r$ and $0 \leq r < |b|$.
+\\Noting that $-q$ is still an integer, it can be relabeled as $q$.
+\\Thus for negative values of $b$, $a = bq + r$ and $0 \leq r < |b|$.
+\\However, noting that $q$ and $r$ are unique as defined in the Division Algorithm, so must $-q$ and $r$ be unique and thus for when $b < 0$, the chosen $b$ and $r$ must still be unique.
+\\Therefore, for $b>0$ or $b<0$ and thus for all $b \neq 0$, $a = bq + r$ and $0 \leq r < |b|$ with a unique $q$ and $r$.
+\end{proof}
 \end{addmargin}
 
 %----------------------------------------------------------------------------------------
