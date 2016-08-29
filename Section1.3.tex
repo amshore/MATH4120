@@ -172,13 +172,27 @@ Yes, this is true.
 \section*{Problem 19}
 
 
-\textbf{Problem statement}: Suppose that $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k}$, where $p_1,p_2,\ldots,p_k$ are distinct positive primes and each $r_i,s_i \geq 0$.  Prove that $a|b$ if and only if $r_i \leq s_i$ for every $i$.
+\textbf{Problem statement}: Suppose that $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k}$ and $b = p_1^{s_1}p_2^{s_2} \ldots p_k^{s_k}$, where $p_1,p_2,\ldots,p_k$ are distinct positive primes and each $r_i,s_i \geq 0$.  Prove that $a|b$ if and only if $r_i \leq s_i$ for every $i$.
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k}$ and $b = p_1^{s_1}p_2^{s_2} \ldots p_k^{s_k}$, where $p_1,p_2,\ldots,p_k$ are distinct positive primes and each $r_i,s_i \geq 0$.
+\\ \marginpar{$\Rightarrow$}
+Suppose that $a|b$.
+\\Then $b = ta$, where $t \in \mathbb{Z}$
+\\Thus, $p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k} = tp_1^{s_1}p_2^{s_2} \ldots p_k^{s_k} \implies 1 = tp_1^{s_1 - r_1}p_2^{s_2-r_2} \ldots p_k^{s_k-r_k}$
+\\Note that because for $p_i, p_j$ do not share any divisors other than $\pm 1$ if $i \neq j$
+\\Thus, unless $i = j$, $\frac{p_i}{p_j}$ will not be an integer as there will be remaining integers in the denominator.
+\\This implies, that if for any of the $p_i^{s_i - r_i}$, if $s_i - r_i < 0$, then the resulting value will not be an integer.
+\\Thus, all of the $s_i - r_i \geq 0 \implies s_i \geq r_i$ (or equivalents, $r_i \leq s_i$.
+\\ \marginpar{$\Leftarrow$}
+Suppose that for every $i$, $r_i \leq s_i$.
+\\Then, $b = p_1^{s_1}p_2^{s_2} \ldots p_k^{s_k} = p_1^{s_1 - r_1}p_2^{s_2 - r_2} \ldots p_k^{s_k - r_k} (p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k})$
+\\Because $s_i \geq r_i$ for all $i$, $s_i - r_i \geq 0 \implies p_i^{s_i - r_i} \in \mathbb{Z}$.
+\\Thus $b = ka$ because $p_1^{s_1 - r_1}p_2^{s_2 - r_2} \ldots p_k^{s_k - r_k}$ is an integer and $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k}$.
+\\Therefore, by definition, $a|b$.
 \end{proof}
 \end{addmargin}
 
@@ -191,10 +205,18 @@ Solution:
 \textbf{Problem statement}: Let $p$ be prime and $1 \leq k < p$.  Prove that $p$ divides the binomial coefficient $\binom{p}{k}$.  [Recall that $\binom{p}{k} = \frac{p!}{k!(p-k)!}$].
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $p$ be prime and $1 \leq k < p$.
+\\Note that $\binom{p}{k} = \frac{p!}{k!(p-k)!}$.
+\\Then $p! = \binom{p}{k}k!(p-k)!$
+\\On the left hand side, it is clear that $p|p!$ using Corollary 1.6 and that $p! = p(p-1) \ldots (1)$
+\\Thus, $p|\binom{p}{k}k!(p-k)!$
+\\However the smallest divisor of $p > 1$ is $p$ and because all positive divisors of a number are less than or equal to the number.
+\\Thus $p \nmid k!$ and because $(p-k) < p$ because $1 \leq k < p$, $p \nmid (p-k)!$
+\\Therefore, the only term that $p$ can divide is $\binom{p}{k}$
+\\So by Corollary 1.6, $p|\binom{p}{k}$
 \end{proof}
 \end{addmargin}
 
@@ -207,22 +229,36 @@ Solution:
 \textbf{Problem statement (a)}:  Prove that there are no nonzero integers $a,b$ such that $a^2 = 2b^2$.  [\textit{Hint:} Use the Fundamental Theorem of Arithmetic].
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+For the sake of contradiction, let $a, b$ be nonzero integers such that $a^2 = 2b^2$.
+\\By the fundamental theorem of arithmetic, then $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k} and b = q_1^{s_1}q_2^{s_2} \ldots q_l^{s_l}$ where $p_i, q_i$ are primes and $r_i, s_i \geq 0$ for all $i$.
+\\By definition, $p_1^{2r_1}p_2^{2r_2} \ldots p_k^{2r_k} = 2q_1^{2s_1}q_2^{2s_2} \ldots q_l^{2s_l}$.
+\\Because of the uniqueness of the Fundamental Theorem of Arithmetic, all of the elements of the left hand side must equal the elements of the right hand side up to reordering.
+\\To remedy this, assert that if $i < j$, then $p_i,q_i < p_j, q_j$ and move the net negative sign to $p_1, q_1$ and reorder the terms on each side as necessary.
+\\Because 2 is the smallest positive prime number, all of the $p_i, q_i$ for $i > 1$ must be greater than 2.
+\\Thus because primes share no divisors, all of the $p_i^{r_i} = q_i^{s_i}$ for $i > 1$ and the equation reduces to $2^{2r_1} = 2*2^{2s_1}$ because the $p_1$ and $q_1$ would have been reduced also unless they equal 2.
+\\Therefore, $2^{2r_1} = 2^{2s_1 + 1}$
+\\So, for some integers $r_1, s_1$, $2r_1 = 2s_1 + 1$.
+\\However, this implies $2(r_1 - s_1) = 1 \implies 2k = 1$ for some $k \in \mathbb{Z}$.
+\\This is a contradiction because the left hand side is an even number, but 1 is an odd number.
+\\Therefore, there must not exist $a, b$ such that $a^2 = 2b^2$.
 \end{proof}
 \end{addmargin}
 
 \hfill \break 
 
 \textbf{Problem statement (b)}:  Prove that $\sqrt{2}$ is irrational.  [\textit{Hint:} Use proof by contradiction.  Assume that $\sqrt{2} = \frac{a}{b}$ (with $a,b \in \mathbb{Z}$) and use part {a} to reach a contradiction].
-\\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+For the sake of contradiction, assume that $\sqrt{2}$ is a rational number.
+\\Then by definition, $\sqrt{2} = \frac{a}{b}$ where $a,b \in \mathbb{Z}$.
+\\Thus $b = \sqrt{2}a \implies b^2 = 2a^2$.
+\\However, as proved in part (a), there are no integers $a, b$ for which this is true.
+\\Thus this is a contradiction and $\sqrt{2}$ is not a rational number (aka irrational).
 \end{proof}
 \end{addmargin}
 

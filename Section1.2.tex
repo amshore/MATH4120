@@ -8,6 +8,8 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
+\reversemarginpar
+
 %----------------------------------------------------------------------------------------
 %   TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -37,7 +39,12 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+To solve this, I will use the division algorithm:
+\\(1): $112 = (1)(57) + 55$
+\\(2): $57 = (1)(55) + 2$
+\\(3): $55 = (27)(2) + 1$
+\\(4): $27 = (27)(1) + 0$
+\\Thus $(112, 57) = 1$ and they are coprime.
 \end{addmargin}    
 
 \newpage
@@ -50,9 +57,19 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\textbf{(a)}:
-\begin{addmargin}[1em]{0em}
-\end{addmargin}
+\begin{proof}
+Let $a,b \in \mathbb{Z}$.
+\\ \marginpar{$\Rightarrow$}
+Suppose that $b|a$.
+\\Then there exists $k \in \mathbb{Z}$ such that $a = bk$.
+\\Furthermore, $a = bk = (-b)(-k) = (-b)t$ where $t = -k$, which is an integer.
+\\Thus by definition, $(-b)|a$.
+\\ \marginpar{$\Leftarrow$}
+Suppose that $(-b)|a$
+\\Then there exists $k \in \mathbb{Z}$ such that $a = bk$.
+\\Furthermore, $a = (-b)k = (-(-b))(-k) = b(-k) = bt$ where $t = -k$, which is an integer.
+\\Thus by definition, $b|a$.
+\end{proof}
 \end{addmargin}
 
 \newpage
@@ -67,7 +84,11 @@
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $a, b$ be nonzero integers such that $a|b$ and $b|a$
+\\Then by definition, $b = am$ and $a = bn$ where $m,n \in \mathbb{Z}$.
+\\So, solving for $a$, $a = bn = (am)(n) = a(mn) \implies mn = 1$.
+\\However, because $mn \in \mathbb{Z}$, the only solutions are $m = 1, n = 1$ and $m = -1, n = -1$ as $1$ and $-1$ are the only nonzero integers to have multiplicative inverses.
+\\Using these solutions in the original equations, they resolve to $a = b, a = -b, b = a, b = -a$ or put simply, $a = \pm b$.
 \end{proof}
 \end{addmargin}
 
@@ -88,7 +109,12 @@
 \\ \hfill \break
 \underline{Soution}:
 \begin{addmargin}[1em]{0em}
-words
+\begin{proof}
+Let $a, b, q, r, c \in \mathbb{Z}$ be such that $a = bq + r$ and $c|a$ and $c|b$.
+\\Then there exist $m, n \in \mathbb{Z}$ such that $a = cm$ and $b = cn$.
+\\By substituting, $cm = cnq + r \implies c(m-nq) = r$.
+\\But $m,n,q \in \mathbb{Z}$, so this implies, $c|r$.
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 \hfill \break
@@ -99,7 +125,15 @@ words
 \\ \hfill \break
 \underline{Soution}:
 \begin{addmargin}[1em]{0em}
-words
+\begin{proof}
+Let $a, b, q, r, c \in \mathbb{Z}$ be such that $a = bq + r$ and $c|b$ and $c|r$.
+\\Thus, c is defined as a common divisor of $b$ and $r$.
+\\In this proof, because $c$ is arbitrary, if this holds for $c$, it holds for all common divisors of $b$ and $r$.
+\\So, there exist $m,n \in \mathbb{Z}$ such that $b = cm$ and $r = cn$.
+\\By substitution, $a = cmq + cn = c(mq + n)$.
+\\Because $m,q,n \in \mathbb{Z}$, this implies $c|a$.
+\\Therefore, $c$ is a common divisor of $a$ and $b$.
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 \hfill \break
@@ -110,7 +144,17 @@ words
 \\ \hfill \break
 \underline{Soution}:
 \begin{addmargin}[1em]{0em}
-words
+\begin{proof}
+Let $a, b, q, r \in \mathbb{Z}$ be such that $a = bq + r$.
+\\Suppose that $g$ is the greatest common divisor of $a$ and $b$.
+\\Because $g$ is a common divisor of $a$ and $b$, by part (a), $g$ is a divisor of $r$.
+\\Thus, $g$ is a common divisor of $b$ and $r$.
+\\Now, suppose $h$ is the greatest common divisor of $b$ and $r$.
+\\Because $g$ is a divisor of $b$ and $r$ and $h$ is the greatest common divisor of $b$ and $r$, $h \geq g$.
+\\However, because $h$ is a divisor of $b$ and $r$, by part (b), $h$ is a divisor of $a$ and $b$.
+\\Thus, because $h$ is a divisor of $a$ and $b$ and $g$ is the greatest common divisor of $a$ and $b$, $g \geq h$.
+\\Therefore, because $g \geq h$ and $h \geq g$, $g = h$, or in equivalent notation, $(a,b) = (b,r)$.
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 \hfill \break
@@ -126,9 +170,10 @@ words
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+(1): $1003 = (2)(456) + 91$
+\\(2): $456 = (5)(91) + 1$
+\\(3): $91 = (1)(91) + 0$
+\\Thus, by the Euclidean Algorithm, $(1003, 456) = 91$
 \end{addmargin}
 
 \newpage
@@ -137,14 +182,12 @@ words
 \section*{Problem 15j*}
 
 
-\textbf{Problem statement}: The $gcd$ can be viewed as a linear combination of the arguments.  Using the remainder form each step of the Euclidean Algorightm, express the gcd of (1003, 456) as a linear combination of 1003 and 456.
+\textbf{Problem statement}: The $gcd$ can be viewed as a linear combination of the arguments.  Using the remainder from each step of the Euclidean Algorightm, express the gcd of (1003, 456) as a linear combination of 1003 and 456.
 \\
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+(1): $ $
 \end{addmargin}
 
 \newpage
@@ -159,7 +202,16 @@ words
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $a,b,n \in \mathbb{Z}$ such that $(a,b) = 1$ and $n \geq 1$.
+\\ \marginpar{Base Case}
+Note that $(a, b^1) = 1$ by definition.
+\\ \marginpar{Induct. Hypo.}
+Suppose that $(a, b^n) = 1$.
+\\ \marginpar{Induction Step}
+Note that $(a, b^{n+1}) = 1 \Leftrightarrow am + b^{n+1}k = 1$ for $m, k \in \mathbb{Z}$
+\\This is equivalent to $am + b^n(bk) = 1$.
+\\But $bk$ is an integer and is equivalent to $(a,b^n) = 1$.
+\\Thus because all of these statements are equivalent, $(a,b^n) = 1 \implies (a,b^{n+1}) = 1$.
 \end{proof}
 \end{addmargin}
 
@@ -175,7 +227,20 @@ words
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $a \in \mathbb{Z}$ be defined as its digits in base $10$.
+\\So, $a = \sum_{i = 0}{a_i10^i} = \sum_{i=0}{a_i(9\sum_{j=0}^{i}{10^j} + 1)} = \sum_{i=0}{a_i9\sum_{j=0}^{i}{10^j}} + \sum_{i=0}{a_i} = 9\sum_{i=0}{a_i\sum_{j=0}^{i}{10^j}} + \sum_{i=0}{a_i}$
+\\To simplify this, note that $x = \sum_{i=0}{a_i\sum_{j=0}^{i}{10^j}}$ and $y = \sum_{i=0}{a_i}$ are integers and that $y$ is the sum of the digits of $a$.
+\\ \marginpar{$\Rightarrow$}
+Suppose $9|a$
+\\Then $9|(9x + y)$
+\\Or equivalently, there is a $k \in \mathbb{Z}$, $9x + y = 9k \implies y = 9(k-x) \implies y = 3(3k - 3x)$ 
+\\Thus, because $(3k - 3x) \in \mathbb{Z}$, $3|y$.
+\\ \marginpar{$\Leftarrow$}
+For the sake of contradiction suppose that $3|y$ and $9 \nmid a$
+\\Then there does not exist an integer $k \in \mathbb{Z}$ such that $a = 9k$.
+\\Equivalently, for all $k$, $9x + y \neq 9k$.
+\\However, this implies $y \neq 3(3k - 3x)$, which contradicts the statement that $3|y$.
+\\Thus, the assumption must be wrong, and so $9|a$.
 \end{proof}
 \end{addmargin}
 
