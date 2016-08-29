@@ -7,6 +7,7 @@
 \usepackage{scrextend, tikz, amssymb}
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+\reversemarginpar
 
 %----------------------------------------------------------------------------------------
 %   TITLE SECTION
@@ -38,7 +39,17 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+Divisible by 2: 2,042,040 = 2 * 1,021,020
+\\Divisible by 2: 1,021,020 = 2 * 510,510
+\\Divisible by 2: 501,510 = 2 * 255,255
+\\Divisible by 3: 255,255 = 3 * 85,085
+\\Divisible by 5: 85,085 = 5 * 17,017
+\\Divisible by 7: 17,017 = 7 * 2,431
+\\Divisible by 11: 2,431 = 11 * 221
+\\Divisible by 13: 221 = 13 * 17
+\\Divisible by 1: 17 = 1 * 17 (Prime)
+\\ \hfill \break
+2,042,040 = $2^3*3*5*7*11*13*17$
 \end{addmargin}    
 
 \newpage
@@ -56,27 +67,34 @@
 \\ \hfill \break
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
+701 is a prime number
 \end{addmargin}
+\hfill \break
 
 %part b
 \textbf{(b)}: 1009
 \\ \hfill \break
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
+1009 is a prime number
 \end{addmargin}
+\hfill \break
 
 %part c
 \textbf{(c)}: 1949
 \\ \hfill \break
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
+1949 is a prime number
 \end{addmargin}
+\hfill \break
 
 %part d
 \textbf{(d)}: 1951
 \\ \hfill \break
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
+1951 is a prime number
 \end{addmargin}
 \end{addmargin}
 
@@ -89,11 +107,14 @@
 \textbf{Problem statement}: List all the positive integer divisors of $3^s5^t$, where $s, t \in \mathbb{Z}$ and $s, t > 0$.
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+Let S be the set of all positive integer divisors of $3^s5^t$ for $s, t \in \mathbb{Z}$ and $s, t > 0$
+\\Say we call the postive integer $r$ and we have an integer $a|r$.
+\\Then $a|3^s5^t \implies a|3^s$ or $a|5^t$ because 3 and 5 are prime.
+\\Thus for $i, j \in \mathbb{Z}$ where $0 \leq i \leq s, 0 \leq j \leq t$, $a = 3^{i}$ or $a = 5^{j}$
+\\Therefore in general, $a = 3^i5^j$ where $i, j \in \mathbb{Z}$ and $0 \leq i \leq s, 0 \leq j \leq t$
+\\Thus, $S = \{3^i5^j | s, t, i, j \in \mathbb{Z}, 0 \leq i \leq s > 0, 0 \leq j \leq t > 0\}$
 \end{addmargin}
 
 \newpage
@@ -105,10 +126,21 @@ Solution:
 \textbf{Problem statement}: Let $p$ be an integer other than $0, \pm 1$.  Prove that $p$ is a prime if and only if for each $a \in \mathbb{Z}$ either $(a,p) = 1$ or $p|a$.
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $p \in \mathbb{Z}$ and $ p \notin \{0, \pm 1\}$
+\\ \marginpar{$\Rightarrow$}
+Let $p$ be a prime number and $a \in \mathbb{Z}$.
+\\Then by the definition of a prime number, the only divisors of $p$ are $\pm 1$ and $\pm p$.
+\\Thus if $a \neq \pm pk$ for $k \in \mathbb{Z}$, then $a$ and $p$ do not share any factors and thus $(a,p) = 1$.
+\\In the other case, if $a = \pm pk$ for $k \in \mathbb{Z}$, then by definition of divisibility, $p|a$.
+\\ \marginpar{$\Leftarrow$}
+For the sake of contradiction, let $a \in \mathbb{Z}$ such that $(a,p) = 1$ or $p|a$ and let $p$ not be prime.
+\\Since all values of $a$ must be valid, let $a$ be a positive divisor of $p$ (the negative divisors of $p$ are equal to the negative of the positive divisors) which is not in the set $\{\pm 1, \pm p\}$.
+\\Then because $a$ is a divisor of $p$, $(a, p) \neq 1$.
+\\In addition, because $a$ is a divisor of $p$, $a < p$, which contradicts the idea that $p|a$ as this implies that $a \geq p$.
+\\Thus this is a contradiction and the premise must be false, which implies that $p$ is a prime number.
 \end{proof}
 \end{addmargin}
 
@@ -121,11 +153,17 @@ Solution:
 \textbf{Problem statement}: If $p$ is prime and $p|a^n$, is it true that $p^n|a^n$?  Justify your answer. [\textit{Hint:} Corollary 1.6]
 \\
 
-Solution: 
+\underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+Yes, this is true.
+\\First observe that $a$ can be written as a product of prime factors $q_1q_2 ... q_k$.
+\\Then $a^n = q_1^nq_2^n ... q_k^n$.
+\\Thus, because $p|a^n$, $p|q_1^nq_2^n ... q_k^n$.
+\\So by Corollary 1.6, $p|q_i^n$ which then implies $p|q_i$.
+\\Redefine the $q_i$ to be $q_1$ and reorder the terms.
+\\Note that this implies that $q_1 = pk$ for $k \in \mathbb{Z}$
+\\Raising both sides to the n$^{th}$ power, we get $q_1^n = p^nk^n \implies p^n|q_1^n$
+\\Finally using the fact that $x|y \implies x|yz$, we can rewrite this as $p^n|q_1^nq_2^n ... q_k^n$
 \end{addmargin}
 
 \newpage
