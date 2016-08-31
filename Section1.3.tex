@@ -61,7 +61,12 @@ Divisible by 2: 2,042,040 = 2 * 1,021,020
 \\
 
 \begin{addmargin}[1em]{0em}
+For each problem, only the primes less than the square root of the number need to be tested.
+\\Thus, the only numbers needed to check for divisibility by are: 
+\\$\{2,3,5,7,11,13,17,19,23,29,31,37,41,43\}$
+\\These are checked and any primes divisibly by the questioned number are noted.  Otherwise the number is stated as prime.
 
+\hfill \break
 %part a
 \textbf{(a)}: 701
 \\ \hfill \break
@@ -186,7 +191,7 @@ Suppose that $a|b$.
 \\Note that because for $p_i, p_j$ do not share any divisors other than $\pm 1$ if $i \neq j$
 \\Thus, unless $i = j$, $\frac{p_i}{p_j}$ will not be an integer as there will be remaining integers in the denominator.
 \\This implies, that if for any of the $p_i^{s_i - r_i}$, if $s_i - r_i < 0$, then the resulting value will not be an integer.
-\\Thus, all of the $s_i - r_i \geq 0 \implies s_i \geq r_i$ (or equivalents, $r_i \leq s_i$.
+\\Thus, all of the $s_i - r_i \geq 0 \implies s_i \geq r_i$ (or equivalently, $r_i \leq s_i$).
 \\ \marginpar{$\Leftarrow$}
 Suppose that for every $i$, $r_i \leq s_i$.
 \\Then, $b = p_1^{s_1}p_2^{s_2} \ldots p_k^{s_k} = p_1^{s_1 - r_1}p_2^{s_2 - r_2} \ldots p_k^{s_k - r_k} (p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k})$
@@ -214,7 +219,7 @@ Let $p$ be prime and $1 \leq k < p$.
 \\On the left hand side, it is clear that $p|p!$ using Corollary 1.6 and that $p! = p(p-1) \ldots (1)$
 \\Thus, $p|\binom{p}{k}k!(p-k)!$
 \\However the smallest divisor of $p > 1$ is $p$ and because all positive divisors of a number are less than or equal to the number.
-\\Thus $p \nmid k!$ and because $(p-k) < p$ because $1 \leq k < p$, $p \nmid (p-k)!$
+\\Thus $p \nmid k!$ and $(p-k) < p$ because $1 \leq k < p \implies p \nmid (p-k)!$
 \\Therefore, the only term that $p$ can divide is $\binom{p}{k}$
 \\So by Corollary 1.6, $p|\binom{p}{k}$
 \end{proof}
@@ -233,10 +238,10 @@ Let $p$ be prime and $1 \leq k < p$.
 \begin{addmargin}[1em]{0em}
 \begin{proof}
 For the sake of contradiction, let $a, b$ be nonzero integers such that $a^2 = 2b^2$.
-\\By the fundamental theorem of arithmetic, then $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k} and b = q_1^{s_1}q_2^{s_2} \ldots q_l^{s_l}$ where $p_i, q_i$ are primes and $r_i, s_i \geq 0$ for all $i$.
+\\By the fundamental theorem of arithmetic, then $a = p_1^{r_1}p_2^{r_2} \ldots p_k^{r_k}$ and $b = q_1^{s_1}q_2^{s_2} \ldots q_l^{s_l}$ where $p_i, q_i$ are primes and $r_i, s_i \geq 0$ for all $i$.
 \\By definition, $p_1^{2r_1}p_2^{2r_2} \ldots p_k^{2r_k} = 2q_1^{2s_1}q_2^{2s_2} \ldots q_l^{2s_l}$.
 \\Because of the uniqueness of the Fundamental Theorem of Arithmetic, all of the elements of the left hand side must equal the elements of the right hand side up to reordering.
-\\To remedy this, assert that if $i < j$, then $p_i,q_i < p_j, q_j$ and move the net negative sign to $p_1, q_1$ and reorder the terms on each side as necessary.
+\\To remedy this, assert that if $i < j$, then $p_i < p_j$ and $q_i <  q_j$ and move the net negative sign to $p_1, q_1$ and reorder the terms on each side as necessary.
 \\Because 2 is the smallest positive prime number, all of the $p_i, q_i$ for $i > 1$ must be greater than 2.
 \\Thus because primes share no divisors, all of the $p_i^{r_i} = q_i^{s_i}$ for $i > 1$ and the equation reduces to $2^{2r_1} = 2*2^{2s_1}$ because the $p_1$ and $q_1$ would have been reduced also unless they equal 2.
 \\Therefore, $2^{2r_1} = 2^{2s_1 + 1}$
