@@ -38,7 +38,10 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+We need to show that $4^6 \equiv 1 ($mod $7)$.
+\\Thus by definition, we must find a $k \in \mathbb{Z}$ such that $7k = 4^6 - 1 = 4096 - 1 = 4095$
+\\Thus when $k = 585$, $7 * 585 = 4095$.
+\\So we have shown that $4^6 \equiv 1($mod $7)$.
 \end{addmargin}    
 
 \newpage
@@ -92,13 +95,44 @@ If the congruence does not hold, an error has been made and the item must be sca
 \section*{Problem 7}
 
 
-\textbf{Problem statement}: If $a \in mathbb{Z}$, prove that $a^2$ is not congruent to 2 modulo 4 or to 3 modulo 4.
+\textbf{Problem statement}: If $a \in \mathbb{Z}$, prove that $a^2$ is not congruent to 2 modulo 4 or to 3 modulo 4.
 \\
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $a \in \mathbb{Z}$.
+\\Then as proved in another theorem, $a \equiv 0($mod $4)$, $a \equiv 1($mod $4)$, $a \equiv 2($mod $4)$, or $a \equiv 3($mod $4)$.
+\\Thus for each case, there exits $m \in \mathbb{Z}$.
+\\ \underline{Case 1: $a \equiv 0($mod $4)$.}
+\begin{addmargin}[1em]{0em}
+So by definition, $4m = a$.
+\\Thus, $a^2 = 16m^2 = 4(4m^2)$
+\\So $a^2 \equiv 0($mod $4)$.
+\end{addmargin}
+\underline{Case 2: $a \equiv 1($mod $4)$.}
+\begin{addmargin}[1em]{0em}
+So by definition, $4m = a-1$.
+\\Thus $(a-1)^2 = 16m^2 \implies a^2 - 2a + 1 = 16m^2$.
+\\So using the case, $a = 4m + 1$, we get $a^2 = 16m^2 + 2(4m + 1) - 1 \implies a^2 = 16m^2 + 8m + 1 = 4(4m^2 + 8m) + 1 \implies a^2 - 1 = 4(4m^2 + 8m)$.
+\\Thus, $a^2 \equiv 1($mod $4)$.
+\end{addmargin}
+\underline{Case 3: $a \equiv 2($mod $4)$.}
+\begin{addmargin}[1em]{0em}
+So by definition, $4m = a-2$.
+\\Thus $(a-2)^2 = 16m^2 \implies a^2 - 4a + 4 = 16m^2$.
+\\So using the case, $a = 4m + 2$, we get $a^2 = 16m^2 + 4(4m + 2) - 4 = 4(4m^2 + 4m) + 4 \implies a^2 = 4(4m^2 + 4m + 1)$.
+\\Thus, $a^2 \equiv 0($mod $ 4)$.
+\end{addmargin}
+\underline{Case 4: $a \equiv 3($mod $4)$.}
+\begin{addmargin}[1em]{0em}
+So by definition, $4m = a-3$.
+\\Thus $(a-3)^2 = 16m^2 \implies a^2 - 6a + 9 = 16m^2$.
+\\So using the case, $a = 4m + 3$, we get $a^2 = 16m^2 + 6(4m + 3) - 9 = 4(4m^2 + 6m) + 9 = 4(4m^2 + 6m + 2) + 1 \implies a^2 - 1 = 4(4m^2 + 6m + 2).$
+\\Thus, $a^2 \equiv 1 ($mod $4)$.
+\end{addmargin}
+Therefore for all values of $a$, $a^2 \equiv 0($mod $4)$ or $a^2 \equiv 0($mod $4)$.
+\\Thus, $a^2$ is not congruent to 2 modulo 4 or 3 modulo 4.
 \end{proof}
 \end{addmargin}
 
@@ -114,7 +148,7 @@ If the congruence does not hold, an error has been made and the item must be sca
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $p$ be prime such that $p \geq 5$.
 \end{proof}
 \end{addmargin}
 
