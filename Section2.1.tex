@@ -8,6 +8,8 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
+\reversemarginpar
+
 %----------------------------------------------------------------------------------------
 %   TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -161,6 +163,42 @@ Therefore for all values of $a$, $a^2 \equiv 0($mod $4)$ or $a^2 \equiv 0($mod $
 \begin{addmargin}[1em]{0em}
 \begin{proof}
 Let $p$ be prime such that $p \geq 5$.
+\\Then, by Corollary 2.5, $[p]= [0]$ or $[p]= [1]$ or $[p]= [2]$ or $[p]= [3]$ or $[p]= [4]$ or $[p]= [5]$
+\\ \underline{\textbf{Case 1: $[p] = [0]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 0($mod $6) \implies p - 0 = 6k \implies p = 6k$ for $k \in \mathbb{Z}$
+\\However, this implies $6|p$ and because 6 is not prime, this leads to a contradiction.
+\\Thus, $[p] \neq [0]$
+\end{addmargin}
+\underline{\textbf{Case 2: $[p] = [1]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 1($mod $6) \implies p - 1 = 6k \implies p = 6k - 1$ for $k \in \mathbb{Z}$
+\\Thus, $[p]$ may equal $[1]$.
+\end{addmargin}
+\underline{\textbf{Case 3: $[p] = [2]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 2($mod $6) \implies p - 2 = 6k \implies p = 2(3k + 1)$ for $k \in \mathbb{Z}$
+\\However, this implies $2|p$ and because $2 < 5$ and $p \geq 5$, this leads to a contradiction.
+\\Thus, $[p] \neq [2]$
+\end{addmargin}
+\underline{\textbf{Case 4: $[p] = [3]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 3($mod $6) \implies p - 3 = 6k \implies p = 3(2k + 1)$ for $k \in \mathbb{Z}$
+\\However, this implies $23|p$ and because $3 < 5$ and $p \geq 5$, this leads to a contradiction.
+\\Thus, $[p] \neq [3]$
+\end{addmargin}
+\underline{\textbf{Case 5: $[p] = [4]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 4($mod $6) \implies p - 4 = 6k \implies p = 2(3k + 2)$ for $k \in \mathbb{Z}$
+\\However, this implies $2|p$ and because $2 < 5$ and $p \geq 5$, this leads to a contradiction.
+\\Thus, $[p] \neq [4]$
+\end{addmargin}
+\underline{\textbf{Case 6: $[p] = [5]$}}
+\begin{addmargin}[1em]{0em}
+So by Theorem 2.3, $p \equiv 5($mod $6) \implies p - 5 = 6k \implies p = 6k + 5$ for $k \in \mathbb{Z}$
+\\Thus, $[p]$ may equal $[5]$.
+\end{addmargin}
+Because $[1]$ and $[5]$ are the only possible values for $[p]$, $[p] = [1]$ or $[p] = [5]$.
 \end{proof}
 \end{addmargin}
 
@@ -176,7 +214,31 @@ Let $p$ be prime such that $p \geq 5$.
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+To solve this problem, use induction on $n$, where $0 < n \in \mathbb{Z}$
+\\ \marginpar{Base Case}
+Note that when $n = 1$, $10^n = 10$ and $(-1)^n = -1$, so $10 - (-1) = 11$
+\\Thus, $10^1 \equiv (-1)^1 ($mod $11)$.
+\\ \marginpar{Hypothesis}
+Assume $10^n \equiv (-1)^n($mod $11)$.
+\\Thus, for $k \in \mathbb{Z}$, $10^n - (-1)^n = 11k$.
+\\ \marginpar{Induction}
+Note that $10^{n+1} = 10(10^n) = 10(11k - (-1)^n)$
+\\Take this into 2 cases based off if $n$ is even or odd
+\\ \underline{\textbf{Case 1: $n$ is even}}
+\begin{addmargin}[1em]{0em}
+Because $n$ is even, $(-1)^n = 1$
+\\Thus, $10(11k + (-1)^n) = 10(11k + 1) = 11(10k) + 10 = 11(10k) + (11 - 1) = 11(10k + 1) - 1 = 11(10k + 1) + (-1)^{n+1}$
+\\Because $n$ is even, so $(-1)^{n+1} = -1$.
+\\So, $10^{n+1} - (-1)^{n+1} = 11(10k + 1) \implies 10^{n+1} \equiv (-1)^{n+1}($mod $11)$.
+\end{addmargin}
+\underline{\textbf{Case 2: $n$ is odd}}
+\begin{addmargin}[1em]{0em}
+Because $n$ is even, $(-1)^n = -1$
+\\Thus, $10(11k + (-1)^n) = 10(11k - 1) = 11(10k) + 10 = 11(10k) - (11 - 1) = 11(10k - 1) + 1 = 11(10k - 1) + (-1)^{n+1}$
+\\Because $n$ is even, so $(-1)^{n+1} = 1$.
+\\So, $10^{n+1} - (-1)^{n+1} = 11(10k - 1) \implies 10^{n+1} \equiv (-1)^{n+1}($mod $11)$.
+\end{addmargin}
+Thus, in each case, $10^{n+1} \equiv (-1)^{n+1}($mod $11)$ and so by the principle of incuction, the original proposition is proved.
 \end{proof}
 \end{addmargin}
 
@@ -192,9 +254,9 @@ Let $p$ be prime such that $p \geq 5$.
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 This is false.
-\\As a counterexample, suppose $a = 8$, $b = 2$, and $n = 6$.
-\\Then $8 \equiv 2 ($mod $ 6)$.
-\\However,
+\\As a counterexample, suppose $a = 8$, $b = 2$, and $n = 15$.
+\\Then $64 \equiv 4 ($mod $ 15)$.
+\\However, $8 \not\equiv 2($mod $15)$ and $8 \not\equiv -2($mod $15)$.
 \end{addmargin}
 
 \hfill \break
@@ -205,7 +267,11 @@ This is false.
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $p$ be prime and $a^2 \equiv b^2($mod $p)$.
+\\Then for $k \in \mathbb{Z}$, $a^2 - b^2 = (a-b)(a+b) = pk$
+\\Because $p$ is prime, it's only positive prime factor is $p$.  
+\\Thus because the right hand side is the product of two integers, $p|(a-b)$ or $p|(a+b)$.
+\\Thus, $a \equiv b($mod $p)$ or $a \equiv -b($mod $p)$.
 \end{proof}
 \end{addmargin}
 
@@ -220,9 +286,9 @@ This is false.
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+Let $a = 2$, $b = 3$, $c = -1$, $n = 8$.
+\\Then $ab = 6$ and $ac = -2$ and $6 \equiv -2 ($mod $8)$.
+\\However, $3 \not\equiv -2 ($mod $8)$
 \end{addmargin}
 
 \hfill \break
@@ -233,7 +299,11 @@ This is false.
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $a,b,c,0<n \in \mathbb{Z}$ such that $ab \equiv ac($mod $n)$, $a \not\equiv 0($mod $n)$, and $(a,n) = 1$.
+\\Thus, for $k \in \mathbb{Z}$, $ab - ac = a(b-c)=nk$
+\\However, $(a,n) = 1$, so thus all the prime factors of $a$ must be in $k$ and not $n$, so $k$ can be rewritten as $as$ where $s \in \mathbb{Z}$.
+\\Also, because $a \not\equiv 0($mod $n)$, $a$ is nonzero and thus has at least one nonzero factor.
+\\Thus, $a(b-c) = nk = nas \implies b - c = ns \implies b \equiv c($mod $s)$.
 \end{proof}
 \end{addmargin}
 
