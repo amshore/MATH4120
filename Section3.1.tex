@@ -298,26 +298,129 @@ In this set, $6$ is the multiplicative identity:
 
 \underline{Solution}:
 \begin{addmargin}[1em]{0em}
-
-\underline{\textbf{Subset}}
-\begin{addmargin}[1em]{0em}
-\end{addmargin} 
-
+$M(\mathbb{Z}_2) = \{
+\left(\begin{smallmatrix} 0& 0\\ 0& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 0\\ 0& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 0\\ 1& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 0\\ 1& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 1\\ 0& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 1\\ 0& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 1\\ 1& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 0& 1\\ 1& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 0\\ 0& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 0\\ 0& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 0\\ 1& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 0\\ 1& 1\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 1\\ 0& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 1\\ 0& 1\end{smallmatrix} \right),
+\break \left(\begin{smallmatrix} 1& 1\\ 1& 0\end{smallmatrix} \right),
+\left(\begin{smallmatrix} 1& 1\\ 1& 1\end{smallmatrix} \right)\}$ \\
 \underline{\textbf{Closure under addition}}
 \begin{addmargin}[1em]{0em}
+Suppose $a, b \in M(\mathbb{Z}_2)$
+\\Then $a + b = \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) = \left( \begin{smallmatrix} (a_{11} + b_{11}) & (a_{12} + b_{12}) \\ (a_{21} + b_{21}) & (a_{22} + b_{22}) \end{smallmatrix} \right) \in M(\mathbb{Z}_2)$
+\\This holds because $\mathbb{Z}_2$ is closed under addition.
 \end{addmargin}
 
-\underline{\textbf{Closure under multiplication}}
+\underline{\textbf{Communativity of addition}}
 \begin{addmargin}[1em]{0em}
+Suppose $a, b \in M(\mathbb{Z}_2)$
+\\Then $a + b = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} a_{11} + b_{11}  & a_{12} + b_{12}  \\ a_{21} + b_{21} & a_{22} + b_{22}  \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} b_{11} + a_{11}  & b_{12} + a_{12}  \\ b_{21} + a_{21} & b_{22} + a_{22}  \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) =
+b + a$
+\end{addmargin}
+
+\underline{\textbf{Associativity of addition}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b, c \in M(\mathbb{Z}_2)$
+\\Then $a + (b + c) = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) \right ) = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} (b_{11} + c_{11}) & (b_{12} + c_{12}) \\ (b_{21} + c_{21}) & (b_{22} + c_{22}) \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} a_{11} + (b_{11} + c_{11}) & a_{12} + (b_{12} + c_{12}) \\ a_{21} + (b_{21} + c_{21}) & a_{22} + (b_{22} + c_{22}) \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} (a_{11} + b_{11}) + c_{11} & (a_{12} + b_{12}) + c_{12} \\ (a_{21} + b_{21}) + c_{21} & (a_{22} + b_{22}) + c_{22} \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} (a_{11} + b_{11})  & (a_{12} + b_{12})  \\ (a_{21} + b_{21})  & (a_{22} + b_{22})  \end{smallmatrix} \right) + \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) = 
+\left(\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right)\right) + \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) = 
+(a + b) + c$
 \end{addmargin}
 
 \underline{\textbf{Existence of additive identity}}
 \begin{addmargin}[1em]{0em}
+Suppose $a , 0 \in M(\mathbb{Z}_2)$ such that $ 0 = \left(\begin{smallmatrix} 0 & 0 \\ 0 & 0 \end{smallmatrix}\right)$
+\\So $a + 0 = \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left(\begin{smallmatrix} 0 & 0 \\ 0 & 0 \end{smallmatrix}\right) = 
+\left( \begin{smallmatrix} (a_{11} + 0) & (a_{12} + 0) \\ (a_{21} + 0) & (a_{22} + 0) \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) =
+a$
+\\Because $M(\mathbb{Z}_2)$ is communative over addition, $0 + a = a$ also.
 \end{addmargin}
 
 \underline{\textbf{Existence of additive inverse}}
 \begin{addmargin}[1em]{0em}
+Suppose $a, -a \in M(\mathbb{Z}_2)$ such that $-a = \left( \begin{smallmatrix} -a_{11} & -a_{12} \\ -a_{21} & -a_{22} \end{smallmatrix} \right)$
+\\So $a + (-a) = \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} -a_{11} & -a_{12} \\ -a_{21} & -a_{22} \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} a_{11}  -a_{11} & a_{12}  -a_{12} \\ a_{21}  -a_{21} & a_{22} -a_{22} \end{smallmatrix} \right) =
+ \left(\begin{smallmatrix} 0 & 0 \\ 0 & 0 \end{smallmatrix}\right) = 
+0$
+\\Because $M(\mathbb{Z}_2)$ is communative over addition, $-a + a = 0$ also.
 \end{addmargin}
+
+\underline{\textbf{Closure under multiplication}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in M(\mathbb{Z}_2)$
+\\Then $ab = \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) = \left( \begin{smallmatrix} (a_{11}b_{11} + a_{12}b_{21}) & (a_{11}b_{12} + a_{12}b_{22} ) \\ (a_{21}b_{11} + a_{22}b_{21}) & (a_{21}b_{12} + a_{22}b_{22}) \end{smallmatrix} \right) \in M(\mathbb{Z}_2)$
+\\This holds because $\mathbb{Z}_2$ is closed under addition and multiplication.
+\end{addmargin}
+
+\underline{\textbf{Associativity of multiplication}}
+\begin{addmargin}[1em]{0em}
+Suppose $a,b,c \in M(\mathbb{Z}_2)$
+\\Then $(ab)c =  \left( \begin{smallmatrix} (ab)_{11} & (ab)_{12} \\ (ab)_{21} & (ab)_{22} \end{smallmatrix} \right) \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} ((ab)_{11}c_{11} + (ab)_{12}c_{21}) & ((ab)_{11}c_{12} + (ab)_{12}c_{22}) \\ ((ab)_{21}c_{11} + (ab)_{22}c_{21}) & ((ab)_{21}c_{12} + (ab)_{22}c_{22}) \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} ((a_{11}b_{11} + a_{12}b_{21})c_{11} + (a_{11}b_{12} + a_{12}b_{22})c_{21}) & ((a_{11}b_{11} + a_{12}b_{21})c_{12} +(a_{11}b_{12} + a_{12}b_{22})c_{22}) \\ ((a_{21}b_{11} + a_{22}b_{21})c_{11} + (a_{21}b_{12} + a_{22}b_{22})c_{21}) & ((a_{21}b_{11} + a_{22}b_{21})c_{12} +(a_{21}b_{12} + a_{22}b_{22})c_{22}) \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} (a_{11}(b_{11}c_{11} + b_{12}c_{21}) + a_{12}(b_{21}c_{11} + b_{22}c_{21})) & (a_{11}(b_{11}c_{12} + b_{12}c_{22}) + a_{12}(b_{21}c_{12} + b_{22}c_{22})) \\ (a_{21}(b_{11}c_{11} + b_{12}c_{21}) + a_{22}(b_{21}c_{11} + b_{22}c_{21})) & (a_{21}(b_{11}c_{12} + b_{12}c_{22}) + a_{22}(b_{21}c_{12} + b_{22}c_{22})) \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} (a_{11}(bc)_{11} + a_{12}(bc)_{21}) & (a_{11}(bc)_{12}+ a_{12}(bc)_{22}) \\ (a_{21}(bc)_{11} + a_{22}(bc)_{21}) & (a_{21}(bc)_{12} + a_{22}(bc)_{22}) \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right)  \left( \begin{smallmatrix} (bc)_{11} & (bc)_{12} \\ (bc)_{21} & (bc)_{22} \end{smallmatrix} \right) =
+a(bc)$
+\end{addmargin}
+
+\underline{\textbf{Distributivity of multiplication over addition}}
+\begin{addmargin}[1em]{0em}
+Suppose $a,b,c \in M(\mathbb{Z}_2)$
+\\Then $a(b + c) = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right)  \left( \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) \right ) = 
+\left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right)  \left( \begin{smallmatrix} (b_{11} + c_{11}) & (b_{12} + c_{12}) \\ (b_{21} + c_{21}) & (b_{22} + c_{22}) \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} (a_{11}(b_{11} + c_{11}) + a_{12}(b_{21} + c_{21})) & (a_{11}(b_{12} + c_{12}) + a_{12}(b_{22} + c_{22})) \\ (a_{21}(b_{11} + c_{11}) + a_{22}(b_{21} + c_{21})) & (a_{21}(b_{12} + c_{12}) + a_{22}(b_{22} + c_{22})) \end{smallmatrix} \right) = 
+\break \left( \begin{smallmatrix} ((a_{11}b_{11} + a_{12}b_{21}) + (a_{11}c_{11} + a_{12}c_{21})) & ((a_{11}b_{12} + a_{12}b_{22}) + (a_{11}c_{12} + a_{12}c_{22})) \\ ((a_{21}b_{11} + a_{22}b_{21}) + (a_{21}c_{11} + a_{22}c_{21})) & ((a_{21}b_{12} + a_{22}b_{22}) + (a_{21}c_{12} + a_{22}c_{22}))\end{smallmatrix} \right) =
+\break \left( \begin{smallmatrix} (a_{11}b_{11} + a_{12}b_{21}) & (a_{11}b_{12} + a_{12}b_{22}) \\ (a_{21}b_{11} + a_{22}b_{21}) & (a_{21}b_{12} + a_{22}b_{22}) \end{smallmatrix} \right) + \left( \begin{smallmatrix} (a_{11}c_{11} + a_{12}c_{21}) & (a_{11}c_{12} + a_{12}c_{22}) \\ (a_{21}c_{11} + a_{22}c_{21}) & (a_{21}c_{12} + a_{22}c_{22}) \end{smallmatrix} \right) =
+\break (ab) + (ac)$
+\\Also, $(a + b)c = \left( \left( \begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix} \right) + \left( \begin{smallmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{smallmatrix} \right) \right) \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) = 
+\left( \begin{smallmatrix} (a_{11} + b_{11}) & (a_{12} + b_{12}) \\ (a_{21} + b_{21}) & (a_{22} + b_{22}) \end{smallmatrix} \right)  \left( \begin{smallmatrix} c_{11} & c_{12} \\ c_{21} & c_{22} \end{smallmatrix} \right) =
+\left( \begin{smallmatrix} ((a_{11} + b_{11})c_{11} + (a_{12} + b_{12})c_{21})& ((a_{11} + b_{11})c_{12} + (a_{12} + b_{12})c_{22}) \\ ((a_{21} + b_{21})c_{11} + (a_{22} + b_{22})c_{21}) & ((a_{21} + b_{21})c_{12} + (a_{22} + b_{22})c_{22}) \end{smallmatrix} \right) =
+\break \left( \begin{smallmatrix} ((a_{11}c_{11} + a_{12}c_{21}) + (b_{11}c_{11} + b_{12}c_{21})) & ((a_{11}c_{12} + a_{12}c_{22}) + (b_{11}c_{12} + b_{12}c_{22})) \\ ((a_{21}c_{11} + a_{22}c_{21}) + (b_{21}c_{11} + b_{22}c_{21})) & ((a_{21}c_{12} + a_{22}c_{22}) + (b_{21}c_{12} + b_{22}c_{22})) \end{smallmatrix} \right) =
+\break \left( \begin{smallmatrix} (a_{11}c_{11} + a_{12}c_{21}) & (a_{11}c_{12} + a_{12}c_{22}) \\ (a_{21}c_{11} + a_{22}c_{21}) & (a_{21}c_{12} + a_{22}c_{22}) \end{smallmatrix} \right) + \left( \begin{smallmatrix} (b_{11}c_{11} + b_{12}c_{21}) & (b_{11}c_{12} + b_{12}c_{22}) \\ (b_{21}c_{11} + b_{22}c_{21}) & (b_{21}c_{12} + b_{22}c_{22}) \end{smallmatrix} \right) =
+\break (ac) + (bc)$
+\end{addmargin}
+
+\underline{\textbf{Non-communativity of multiplication}}
+\begin{addmargin}[1em]{0em}
+Note that $\left(\begin{smallmatrix} 1& 1\\ 0& 0\end{smallmatrix} \right)  \left(\begin{smallmatrix} 1& 0\\ 1& 0\end{smallmatrix} \right) = \left(\begin{smallmatrix} 0& 0\\ 0& 0\end{smallmatrix} \right)$
+\\And $\left(\begin{smallmatrix} 1& 0\\ 1& 0\end{smallmatrix} \right)  \left(\begin{smallmatrix} 1& 1\\ 0& 0\end{smallmatrix} \right) = \left(\begin{smallmatrix} 1& 1\\ 1& 1\end{smallmatrix} \right)$
+\\Thus, because these two matricies are not equal, and are all in $M(\mathbb{Z}_2)$, the ring is not communative over multiplication
+\end{addmargin}
+
+\underline{\textbf{Existence of multiplicative identity}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, 1 \in M(\mathbb{Z}_2)$ such that $1 = \left(\begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix}\right)$
+\\Then $1a =  \left(\begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix}\right)  \left(\begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix}\right) = \left(\begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix}\right)$
+\\Also, $a1 = \left(\begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix}\right) \left(\begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix}\right)  = \left(\begin{smallmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{smallmatrix}\right)$
+\\Thus, $1$ is the multiplicative identity of $M(\mathbb{Z}_2)$
+\end{addmargin}
+
+
+
+
 
 \end{addmargin}
 
