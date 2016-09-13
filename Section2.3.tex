@@ -1,0 +1,258 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 2.3: 1d, 2c, 4*, 10*, 15, 17 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1d}
+
+
+\textbf{Problem statement}: Find all of the units in $\mathbb{Z}_{10}$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$(0, 10) = 0 $\\
+$(1, 10) = 1 $ so $[1]$ is a unit\\
+$(2, 10) = 2 $\\
+$(3, 10) = 1 $ so $[3]$ is a unit\\
+$(4, 10) = 2 $\\
+$(5, 10) = 5 $\\
+$(6, 10) = 2 $\\
+$(7, 10) = 1 $ so $[7]$ is a unit\\
+$(8, 10) = 2 $\\
+$(9, 10) = 1 $ so $[9]$ is a unit\\
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 2c}
+
+\textbf{Problem statement}: Find all the zero divisors in $\mathbb{Z}_{9}$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$[0]$ is not a zero divisor by definition\\
+$[1]$ is not a zero divisor \\
+$[2]$ is not a zero divisor \\
+$[3] * [3] = [0]$ so $[3]$ is a zero divisor \\
+$[4]$ is not a zero divisor \\
+$[5]$ is not a zero divisor \\
+$[6] * [3] = [0]$ so $[6]$ is a zero divisor \\
+$[7]$ is not a zero divisor \\
+$[8]$ is not a zero divisor
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 4*}
+
+
+\textbf{Problem statement}: How many solutions does the equation $6x = 4$ have in:
+\\
+
+\begin{addmargin}[1em]{0em}
+\textbf{(a)}:$\mathbb{Z}_{7}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+$[6] * [0] = [0]$ \\
+$[6] * [1] = [6]$ \\
+$[6] * [2] = [5]$ \\
+$[6] * [3] = [4]$ \\
+$[6] * [4] = [3]$ \\
+$[6] * [5] = [2]$ \\
+$[6] * [6] = [1]$ \\
+Number of solutions: 1
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(b)}:$\mathbb{Z}_{8}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+$[6] * [0] = [0]$ \\
+$[6] * [1] = [6]$ \\
+$[6] * [2] = [4]$ \\
+$[6] * [3] = [2]$ \\
+$[6] * [4] = [0]$ \\
+$[6] * [5] = [6]$ \\
+$[6] * [6] = [4]$ \\
+$[6] * [7] = [2]$ \\
+Number of Solutions: 2
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(c)}:$\mathbb{Z}_{9}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+$[6] * [0] = [0]$ \\
+$[6] * [1] = [6]$ \\
+$[6] * [2] = [3]$ \\
+$[6] * [3] = [0]$ \\
+$[6] * [4] = [6]$ \\
+$[6] * [5] = [3]$ \\
+$[6] * [6] = [0]$ \\
+$[6] * [7] = [6]$ \\
+$[6] * [8] = [3]$ \\
+Number of Solutions: 0
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+\textbf{(d)}:$\mathbb{Z}_{10}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+$[6] * [0] = [0]$ \\
+$[6] * [1] = [6]$ \\
+$[6] * [2] = [2]$ \\
+$[6] * [3] = [8]$ \\
+$[6] * [4] = [4]$ \\
+$[6] * [5] = [0]$ \\
+$[6] * [6] = [6]$ \\
+$[6] * [7] = [2]$ \\
+$[6] * [8] = [8]$ \\
+$[6] * [9] = [4]$ \\
+Number of Solutions: 2
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 10*}
+
+\textbf{Problem statement}: Prove that every nonzero element of $\mathbb{Z}_n$ is either a unit or a zero divisor, but not both.
+\\
+
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $a \in \mathbb{Z}_n$ be nonzero. \\
+\underline{\textbf{Case 1:} $(a,n) = 1$}
+\begin{addmargin}[1em]{0em}
+By theorem 2.10, then $a$ is a unit of $\mathbb{Z}_n$.
+\\Also, because $(a,n) = 1$, there do not exist any $0 \leq b < n$ such that $ab = nk$.
+\\Thus, $n \not| ab \implies ab \not\equiv 0 ($mod $n)$.
+\\So, $[a][b] \neq [0]$.
+\\Because $b$ ranges over all values from $0$ to $n-1$, this statement is valid for all $[b]$ in $\mathbb{Z}_n$.
+\\Thus, $a$ is not a zero divisor of $\mathbb{Z}_n$.
+\\Therefore $a$ is a unit but not a zero divisor of $\mathbb{Z}_n$.
+\end{addmargin}
+\underline{\textbf{Case 2:} $(a,n) = d > 1$}
+\begin{addmargin}[1em]{0em}
+By theorem 2.10, $a$ is not a unit of $\mathbb{Z}_n$.
+\\Because $(a,n) = d$, there exist $b,c \in \mathbb{Z}_n$
+\\So $a = dc$ and $n = bd$ 
+\\Thus, $ab = bcd \implies ab = cn$
+\\However, in $\mathbb{Z}_n$, $cn = 0$, so $ab = 0$.
+\\Thus, $a$ is a zero divisor of $\mathbb{Z}_n$.
+\\Therefore $a$ is a zero divisor but not a unit of $\mathbb{Z}_n$.
+\end{addmargin}
+Therefore, because all greatest common divisors are positive integers, we have tested for all non-zero possible values of $a$ in $\mathbb{Z}_n$.
+\\Thus, all non-zero $a$ in $\mathbb{Z}_n$ are either units or zero divisors but not both.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+
+\section*{Problem 15}
+
+\textbf{Problem statement}: Let $a, a_1, b, b_1, n, n_1, u, v$ be integers with $n > 1$, $d = (a,n)$, $d|b$, $au + nv = d$, $a = da_1$, $b = db_1$, and $n = dn_1$.  Then $[ub_1], [ub_1 + n_1], [ub_1 + 2n_1], [ub_1 + 3n_1], ..., [ub_1 + (d-1)n_1]$ are solutions to $[a]x = [b]$
+\\ \hfill \break
+Use this to solve the following equations:
+\\
+
+\begin{addmargin}[1em]{0em}
+\textbf{(a)}:$16x = 9$ in $\mathbb{Z}_{18}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+$a = 16$ \\
+$b = 9$ \\
+$n = 18$ \\
+$d = (a,n) = 2$ \\
+$2 \not| 9$, so there is no solution $x \in \mathbb{Z}_{18}$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(b)}:$25x = 10$ in $\mathbb{Z}_{8}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+$a = 25$ \\
+$b = 10$ \\
+$n = 8$ \\
+$d = (a,n) = 1$ \\
+$1|10$ \checkmark \\
+$u = 1$ \\
+$v = -3$ \\
+$a_1 = 25$ \\
+$b_1 = 10$ \\
+$n_1 = 8$\\
+Thus, $x$ has solution: $[1 * 10] = [2]$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 17}
+
+\textbf{Problem statement}: Prove that the product of two units in $\mathbb{Z}_n$ is also a unit.
+\\
+
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $a,b$ are units in $\mathbb{Z}_n$.
+\\Then $an = 1$ and $bn = 1$
+\\Suppose we have $ab = x$.
+\\Then $(an)(bn) = xn^2$
+\\However, $xn^2 = x$ because we are in $\mathbb{Z}_n$.
+\\So, $(1)(1) = x \implies x = 1$.
+\\Thus, $ab = 1$, so $ab$ is a unit of $\mathbb{Z}_n$.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}

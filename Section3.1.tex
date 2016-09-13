@@ -1,0 +1,327 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 3.1: 1, 5a-d, 9*, 14, 21*, 34 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1}
+
+
+\textbf{Problem statement}: The following subsets of $\mathbb{Z}$ (with ordinary addition and multiplication) satisfy all but one of the axioms for a ring.  In each case, which axiom fails?
+\\
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{(a)}:The set $S$ of all odd integers and 0.
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+Closure of addition $(1 + 1 = 2 \not\in S)$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}   
+
+\textbf{(b)}:The set of non-negative integers
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+Existance of an additive inverse (There is no solution to $1 + x = 0$ in the set)
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+ 
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 5a-d}
+
+\textbf{Problem statement}: Which of the following six sets are subrings of $M(\mathbb{R})$? Which ones have an identity?
+\\
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{(a)}: All matrices of the form $\left( \begin{smallmatrix} 0 & r \\ 0 & 0 \end{smallmatrix} \right)$ with $r \in \mathbb{Q}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\\ 1) Subset \checkmark
+\\ 2) Closure under addition \checkmark
+\\ 3) Closure under multiplication \checkmark
+\\ 4) Existence of additive identity \checkmark
+\\ 5) Existence of additive inverse \checkmark
+\\ 6*) Existence of multiplicative identity $\times$
+\\ Subring of $M(\mathbb{R})$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}   
+
+\textbf{(b)}: All matrices of the form $\left( \begin{smallmatrix} a & b \\ 0 & c \end{smallmatrix} \right)$ with $a,b,c \in \mathbb{Z}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\\ 1) Subset \checkmark
+\\ 2) Closure under addition \checkmark
+\\ 3) Closure under multiplication \checkmark
+\\ 4) Existence of additive identity \checkmark
+\\ 5) Existence of additive inverse \checkmark
+\\ 6*) Existence of multiplicative identity \checkmark
+\\ Subring with identity of $M(\mathbb{R})$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(c)}: All matrices of the form $\left( \begin{smallmatrix} a & b \\ c & 0 \end{smallmatrix} \right)$ with $r \in \mathbb{R}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\\ 1) Subset \checkmark
+\\ 2) Closure under addition \checkmark
+\\ 3) Closure under multiplication $\times$
+\\ 4) Existence of additive identity \checkmark
+\\ 5) Existence of additive inverse \checkmark
+\\ 6*) Existence of multiplicative identity $\times$
+\\ Not a subring of $M(\mathbb{R})$
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(d)}: All matrices of the form $\left( \begin{smallmatrix} a & 0 \\ a & 0 \end{smallmatrix} \right)$ with $a \in \mathbb{R}$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\\ 1) Subset \checkmark
+\\ 2) Closure under addition \checkmark
+\\ 3) Closure under multiplication \checkmark
+\\ 4) Existence of additive identity \checkmark
+\\ 5) Existence of additive inverse \checkmark
+\\ 6*) Existence of multiplicative identity \checkmark
+\\Subring with identity of $M(\mathbb{R})$
+
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+\end{addmargin}
+ 
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 9}
+
+
+\textbf{Problem statement}: Let $R$ be a ring and consider the subset $R^*$ of $R \times R$ defined by $R^* = \{(r,r)|r \in R\}$.
+\\
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{(a)}: If R = $\mathbb{Z}_6$, list the element of $R^*$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+$R^* = \{([0],[0]),([1],[1]), ([2],[2]), ([3],[3]), ([4],[4]),([5],[5])\}$
+\end{addmargin}
+\end{addmargin}   
+\hfill \break
+\textbf{(b)}: For any ring $R$, show that $R^*$ is a subring of $R \times R$.
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\underline{\textbf{Subset}}
+\begin{addmargin}[1em]{0em}
+Note that $R^*$ is a subset of $R \times R$. 
+\end{addmargin} 
+
+\underline{\textbf{Closure under addition}}
+\begin{addmargin}[1em]{0em}
+Suppose $a,b \in R^*$.  
+\\Then $a + b = ([a],[a]) + ([b], [b]) = ([a] + [b], [a] + [b]) = ([a + b], [a + b]) \in R^*$ 
+\end{addmargin}
+
+\underline{\textbf{Closure under multiplication}}
+\begin{addmargin}[1em]{0em}
+Suppose $a,b \in R^*$
+\\Then $ab = ([a], [a])([b],[b]) = ([a][b], [a][b]) = ([ab], [ab]) \in R^*$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive identity}}
+\begin{addmargin}[1em]{0em}
+Suppose $a \in R^*$ and $([0], [0]) = 0 \in R^*$
+\\Then $a + 0 = ([a], [a]) + ([0] + [0]) = ([a] + [0], [a] + [0]) = ([a + 0], [a + 0]) = ([a], [a]) = a$
+\\Also, $0 + a = ([0], [0]) + ([a] + [a]) = ([0] + [a], [0] + [a]) = ([0 + a], [0 + a]) = ([a], [a]) = a$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive inverse}}
+\begin{addmargin}[1em]{0em}
+Suppose $a \in R^*$ and $([-a], [-a]) = -a \in R^*$
+\\Then $a + -a = ([a], [a]) + ([-a] + [-a]) = ([a] + [-a], [a] + [-a]) = ([a + -a], [a + -a]) = ([0], [0]) = 0$
+\\Also, $-a + a = ([-a], [-a]) + ([a] + [a]) = ([-a] + [a], [-a] + [a]) = ([-a + a], [-a + a]) = ([0], [0]) = 0$
+\end{addmargin}
+\end{addmargin}
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 14}
+
+
+\textbf{Problem statement}: Let $T$ be the ring defined as $T = \{f(x)|f: \mathbb{R} \rightarrow \mathbb{R}\}$ with $f,g \in T$, $(f + g)(x) = f(x) + g(x)$ and $(fg)(x) = f(x)g(x)$.  Let $S = \{f \in T|f(s) = 0\}$.  Prove that $S$ is a subring of $T$.
+\\
+
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+In order to prove $S$ is a subring of $T$, we must show $S \subseteq T$, $S$ is closed under addition and multiplication, and $S$ has an additive inverse and identity.
+\begin{addmargin}[1em]{0em}
+\underline{\textbf{Subset}}
+\begin{addmargin}[1em]{0em}
+Because $s, 0 \in \mathbb{R}$, $S \subseteq T$
+\end{addmargin} 
+
+\underline{\textbf{Closure under addition}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in S$.
+\\Then $(a + b)(x) = a(x) + b(x) = 0 + 0 = 0 \in S$
+\end{addmargin}
+
+\underline{\textbf{Closure under multiplication}}
+\begin{addmargin}[1em]{0em}
+Suppose $a(x), b(x) \in S$.
+\\Then $(ab)(x) = a(x)b(x) = (0)(0) = 0 \in S$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive identity}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, 0 \in S$ such that $0(x) = 0$
+Then $(a + b)(x) = a(x) + b(x) = 0 + 0 = 0$
+Also, $(b + a)(x) = b(x) + a(x) = 0 + 0 = 0$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive inverse}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in S$
+Then $(a + b)(x) = a(x) + b(x) = 0 + 0 = 0$
+Also, $(b + a)(x) = b(x) + a(x) = 0 + 0 = 0$
+\end{addmargin}
+\end{addmargin}
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 21*}
+
+
+\textbf{Problem statement}: Show that the subset $S = \{0,2,4,6,8\}$ of $\mathbb{Z}_{10}$ is a subring. Does $S$ have an identity?
+\\
+
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+Note that $S = \{x : 2|x, x \in \mathbb{Z}_{10}\}$ \\
+\underline{\textbf{Subset}}
+\begin{addmargin}[1em]{0em}
+$S$ is a subset of $\mathbb{Z}_{10}$ because all elements of $S$ are in $\mathbb{Z}_{10}$
+\end{addmargin} 
+
+\underline{\textbf{Closure under addition}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in S$.
+\\Then for $k,m \in \mathbb{Z}$, $a = 2k$ and $b = 2m$
+\\Thus, $a + b = 2k + 2m = 2(k + m) \implies 2|(a+b)$
+\\So $(a + b) \in S$
+\end{addmargin}
+
+\underline{\textbf{Closure under multiplication}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in S$.
+\\Then for $k,m \in \mathbb{Z}$, $a = 2k$ and $b = 2m$
+\\Thus, $ab = (2k)(2m) = 2(2km) \implies 2|ab$
+\\So $(ab) \in S$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive identity}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, -a \in S$.
+\\Then $a + (0) = a$ and $(0) + a = a$ as these properties are inherited from $\mathbb{Z}$
+\end{addmargin}
+
+\underline{\textbf{Existence of additive inverse}}
+\begin{addmargin}[1em]{0em}
+Suppose $a, -a \in S$.
+\\Then $a + (-a) = 0$ and $(-a) + a = 0$ as these properties are inherited from $\mathbb{Z}$
+\end{addmargin}
+
+\underline{\textbf{Existence of multiplicative identity}}
+\begin{addmargin}[1em]{0em}
+In this set, $6$ is the multiplicative identity:
+\\ $ 6 * 0 = 0$ and $0 * 6 = 0$
+\\ $ 6 * 2 = 2$ and $2 * 6 = 2$
+\\ $ 6 * 4 = 4$ and $4 * 6 = 4$
+\\ $ 6 * 6 = 6$ and $6 * 6 = 6$
+\\ $ 6 * 8 = 8$ and $8 * 6 = 8$
+\end{addmargin}
+
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 34}
+
+
+\textbf{Problem statement}: Show that $M(\mathbb{Z}_2)$ is a 16-element noncommutative ring with identity.
+\\
+
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+
+\underline{\textbf{Subset}}
+\begin{addmargin}[1em]{0em}
+\end{addmargin} 
+
+\underline{\textbf{Closure under addition}}
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+
+\underline{\textbf{Closure under multiplication}}
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+
+\underline{\textbf{Existence of additive identity}}
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+
+\underline{\textbf{Existence of additive inverse}}
+\begin{addmargin}[1em]{0em}
+\end{addmargin}
+
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}
