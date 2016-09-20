@@ -1,0 +1,273 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 3.2: 1, 3b, 11, 13*, 25*, 31, 41  \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1}
+
+
+\textbf{Problem statement}: Let $R$ be a ring and $a, b \in R$
+\\
+
+ 
+\textbf{(a): }$(a + b)(a-b) = ?$ \\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+$(a + b)(a - b) = a(a - b) + b(a - b) = aa - ab + ba - bb = 
+a^2 - b^2 + (ba - ab)$
+\\I use the associative and commutative properties of rings
+\\
+\end{addmargin}
+\end{addmargin}    
+
+\textbf{(b): } $(a + b)^3 = ?$ \\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+$(a+b)^3 = (a+b)(a+b)(a+b)= a((a+b)(a+b)) + b((a+b)(a+b)) = a(a(a+b) + b(a+b)) + b(a(a+b)+b(a+b)) = a(aa + ab + ba + bb) + b(aa + ab + ba + bb) = aa^2 + ab^2 + aba + aab + ba^2 + bab + bba + bb^2 = a^3 + b^3 + (a^2b + aba + ba^2) + (b^2a + bab + ab^2)$
+\\I use the associative and commutative properties of rings
+\\
+\end{addmargin}
+\end{addmargin}
+
+\textbf{(c): }What are the answers to (a) and (b) if $R$ is commutative? \\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+If R is commutative, then $ba = ab$, so $(a+b)(a-b) = a^2 - b^2 + (ab - ba) = a^2 - b^2 + (ab - ab) = a^2 - b^2$
+\\Also, $a^2b = aba = ba^2$ and $b^2a = bab = ab^2$, so $(a+b)^3 = a^3 + b^3 + (a^2b + aba + ba^2) + (b^2a + bab + ab^2) = a^3 + b^3 + (a^2b + a^2b + a^2b) + (b^2a + b^2a + b^2a) = a^3 + b^3 + 3a^2b + 3b^2a$.
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 3b}
+
+\textbf{Problem statement}: An element $e$ of a ring $R$ is said to be \textbf{idempotent} if $e^2 = e$.  Find all idempotents in $\mathbb{Z}_{12}$
+\\
+
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$[0]*[0] = [0]$ \textbf{idempotent}
+\\$[1]*[1] = [1]$ \textbf{idempotent}
+\\$[2]*[2] = [4]$
+\\$[3]*[3] = [9]$
+\\$[4]*[4] = [4]$ \textbf{idempotent}
+\\$[5]*[5] = [1]$
+\\$[6]*[6] = [0]$
+\\$[7]*[7] = [1]$
+\\$[8]*[8] = [4]$
+\\$[9]*[9] = [9]$ \textbf{idempotent}
+\\$[10]*[10] = [4]$
+\\$[11]*[11] = [1]$
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 11}
+
+
+\textbf{Problem statement}: Let $R$ be a ring and $m$ a fixed integer.  Let $S = \{r \in R | mr = 0_R\}$.  Prove that $S$ is a subring of $R$.
+\\
+
+\underline{Solution:} 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+First observe that by definition, all elements of $S$ are from elements of $R$ and that $0_R \in S$ because $0_R \in R$ and $m * 0_R = 0_R$.
+\\Thus, $\varnothing \neq S \subseteq R$
+\\Thus, by a previously proven theorem, to show $S$ is a surbring of $R$, I need to show that $S$ is closed under subtraction and multiplication.
+\\ \underline{\textbf{Subtraction}}
+\\ Suppose $a, b \in S$.
+\\ Then $a = mr_a$ and $b = mr_b$.
+\\ Thus $a - b = mr_a - mr_b = 0_R - 0_R = 0_R + 0_R = 0_R$
+\\ This step is justified because $0_R$ is its own additive inverse.
+\\ In addition $mr_a - mr_b = m(r_a - r_b)$ (Integers distribute over rings).
+\\ Thus because $R$ is a ring, $r_a - r_b \in R$ and thus, by definition, $a - b \in S$.
+\\ So $S$ is closed under subtraction
+\\ \underline{\textbf{Multiplication}}
+\\ Suppose $a, b \in S$
+\\ Then $a = mr_a$ and $b = mr_b$
+\\ Thus $ab = (mr_a)(mr_b) = m((mr_a)r_b)$
+\\ So because $R$ is a ring, $mr_a \in R$ and thus, $mr_ar_b \in R$.
+\\ Therefore $ab \in S$ and $S$ is closed under multiplication
+\\ Thus, $S$ is a subring of $R$.
+\end{proof}
+\end{addmargin}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 13*}
+
+
+\textbf{Problem statement}: Let $S$ and $T$ be subrings of $R$.  If the statement is true, prove it, otherwise provide a counterexample.
+\\
+
+\textbf{(a):} $S \cap T$ is a subring of $R$.
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+First note that because $S$ and $T$ are subrings of $R$, $0_R \in S$ and $0_R \in T$.
+\\Thus, $0_r \in S \cap T$ and $S \cap T \neq \varnothing$
+\\In addition, suppose $a, b \in S \cap T$, then $a,b \in S$ and $a, b \in T$.
+\\Thus, because $S$ and $T$ are rings, $a-b,ab \in S$ and $a-b, ab \in T$.
+\\This implies $a-b, ab \in S \cup T$
+\\Therefore, by a previous theorem, $S \cup T$ is a subring of $R$.
+\\
+\end{proof}
+\end{addmargin}
+\end{addmargin}    
+
+
+\textbf{(b):} $S \cup T$ is a subring of $R$.
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: \\
+Suppose $R = \mathbb{Z}$, $S = \{x \in \mathbb{Z} : 2|x\}$, and $T = \{x \in \mathbb{Z} : 5|x\}$
+\\Then $2 \in S$ and $5 \in T$.
+\\However, $5-2 = 3 \not\in S \cup T = \{x \in \mathbb{Z} : 2|x$ or $5|x\}$
+\\Thus, because $S \cup T$ is not closed under subtraction, it is not a subring of $R$.
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+
+\section*{Problem 25*}
+
+
+\textbf{Problem statement}: Let $S$ be a subring of a ring $R$ with identity.
+\\
+
+\textbf{(a):} If $S$ has an identity, show by example that $1_S$ may not be the same as $1_R$.
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+Suppose $R = A \times B$ so that $1_R = (1_A, 1,_B)$ and $S = A \times \{0_B\}$
+\\Then $S$ is a subring of $R$.
+\\However, $1_S = (1_A, 0_B)$ and in general $1_R = (1_A, 1_B) \neq (1_A, 0_B) = 1_S$. \\
+\end{addmargin}
+\end{addmargin}    
+
+
+\textbf{(b):} If both $R$ and $S$ are integral domains, prove that $1_S = 1_R$.
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{proof}
+Let $R, S$ be integral domains such that $S$ is a subring of $R$.
+\\Note that by definition, $1_Rr = r, \forall r \in R$ and $1_ss = s, \forall s \in S$.
+\\Thus because $S$ is a subset of $R$, $1_S \in R$ and $1_R1_S = 1_S$ and $1_S1_S = 1_S$.
+\\Thus, $1_R1_S - 1_S1_S = 1_S - 1_S \implies (1_R - 1_S)1_S = 0_S$
+\\Because $S$ is an integral domain, $(1_R - 1_S) = 0_S$ or $1_S = 0_S$.
+\\However, by definition of an integral domain, $1_S \neq 0_S$.
+\\Thus $1_R - 1_S = 0_S \implies 1_R = 0_S$.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 31}
+
+
+\textbf{Problem statement}: A \textbf{Boolean ring} is a ring $R$ with identity in which $x^2 = x$ for every $x \in R$.  If $R$ is a Boolean ring prove that:
+\\
+
+\textbf{(a):} $a + a = 0_R$ for every $a \in R$, which means that $a = -a$ [\textit{Hint:} Expand $(a + a)^2$]
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{proof}
+Suppose that $R$ is a Boolean ring and $a \in R$.
+\\So $(a+a)^2 = a(a + a) + a(a + a) = a^2 + a^2 + a^2 + a^2 = 4a^2$
+\\However, $a + a = 2a$ but because $(a+a) = (a+a)^2 = 4a^2 = 4a$, this implies $2a = 4a$
+\\Adding $-2a$ to both sides $2a - 2a = 4a - 2a \implies 0_R = (4-2)a \implies 2a = 0_R$.
+\\This implies that $a = 0_R$.
+\end{proof}
+\end{addmargin}    
+
+\textbf{(b):} $R$ is commutative [\textit{Hint:} Expand $(a + b)^2$]
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{proof}
+Suppose $R$ is a commutative boolean ring and $a, b \in R$.
+\\Then $(a + b) = (a + b)^2 = a(a + b) + b(a + b) = a^2 + ab + ba + b^2 = a + b + (ab + ba)$.
+\\Thus, $a + b = a + b + (ab + ba) \implies 0_R = ab + ba \implies ab = -ba$.
+\\However, by the proof in part (a), $ba = -ba$, so $ab = ba$ and thus $R$ is commutative.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 41}
+
+\textbf{Problem statement}:Let $R$ be a ring with identity.  If there is a smallest positive integer $n$ such that $n1_R = 0_R$ is said to have \textbf{characteristic n}.  If not such $n$ exists, $R$ is said to have \textbf{characteristic zero}
+\\
+
+\textbf{(a):} Show that $\mathbb{Z}$ has characteristic zero and $\mathbb{Z}_n$ has characteristic $n$.
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+In $\mathbb{Z}$, $1k = 0 \implies k = 0$
+\\So $\mathbb{Z}$ has characteristic 0.
+\\In $\mathbb{Z}_n$, $[1][k] = [0] \implies [k] = [0] = [n]$.
+\\Because $n$ is the smallest positive element of $[0]$, this implies $\mathbb{Z}_n$ has characteristic $n$.\\
+\end{addmargin}
+\end{addmargin}    
+
+\textbf{(b):} What is the characteristic of $\mathbb{Z}_4 \times \mathbb{Z}_6$
+\\
+\begin{addmargin}[1em]{0em}
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+In $\mathbb{Z}_4 \times \mathbb{Z}_6$, $([1],[1])([k][k]) = ([0],[0]) \implies ([k],[k]) = ([0], [0])$
+\\For this to be true $k = 4a$ and $k = 6b$ where $a, b \in \mathbb{Z}$.
+\\Thus, the characteristic is the smallest $k$ that solves these two equations.
+\\The smallest solution is $a = 3, b = 2$ as found by noting $gcd(4, 6) = 2$, $6 = 3 * 2$ and $4 = 2 * 2$.
+\\Thus because $k = 4 * 3 = 12$, $\mathbb{Z}_4 \times \mathbb{Z}_6$ has characteristic 12.
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}
