@@ -1,0 +1,374 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb, multicol}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 3.3: 1, 3, 10, 15*, 25, 32*, 39  \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 1}
+
+\textbf{Problem statement}: Let $f:\mathbb{Z}_6 \rightarrow \mathbb{Z}_2 \times \mathbb{Z}_3$ be the bijection given by 
+\[0 \rightarrow (0,0) \qquad 1 \rightarrow (1,1) \qquad 2 \rightarrow (0,2) \qquad 3 \rightarrow (1,0) \qquad 4 \rightarrow (0,1) \qquad 5 \rightarrow (1,2)\]
+Use the addition and multiplication tables of $\mathbb{Z}_6$ and $\mathbb{Z}_2 \times \mathbb{Z}_3$ to show that $f$ is an isomorphism.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+For $\mathbb{Z}_6$: \\
+\begin{tabular}{c c}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$+$ & $\textbf{[0]}$ & $\textbf{[1]}$ & $\textbf{[2]}$ & $\textbf{[3]}$ & $\textbf{[4]}$ & $\textbf{[5]}$\\ \hline
+$\textbf{[0]}$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$\\ \hline
+$\textbf{[1]}$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ & $[0]$\\ \hline
+$\textbf{[2]}$ & $[2]$ & $[3]$ & $[4]$ & $[5]$ & $[0]$ & $[1]$\\ \hline
+$\textbf{[3]}$ & $[3]$ & $[4]$ & $[5]$ & $[0]$ & $[1]$ & $[2]$\\ \hline
+$\textbf{[4]}$ & $[4]$ & $[5]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$\\ \hline
+$\textbf{[5]}$ & $[5]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$\\
+\hline
+\end{tabular}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$*$ & $\textbf{[0]}$ & $\textbf{[1]}$ & $\textbf{[2]}$ & $\textbf{[3]}$ & $\textbf{[4]}$ & $\textbf{[5]}$\\ \hline
+$\textbf{[0]}$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$\\ \hline
+$\textbf{[1]}$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ & $[5]$\\ \hline
+$\textbf{[2]}$ & $[0]$ & $[2]$ & $[4]$ & $[0]$ & $[2]$ & $[4]$\\ \hline
+$\textbf{[3]}$ & $[0]$ & $[3]$ & $[0]$ & $[3]$ & $[0]$ & $[3]$\\ \hline
+$\textbf{[4]}$ & $[0]$ & $[4]$ & $[2]$ & $[0]$ & $[4]$ & $[2]$\\ \hline
+$\textbf{[5]}$ & $[0]$ & $[5]$ & $[4]$ & $[3]$ & $[2]$ & $[1]$\\
+\hline
+\end{tabular}
+\end{tabular}
+\hfill \break
+For $\mathbb{Z}_2 \times \mathbb{Z}_3$: \\
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$+$ & $\textbf{([0], [0])}$ & $\textbf{([0], [1])}$ & $\textbf{([0], [2])}$ & $\textbf{([1], [0])}$ & $\textbf{([1], [1])}$ & $\textbf{([1], [2])]}$\\ \hline
+$\textbf{([0], [0])}$ & $([0], [0])$ & $([0], [1])$ & $([0], [2])$ & $([1], [0])$ & $([1], [1])$ & $([1], [2])$\\ \hline
+$\textbf{([0], [1])}$ & $([0], [1])$ & $([0], [2])$ & $([0], [0])$ & $([1], [1])$ & $([1], [2])$ & $([1], [0])$\\ \hline
+$\textbf{([0], [2])}$ & $([0], [2])$ & $([0], [0])$ & $([0], [1])$ & $([1], [2])$ & $([1], [0])$ & $([1], [1])$\\ \hline
+$\textbf{([1], [0])}$ & $([1], [0])$ & $([1], [1])$ & $([1], [2])$ & $([0], [0])$ & $([0], [1])$ & $([0], [2])$\\ \hline
+$\textbf{([1], [1])}$ & $([1], [1])$ & $([1], [2])$ & $([1], [0])$ & $([0], [1])$ & $([0], [2])$ & $([0], [0])$\\ \hline
+$\textbf{([1], [2])}$ & $([1], [2])$ & $([1], [0])$ & $([1], [1])$ & $([0], [2])$ & $([0], [0])$ & $([0], [1])$\\
+\hline
+\end{tabular}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$*$ & $\textbf{([0], [0])}$ & $\textbf{([0], [1])}$ & $\textbf{([0], [2])}$ & $\textbf{([1], [0])}$ & $\textbf{([1], [1])}$ & $\textbf{([1], [2])]}$\\ \hline
+$\textbf{([0], [0])}$ & $([0], [0])$ & $([0], [0])$ & $([0], [0])$ & $([0], [0])$ & $([0], [0])$ & $([0], [0])$\\ \hline
+$\textbf{([0], [1])}$ & $([0], [0])$ & $([0], [1])$ & $([0], [2])$ & $([0], [0])$ & $([0], [1])$ & $([0], [2])$\\ \hline
+$\textbf{([0], [2])}$ & $([0], [0])$ & $([0], [2])$ & $([0], [1])$ & $([0], [0])$ & $([0], [2])$ & $([0], [1])$\\ \hline
+$\textbf{([1], [0])}$ & $([0], [0])$ & $([0], [0])$ & $([0], [0])$ & $([1], [0])$ & $([1], [0])$ & $([1], [0])$\\ \hline
+$\textbf{([1], [1])}$ & $([0], [0])$ & $([0], [1])$ & $([0], [2])$ & $([1], [0])$ & $([1], [1])$ & $([1], [2])$\\ \hline
+$\textbf{([1], [2])}$ & $([0], [0])$ & $([0], [2])$ & $([0], [1])$ & $([1], [0])$ & $([1], [2])$ & $([1], [1])$\\
+\hline
+\end{tabular}
+\hfill \break
+If it is an isomorphism, the map must be homomorphic:
+\begin{multicols}{2}
+$0 + 0 = (0,0) + (0,0) = (0,0) = 0 \quad \checkmark$
+\\$0 * 0 = (0,0) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$0 + 1 = (0,0) + (1,1) = (1,1) = 1 \quad \checkmark$
+\\$0 * 1 = (0,0) * (1,1) = (0,0) = 0 \quad \checkmark$
+\\$0 + 2 = (0,0) + (0,2) = (0,2) = 2 \quad \checkmark$
+\\$0 * 2 = (0,0) * (0,2) = (0,0) = 0 \quad \checkmark$
+\\$0 + 3 = (0,0) + (1,0) = (1,0) = 3 \quad \checkmark$
+\\$0 * 3 = (0,0) * (1,0) = (0,0) = 0 \quad \checkmark$
+\\$0 + 4 = (0,0) + (0,1) = (0,1) = 4 \quad \checkmark$
+\\$0 * 4 = (0,0) * (0,1) = (0,0) = 0 \quad \checkmark$
+\\$0 + 5 = (0,0) + (1,2) = (1,2) = 5 \quad \checkmark$
+\\$0 * 5 = (0,0) * (1,2) = (0,0) = 0 \quad \checkmark$
+\\$1 + 0 = (1,1) + (0,0) = (1,1) = 1 \quad \checkmark$
+\\$1 * 0 = (1,1) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$1 + 1 = (1,1) + (1,1) = (0,2) = 2 \quad \checkmark$
+\\$1 * 1 = (1,1) * (1,1) = (1,1) = 1 \quad \checkmark$
+\\$1 + 2 = (1,1) + (0,2) = (1,0) = 3 \quad \checkmark$
+\\$1 * 2 = (1,1) * (0,2) = (0,2) = 2 \quad \checkmark$
+\\$1 + 3 = (1,1) + (1,0) = (0,1) = 4 \quad \checkmark$
+\\$1 * 3 = (1,1) * (1,0) = (1,0) = 1 \quad \checkmark$
+\\$1 + 4 = (1,1) + (0,1) = (1,2) = 5 \quad \checkmark$
+\\$1 * 4 = (1,1) * (0,1) = (0,1) = 4 \quad \checkmark$
+\\$1 + 5 = (1,1) + (1,2) = (0,0) = 0 \quad \checkmark$
+\\$1 * 5 = (1,1) * (1,2) = (1,2) = 5 \quad \checkmark$
+\\$2 + 0 = (0,2) + (0,0) = (0,2) = 2 \quad \checkmark$
+\\$2 * 0 = (0,2) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$2 + 1 = (0,2) + (1,1) = (1,0) = 3 \quad \checkmark$
+\\$2 * 1 = (0,2) * (1,1) = (0,2) = 2 \quad \checkmark$
+\\$2 + 2 = (0,2) + (0,2) = (0,1) = 4 \quad \checkmark$
+\\$2 * 2 = (0,2) * (0,2) = (0,1) = 4 \quad \checkmark$
+\\$2 + 3 = (0,2) + (1,0) = (1,2) = 5 \quad \checkmark$
+\\$2 * 3 = (0,2) * (1,0) = (0,0) = 0 \quad \checkmark$
+\\$2 + 4 = (0,2) + (0,1) = (0,0) = 0 \quad \checkmark$
+\\$2 * 4 = (0,2) * (0,1) = (0,2) = 2 \quad \checkmark$
+\\$2 + 5 = (0,2) + (1,2) = (1,1) = 1 \quad \checkmark$
+\\$2 * 5 = (0,2) * (1,2) = (0,1) = 4 \quad \checkmark$
+\\$3 + 0 = (1,0) + (0,0) = (1,0) = 3 \quad \checkmark$
+\\$3 * 0 = (1,0) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$3 + 1 = (1,0) + (1,1) = (0,1) = 4 \quad \checkmark$
+\\$3 * 1 = (1,0) * (1,1) = (1,0) = 3 \quad \checkmark$
+\\$3 + 2 = (1,0) + (0,2) = (1,2) = 5 \quad \checkmark$
+\\$3 * 2 = (1,0) * (0,2) = (0,0) = 0 \quad \checkmark$
+\\$3 + 3 = (1,0) + (1,0) = (0,0) = 0 \quad \checkmark$
+\\$3 * 3 = (1,0) * (1,0) = (1,0) = 3 \quad \checkmark$
+\\$3 + 4 = (1,0) + (0,1) = (1,1) = 1 \quad \checkmark$
+\\$3 * 4 = (1,0) * (0,1) = (0,0) = 0 \quad \checkmark$
+\\$3 + 5 = (1,0) + (1,2) = (0,2) = 2 \quad \checkmark$
+\\$3 * 5 = (1,0) * (1,2) = (1,0) = 3 \quad \checkmark$
+\\$4 + 0 = (0,1) + (0,0) = (0,1) = 4 \quad \checkmark$
+\\$4 * 0 = (0,1) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$4 + 1 = (0,1) + (1,1) = (1,2) = 5 \quad \checkmark$
+\\$4 * 1 = (0,1) * (1,1) = (0,1) = 4 \quad \checkmark$
+\\$4 + 2 = (0,1) + (0,2) = (0,0) = 0 \quad \checkmark$
+\\$4 * 2 = (0,1) * (0,2) = (0,2) = 2 \quad \checkmark$
+\\$4 + 3 = (0,1) + (1,0) = (1,1) = 1 \quad \checkmark$
+\\$4 * 3 = (0,1) * (1,0) = (0,0) = 0 \quad \checkmark$
+\\$4 + 4 = (0,1) + (0,1) = (0,2) = 2 \quad \checkmark$
+\\$4 * 4 = (0,1) * (0,1) = (0,1) = 4 \quad \checkmark$
+\\$4 + 5 = (0,1) + (1,2) = (1,0) = 3 \quad \checkmark$
+\\$4 * 5 = (0,1) * (1,2) = (0,2) = 2 \quad \checkmark$
+\\$5 + 0 = (1,2) + (0,0) = (1,2) = 5 \quad \checkmark$
+\\$5 * 0 = (1,2) * (0,0) = (0,0) = 0 \quad \checkmark$
+\\$5 + 1 = (1,2) + (1,1) = (0,0) = 0 \quad \checkmark$
+\\$5 * 1 = (1,2) * (1,1) = (1,2) = 5 \quad \checkmark$
+\\$5 + 2 = (1,2) + (0,2) = (1,1) = 1 \quad \checkmark$
+\\$5 * 2 = (1,2) * (0,2) = (0,1) = 4 \quad \checkmark$
+\\$5 + 3 = (1,2) + (1,0) = (0,2) = 2 \quad \checkmark$
+\\$5 * 3 = (1,2) * (1,0) = (1,0) = 3 \quad \checkmark$
+\\$5 + 4 = (1,2) + (0,1) = (1,0) = 3 \quad \checkmark$
+\\$5 * 4 = (1,2) * (0,1) = (0,2) = 2 \quad \checkmark$
+\\$5 + 5 = (1,2) + (1,2) = (0,1) = 4 \quad \checkmark$
+\\$5 * 5 = (1,2) * (1,2) = (1,1) = 1 \quad \checkmark$
+\end{multicols}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 3}
+
+\textbf{Problem statement}: Let $R$ be a ring and let $R^*$ be the subring of $R \times R$ consisting of all elements of the form $(a,a)$.  Show that the function $f:R \rightarrow R^*$ given by $f(a) = (a,a)$ is an isomorphism.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof} \hfill \break
+Let $R$ be a ring and $R^*$ be a subring of $R \times R$ of elements $(r,r)$ for $r \in R$.
+\\Let $f$ be a map from $R$ to $R^*$ such that $f(a) = (a,a)$
+\\In order to show that $f$ is an isomorphism, I need to show that $f$ is a bijective homomorphism.
+\\ \textbf{Injective}
+\begin{addmargin}[1em]{0em}
+Suppose $f(a) = f(b)$
+\\Then $(a,a) = (b,b)$
+\\So $(a,a) - (b,b) = 0 \implies (a-b,a-b) = 0$
+\\Thus, $a-b = 0 \implies a = b$
+\\So $f(a) = f(b) \implies a = b$ and thus $f$ is injective.
+\end{addmargin}
+\textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose $(a,a) \in R^*$
+\\Then let $a \in R$
+\\So $f(a) = (a,a)$ and thus $im(f) = R^*$ so $f$ is surjective.
+\end{addmargin}
+\textbf{Linear over Addition}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in R$
+\\Then $f(a + b) = (a + b, a + b) = (a,a) + (b,b) = f(a) + f(b)$
+\end{addmargin}
+\textbf{Linear over Multiplication}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in R$
+\\Then $f(ab) = (ab, ab) = (a,a)(b,b) = f(a)f(b)$
+\end{addmargin}
+Because $f$ is a bijective homomorphism, $f$ is an isomorphism.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 10}
+
+\textbf{Problem statement}: If $R$ is a ring with identity and $f:R \rightarrow S$ is a homomorphism from $R$ to a ring $S$, prove that $f(1_R)$ is an idempotent in $S$. [Idempotent is defined as an element $e$ such that $e^2 = e$]
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof} \hfill \break
+Suppose $R$ is a ring with identity $1_R$ and $f:R \rightarrow S$ is a homomorphism.
+\\Then suppose $e = f(1_R)$
+\\So $e^2 = f(1_R)f(1_R) = f(1_R1_R) = f(1_R) = e$
+\\Thus, by definition, $f(1_R)$ is idempotent in $S$.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 15*}
+
+\textbf{Problem statement}: Let $f:R \rightarrow S$ be a homomorphism of rings.  If $r$ is a zero divisor in $R$, is $f(r)$ a zero divisor in $S$?
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose $R$ and $S$ are rings and let $f:R \rightarrow S$ be a homomorphism.
+\\Let $r$ be a zero divisor of $R$.
+\\Then there exists $0_R \neq y \in R$ such that $ry = 0_R$
+\\So $f(0_R) = f(ry) = f(r)f(y)$
+\\In addition, as has been proven previously, $f(0_R) = 0_S$, so $f(r)f(y) = 0_S$
+\\However, for $f(r)$ to be a zero divisor in $S$, $f(r)$ and $f(y)$ cannot equal $0_S$.
+\\Thus the map from $\mathbb{Z}_6$ to $0$ (the zero map) has only the element $0$ and thus has no zero divisors.
+\\Therefore a counterexample to the statement is the zero map from a ring with zero divisors to the zero map.
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 25}
+
+\textbf{Problem statement}: Let $L$ be a ring of all matrices in $M(\mathbb{Z})$ of the form $\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right)$.  Show that the function $f:L\rightarrow \mathbb{Z}$ given by $f\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) = a$ is a surjective homomorphism but not an isomorphism
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof} \hfill \break
+Suppose $L$ is a ring of all matrices in $M(\mathbb{Z})$ of the form $\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right)$ and $f:L \rightarrow \mathbb{Z}$ be given by $f\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) = a$
+\\ \textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose $z \in \mathbb{Z}$
+\\Then let $l = \left( \begin{smallmatrix} z & 0 \\ 0 & 0 \end{smallmatrix} \right)$
+\\So $f(l) = f(\left( \begin{smallmatrix} z & 0 \\ 0 & 0 \end{smallmatrix} \right) = z$
+\\Thus $f$ is surjective.
+\end{addmargin}
+\textbf{Linear over addition}
+\begin{addmargin}[1em]{0em}
+Suppose $ \left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right),  \left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right) \in L$
+\\Then $f(\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) + \left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right)) = f(\left( \begin{smallmatrix} a+d & 0 \\ b+e & c+f \end{smallmatrix} \right)) = a + d = f(\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right)) + f(\left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right))$
+\end{addmargin}
+\textbf{Linear over multiplication}
+\begin{addmargin}[1em]{0em}
+Suppose $ \left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right),  \left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right) \in L$
+\\Then $f(\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) \left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right)) = f(\left( \begin{smallmatrix} ad & 0 \\ db + ec & fc \end{smallmatrix} \right)) = ad = f(\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right)) f(\left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right))$
+\end{addmargin}
+\textbf{Not Injective}
+\begin{addmargin}[1em]{0em}
+Suppose $ \left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right),  \left( \begin{smallmatrix} a & 0 \\ e & f \end{smallmatrix} \right) \in L$ with $b \neq e$ or $c \neq f$
+\\Then $f(\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) = a$ and $f( \left( \begin{smallmatrix} d & 0 \\ e & f \end{smallmatrix} \right)) = a$
+\\However,$\left( \begin{smallmatrix} a & 0 \\ b & c \end{smallmatrix} \right) \neq  \left( \begin{smallmatrix} a & 0 \\ e & f \end{smallmatrix} \right)$
+\end{addmargin}
+Therefore, $f$ is a surjective homomorphism, but because $f$ is not injective, $f$ is not an isomorphism.
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 32*}
+
+\textbf{Problem statement}: Assume $n \equiv 1 ($mod $m)$.  Show that the function $f:\mathbb{Z}_m \rightarrow \mathbb{Z}_{mn}$ given by $f([x]_m) = [nx]_{nm}$ is a injective homomorphism but not an isomorphism when $n \geq 2$.
+\\ 
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof} \hfill \break
+Let $n \equiv 1($mod $m)$ and $f: \mathbb{Z}_m \rightarrow \mathbb{Z}_{mn}$ such that $f([x]_m) = [nx]_{nm}$
+\\ \textbf{Injective}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in \mathbb{Z}_m$ such that $f(a) = f(b)$
+\\However, $f(a) = [na] = [n][a]$ and $f(b) = [nb] = [n][b]$
+\\So $[n][a] = [n][b] \implies [n]([a] - [b]) = 0 \implies m|n(a-b)$
+\\Because $(m,n) = 1$ then $m|(a-b) \implies [a] - [b] = 0 \implies [a] = [b]$
+\\Thus because $[a], [b]$ were defined in $\mathbb{Z}_m$, they will be equal to the $[a], [b] \in \mathbb{Z}_{nm}$ since $nm > m$.
+\\Therefore, $a = b$.
+\end{addmargin}
+\textbf{Linear over addition}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in \mathbb{Z}_m$
+\\Then $f(a + b) = f([a+b]_m) = [n(a+b)]_{nm} = [na + nb]_{nm} = [na]_{nm} + [nb]_{nm} = f([a]_m) + f([b]_m) = f(a) + f(b)$
+\end{addmargin}
+\textbf{Linear over multiplication}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in \mathbb{Z}_m$\
+\\Then $f(ab) = f([ab]_m) = [nab]_{nm} = [n]_{nm}[ab]_{nm}$
+\\Note that $n \equiv 1($mod $m)$, so for some $q \in \mathbb{Z}, n = qm + 1 \implies n^2 = qnm + n \implies n^2 \equiv n ($mod $nm)$
+\\Thus $[n]_{nm}[ab]_{nm} = [n^2]_{nm}[ab]_{nm} = [n^2ab]_{nm} = [na]_{nm}[nb]_{nm} = f([a]_m)f([b]_m) = f(a)f(b)$
+\end{addmargin}
+\textbf{Not Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose we have $[nx]_{nm} = [1]_{nm}$ for some $[x]_m$
+\\However, by theorem 2.9, $[n]x = [1]$ has no solution because $(n, nm) = n \neq 1$.
+\\Thus, $f$ is not surjective.
+\end{addmargin}
+
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 39}
+
+\textbf{Problem statement}: Let $R$ be a ring without identity.  Let $T$ be the ring with identity defined as $T = R \times \mathbb{Z}$ with \[(r,m) + (s,n) = (r + s, m + n)\] \[(r,m)*(s,n) = (rs + ms + nr, mn)\] Show that $R$ is isomorphic to the subring $\bar{R}$ of $T$ defined as $\bar{R} = (r, 0) \in T$.  Thus, if $R$ is identified with $\bar{R}$, then $R$ is a subring of a ring with identity.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $R$ is a ring without idenity and $\bar{R} = (r,0) \in T = R \times \mathbb{Z}$
+\\Let $f:R \rightarrow \bar{R}$ be defined as $f(r) = (r, 0)$
+\\Then if $f$ is an isomorphism, $f$ is a bijective homomorphism
+\\ \textbf{Injective}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in R$ and that $f(a) = f(b)$
+\\Then $(a,0) = (b,0) \implies (a,0) - (b,0) = (0,0) \implies (a,0) + (-b, 0) = (0,0) \implies (a - b, 0) = (0,0) \implies a-b = 0 \implies a = b$
+\end{addmargin}
+\textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose $a \in \bar{R}$ is equal to $(r,0)$.
+\\Then let $r \in R$.
+\\So $f(r) = (r,0) = a$
+\\Thus $im(f) = \bar{R}$ so $f$ is surjective
+\end{addmargin}
+\textbf{Linear over Addition}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in R$
+\\Then $f(a + b) = (a + b, 0) = (a + b, 0 + 0) = (a, 0) + (b, 0) = f(a) + f(b)$
+\end{addmargin}
+\textbf{Linear over Multiplication}
+\begin{addmargin}[1em]{0em}
+Suppose $a, b \in R$
+\\Then $f(ab) = (ab, 0) = (ab + 0b + 0a, 00) = (a,0)(b,0) = f(a)f(b)$
+\end{addmargin}
+Therefore, because $f$ is a bijective homomorphism, $f$ is an isomorphism.
+\end{proof}
+\end{addmargin}
+
+\newpage
+\end{document}
