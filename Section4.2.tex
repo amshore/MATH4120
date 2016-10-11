@@ -1,0 +1,200 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm, polynom} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 4.2: 1, 3, 5bdf, 6b*, 11*, 13 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1}
+\textbf{Problem statement}: If $f(x) \in F[x]$, show that every nonzero constant polynomial divides $f(x)$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $F$ is a field and $f(x) \in F[x]$.
+\\Let $g(x) \in F[x]$ be a nonzero constant polynomial.
+\\Then we can rewrite $g(x) = g \in F$
+\\In addition, if $c \in F$ is the leading coefficient of $f(x)$, then there is $h(x) \in F[x]$ such that $f(x) = ch(x)$
+\\Thus, by the division algorithm, there exists $q(x), r(x) \in F[x]$ such that $f(x) = q(x)g(x) + r(x)$
+\\So $ch(x) = q(x)g + r(x) \implies h(x) = q(x)c^{-1}g + c^{-1}r(x)$
+\\If $q(x) = h(x)g^{-1}c$, then $h(x) = h(x)g^{-1}cc^{-1}g + c^{-1}r(x)$
+\\Because $h(x) = h(x) + c^{-1}r(x) \implies r(x) = 0$
+\\Thus $f(x) = q(x)g \implies g|f(x)$
+\end{proof}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 3}
+\textbf{Problem statement}: If $a,b \in F$ and $a \neq b$, show that $x + a$ and $x + b$ are relatively prime in $F[x]$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+I will present this proof by proving the contrapostive statement: If $a, b \in F$ and $x + a$ and $x + b$ are not relatively prime, then $a = b$.
+\\Let $F$ be a field and $a, b \in F$ with $x + a, x + b \in F[x]$ such that $x +a$ and $x+b$ are not relatively prime
+\\Then $(x + a, x + b) \neq 1_F$
+\\However, because $1_F$ is the only polynomial of degree $0$, and the degree of gcd of $x + a$ and $x + b$ must be less or equal to $1$, then for some $c \in F$, $(x + a, x + b) = x + c$
+\\This implies for some $n,m \in F$, $x + a = n(x + c)$ and $x + b = m(x + c)$
+\\Because $x + a$ and $x + b$ are monic, $n = m = 1_F$
+\\Thus $x + a = x + c$ and $x + b = x + c$
+\\Therefore, $x + a = x + b \implies a = b$
+\\Thus, the contrapositive has been proven and the original statement is proven as well.
+\end{proof}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 5bdf}
+\textbf{Problem statement}:Use the Euclidean Algorithm to find the gcd (which is monic) of the given polynomials:
+\\
+
+\textbf{(b): }$x^5 + x^4 + 2x^3 - x^2 -x - 2$ and $x^4 + 2x^3 + 5x^2 + 4x + 4$ in $\mathbb{Q}[x]$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$x^5 + x^4 + 2x^3 - x^2 - x - 2 = (x-1)(x^4 + 2x^3 + 5x^2 + 4x + 4) + (-x^3 - x + 2)$
+\\$x^4 + 2x^3 + 5x^2 + 4x + 4 = (x + 2)(x^3 + x - 2) + (4x^2 + 4x + 8)$
+\\$x^3 + x - 2 = (x - 1)(x^2 + x + 2) + (0)$
+\\Thus, $(x^5 + x^4 + 2x^3 - x^2 -x - 2, x^4 + 2x^3 + 5x^2 + 4x + 4) = x^2 + x + 2$
+\end{addmargin}
+\end{addmargin}
+
+
+\textbf{(d): }$4x^4 + 2x^3 + 6x^2 + 4x + 5$ and $3x^3 + 5x^2 + 6x$ in $\mathbb{Z}_7[x]$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$4x^4 + 2x^3 + 6x^2 + 4x + 6 = (-x)(3x^3 + 5x^2 + 6x) + (5x^2 + 4x + 5)$
+\\$3x^3 + 5x^2 + 6x = (-5x - 2)(5x^2 + 4x + 5) + (4x + 3)$
+\\$5x^2 + 4x + 5 = (-4x - 3)(4x + 3) + (0)$
+\\Also, because we are in $\mathbb{Z}_7, 4x + 3 = 4x - 4 = 4(x-1)$
+\\Thus, $(4x^4 + 2x^3 + 6x^2 + 4x + 5, 3x^3 + 5x^2 + 6x) = x-1$
+\end{addmargin}
+\end{addmargin}
+\textbf{(f): }$x^4 + x + 1$ and $x^2 + x + 1$ in $\mathbb{Z}_2[x]$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$x^4 + x + 1 = (x)(x^3 + x + 1) + (x^2 + 1)$
+\\$x^3 + x + 1 = (x)(x^2 + 1) + (1)$
+\\$x^2 + 1 = (x^2 + 1)(1) + (0)$
+\\Thus, $(x^4 + x + 1, x^2 + x + 1) = 1$ and the two polynomials are relatively prime.
+\end{addmargin}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 6b*}
+\textbf{Problem statement}: Express each of the gcd's for Problem 5b as a linear combination of the two given polynomials
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+For simplicity define $a = x^5 + x^4 + 2x^3 -x^2 -x - 2, b = x^4 + 2x^3 + 5x^2 + 4x + 4$
+\\$a = (x-1)(b) + (-1)(x^3 + x - 2)$
+\\$(-1)a + (x-1)b = (x^3 + x - 2)$
+\\$b = (x + 2)(x^3 + x - 2) + 4(x^2 + x + 2)$
+\\$b = (x + 2)((-1)a + (x-1)b) + (4)(x^2 + x + 2)$
+\\$(x+2)a - ((x+2)(x-1) - 1)b = (4)(x^2 + x + 2)$
+\\$(\frac{1}{4}x + \frac{1}{2})a - \frac{1}{4}(x^2 + x - 3)b = x^2 + x + 2$
+\\$(\frac{1}{4}x + \frac{1}{2})a - (\frac{1}{4}x^2 + \frac{1}{4}x - \frac{3}{4})b = x^2 + x + 2$
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 11*}
+\textbf{Problem statement}: Prove the following statement: Let $F$ be a field and $a(x),b(x) \in F[x]$, not both zero.  Then there is a unique greatest common divisor $d(x)$ of $a(x)$ and $b(x)$.  Furthermore, there are (not necessarily unique) polynomials $u(x)$ and $v(x)$ such that $d(x) = a(x)u(x) + b(x)v(x)$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and $a(x),b(x) \in F[x]$ not both zero.
+\\Let $S = \{a(x)m(x) + b(x)n(x) | m(x),n(x) \in F[x]\}$
+\\Note that $a(x), b(x) \in S$, so $S$ contains at least one nonzero polynomial.
+\\So, the set $R = \{deg(a(x)m(x) + b(x)n(x) | m(x),n(x) \in F[x], a(x)m(x) + b(x)n(x) \neq 0_F)\}$ is nonempty and thus has a smallest element $r \in R$ by the Well Ordering Principle.
+\\In addition, there is a corresponding element $s \in S$ such that $deg(s) = r$
+\\Also, to make $s$ a monic polynomial, suppose for some monic polynomial $t \in S$, with $d \in F$ the leading coefficient of $s$, $s = dt$
+\\Because $F$ is a field, $d$ is nonzero and thus has an inverse, so $t = d^{-1}s$
+\\Thus, by the definition of $S$, for some $u, v \in F[x]$, $t = au + bv$
+\\Now, for $t$ to be the gcd of $a$ and $b$, it must divide $a$ and $b$ and any polynomial that also divides $a$ and $b$ must be of lesser or equal degree
+\\ \textbf{Divides $a$ and $b$}
+\begin{addmargin}[1em]{0em}
+By the division algorithm, there are polynomials $q, r, u, v \in F[x]$ such that $a = tq + r$ with $0 \geq deg(r) < deg(t)$ or $r = 0_F$
+\\So $r = a - tq = a - (au + bv)q = a - aqu - bvq = a(1-qu) + b(-vq)$
+\\Thus $r \in S$
+\\However, by the definition of $t$, the degree of $t$ is the smallest among the elements of $S$ (corresponding to the least element in $R$)
+\\Thus, because $deg(r) < deg(t)$ is impossible, this implies $r = 0_F$
+\\Therefore, $a = tq$ which implies that $t|a$.
+\\In addition there are (possibly different) polynomials $q, r, u , v \in F[x]$ such that $b = tq + r$ with $0 \geq deg(r) < deg(t)$ or $r = 0_F$
+\\So $r = b - tq = b - (au + bv)q = b - aqu - bvq = a(-qu) + b(1-vq)$
+\\Thus $r \in S$
+\\However, by the definition of $t$, the degree of $t$ is the smallest among the elements of $S$ (corresponding to the least element in $R$)
+\\Thus, because $deg(r) < deg(t)$ is impossible, this implies $r = 0_F$
+\\Therefore, $b = tq$ which implies that $t|b$.
+\\Thus, $t|a$ and $t|b$
+\end{addmargin}
+\textbf{Maximum degree monic polynomial}
+\begin{addmargin}[1em]{0em}
+Let $c \in F[x]$ be a common divisor of $a$ and $b$
+\\Suppose $u, v \in F[x]$ such that $au + bv = t$
+\\Then for some polynomials $n, m \in F[x]$, $a = cn$ and $b = cm$.
+\\Thus $t = au + bv = cnu + cmv = c(nu + mv)$
+\\Therefore, $deg(t) \geq deg(c) + deg(nu + mv)$ by Theorem 4.7
+\\And thus, $deg(t) \geq deg(c)$
+\end{addmargin}
+Therefore $t$ is the greatest common divisor of $a$ and $b$
+\\Finally, to show that $t$ is the unique greatest common divisor, suppose $d$ is another greatest common divisor of $a$ and $b$
+\\Thus $d$ is a common divisor and there exist $n,m \in F[x]$ such that $a = nd$ and $b = md$
+\\Thus, $t = au + bv = (nd)u + (md)v = d(nu + mv)$
+\\Therefore $deg(t) \geq deg(d) + deg(nu + mv)$
+\\However, because $t$ and $d$ are gcd's, $deg(t) = deg(d)$
+\\This implies that $0 \geq deg(nu + mv) \implies deg(nu + mv) = 0$
+\\Therefore, $nu + mv = c$ where $c \in F$
+\\Thus, $t = cd$ and because $t$ and $d$ are monic, the leading coefficients imply $1_F = c$
+\\Thus $t = d$ and $t$ is the unique gcd of $a$ and $b$.
+\end{proof}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 13}
+\textbf{Problem statement}: Prove the following statement: Let $F$ be a field and $a(x),b(x),c(x) \in F[x]$.  If $a(x)|b(x)c(x)$ and $a(x)$ and $b(x)$ are relatively prime, then $a(x)|c(x)$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and $a(x), b(x), c(x) \in F[x]$
+\\Let $a(x)|b(x)c(x)$
+\\Then for some $k(x) \in F[x]$, $b(x)c(x) = a(x)k(x)$
+\\Suppose $a(x)$ and $b(x)$ are relatively prime.
+\\Then for some $u(x),v(x) \in F[x]$, $1_F = a(x)u(x) + b(x)v(x)$
+\\Thus, $c(x) = c(x)a(x)u(x) + c(x)b(x)v(x) = c(x)a(x)u(x) + a(x)k(x)v(x) = a(x)(c(x)u(x) + k(x)v(x)) \implies a(x)|c(x)$
+\end{proof}
+\end{addmargin}
+
+\end{document}

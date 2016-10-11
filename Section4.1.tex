@@ -1,0 +1,290 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb, multicol}
+\usepackage{amsmath,amsfonts,amsthm, polynom} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 4.1: 1d, 2, 3a, 5bc, 6, 7, 8, 10, 13, 16, 17 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1d}
+\textbf{Problem statement}: Simplify $(x^2 -3x + 2)(2x^3 -4x + 1)$ in $\mathbb{Z}_7[x]$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$(x^2 - 3x + 2)(2x^3 - 4x + 1) = $
+\\$(1 * 2)x^5 + (-3 * 2)x^4 + (1*-4 + 2*2)x^3 + (1*1 + -3 * -4)x^2 + (-3 * 1 + 2 * -4)x + (2 * 1) = $
+\\$2x^5 - 6x^4 + 13x^2 - 11x + 2$
+\\$2x^5 + x^4 + 6x^2 + 3x + 2$
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 2}
+\textbf{Problem statement}: Show that the set of all real numbers of the form 
+\[a_0 + a_1\pi + a_2\pi^2 + ... + a_n\pi^n \text{, with } n\geq 0 \text{ and } a_i \in \mathbb{Z}\]
+is a subring of $\mathbb{R}$ that contains both $\mathbb{Z}$ and $\pi$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose $P = \{a_0 + a_1\pi + a_2\pi^2 + ... + a_n\pi^n | n \geq 0, a_i \in \mathbb{Z}\}$
+\\First note that because $\mathbb{Z} \subset \mathbb{R}$ and $\pi \in \mathbb{R}$ and that because $\mathbb{R}$ is closed under addition, $A$ is a subset of $\mathbb{R}$.
+\\In addition, when $n = 0$, $A = \{a_0 | a_0 \in \mathbb{Z} \}$, which is equal to $\mathbb{Z}$ and when $n = 1, a_0 = 0, a_1 = 1$, $A = \{\pi\}$.
+\\Thus, $\mathbb{Z} \subset A$ and $\pi \in A$.
+\\To be a subring, $A$ must be closed under multiplication and subtraction.
+\\However, note that $A$ looks like a polynomial of the form $\mathbb{Z}[\pi]$ and so polynomial theorems apply.  Thus, $A$ forms a ring.
+\\Because $A$ is a ring and a subset of $\mathbb{R}$, thus $A$ is a subring of $\mathbb{R}$
+
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 3a}
+\textbf{Problem statement}: List all polynomials of degree 3 in $\mathbb{Z}_3[x]$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{multicols}{2}
+$x^3$
+\\$x^3 + 1$
+\\$x^3 + 2$
+\\$x^3 + x$
+\\$x^3 + x + 1$
+\\$x^3 + x + 2$
+\\$x^3 + 2x$
+\\$x^3 + 2x + 1$
+\\$x^3 + 2x + 2$
+\\$x^3 + x^2$
+\\$x^3 + x^2 + 1$
+\\$x^3 + x^2 + 2$
+\\$x^3 + x^2 + x$
+\\$x^3 + x^2 + x + 1$
+\\$x^3 + x^2 + x + 2$
+\\$x^3 + x^2 + 2x$
+\\$x^3 + x^2 + 2x + 1$
+\\$x^3 + x^2 + 2x + 2$
+\\$x^3 + 2x^2$
+\\$x^3 + 2x^2 + 1$
+\\$x^3 + 2x^2 + 2$
+\\$x^3 + 2x^2 + x$
+\\$x^3 + 2x^2 + x + 1$
+\\$x^3 + 2x^2 + x + 2$
+\\$x^3 + 2x^2 + 2x$
+\\$x^3 + 2x^2 + 2x + 1$
+\\$x^3 + 2x^2 + 2x + 2$
+\\$2x^3$
+\\$2x^3 + 1$
+\\$2x^3 + 2$
+\\$2x^3 + x$
+\\$2x^3 + x + 1$
+\\$2x^3 + x + 2$
+\\$2x^3 + 2x$
+\\$2x^3 + 2x + 1$
+\\$2x^3 + 2x + 2$
+\\$2x^3 + x^2$
+\\$2x^3 + x^2 + 1$
+\\$2x^3 + x^2 + 2$
+\\$2x^3 + x^2 + x$
+\\$2x^3 + x^2 + x + 1$
+\\$2x^3 + x^2 + x + 2$
+\\$2x^3 + x^2 + 2x$
+\\$2x^3 + x^2 + 2x + 1$
+\\$2x^3 + x^2 + 2x + 2$
+\\$2x^3 + 2x^2$
+\\$2x^3 + 2x^2 + 1$
+\\$2x^3 + 2x^2 + 2$
+\\$2x^3 + 2x^2 + x$
+\\$2x^3 + 2x^2 + x + 1$
+\\$2x^3 + 2x^2 + x + 2$
+\\$2x^3 + 2x^2 + 2x$
+\\$2x^3 + 2x^2 + 2x + 1$
+\\$2x^3 + 2x^2 + 2x + 2$
+\end{multicols}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 5bc}
+\textbf{Problem statement}: Find polynomials $q(x)$ and $r(x)$ such that $f(x) = g(x)q(x) + r(x)$, and $r(x)=0$ or $deg(r(x)) < deg(g(x))$
+\\
+
+\textbf{(b): }$f(x) = x^4 - 7x + 1$ and $g(x) = 2x^2 + 1$ in $\mathbb{Q}[x]$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\polylongdiv{x^4 - 7x + 1}{2x^2 + 1}
+\\Thus $q(x) = \frac{1}{2}x^2 - \frac{1}{4}, r(x) = -7x + \frac{5}{4}$
+\end{addmargin}
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+\textbf{(c): }$f(x) = 2x^4 + x^2 - x + 1$ and $g(x) = 2x - 1$ in $\mathbb{Z}_5[x]$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\polylongdiv[stage=4]{2x^4 + x^2 - x + 1}{2x - 1}
+\\Now rewrite $x^3$ as $-4x^3$
+\\ \polylongdiv[stage=4]{-4x^3 + x^2 - x + 1}{2x - 1}
+\\Rewrite $-x^2$ as $4x^2$
+\\ \polylongdiv[stage=4]{4x^2 - x + 1}{2x - 1}
+\\Replace $x$ by $-4x$
+\\ \polylongdiv[stage=4]{-4x + 1}{2x - 1}
+\\So $q(x) = x^3 -2x^2 + 2x -2$ and $r(x) = -1$
+\end{addmargin}
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 6}
+\textbf{Problem statement}: Which of the following subsets of $R[x]$ are subrings of $R[x]$?  Justify your answer
+\\ \textbf{(a)} All polynomials with constant term $0_R$
+\\ \textbf{(b)} All polynomials of degree 2
+\\ \textbf{(c)} All polynomials of degree $\leq k$ where $k$ is a fixed positive integer.
+\\ \textbf{(d)} All polynomials in which the odd posers of $x$ have zero coefficients
+\\ \textbf{(e)} All polynomials in which the even powers of $x$ have zero coefficients
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+(a) is a subring because it is a subset of $R$, and is closed under multiplication and subtraction.
+\\(b) is not a subring of $R[x]$ because if you subtract two monic polynomials of degree 2, you get a polynomial of degree less than 2 or undefined.
+\\(c) is not a subring of $R[x]$ because if you multiply two polynomials of degree $k$, you will get a polynomial of at max degree 2k.
+\\(d) is not a subring because when you multiply the odd powers, you  will get even powers.
+\\(e) is a subring because when you multiply the even powers, you get even powers, when you subtract the even powers you get even powers, and it is a suset of $R$
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 7}
+\textbf{Problem statement}: If $R$ is commutative, show that $R[x]$ is also commutative.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Let $R$ be a commutative ring and $a, b \in R[x]$
+\\Then $ab = (\sum_{k=0}^{n}{a_kx^k})(\sum_{k=0}^{r}{b_kx^k}) = \sum_{k=0}^{n+r}{(\sum_{j=0}^{k}{a_{j}b_{k-j}})x^k}$
+\\Using the substitution $s = k - j$ and using the commutativity of the ring $R$ to rearrange the addition and multiplication terms in the inner sum, we get:
+\\$\sum_{k=0}^{n+r}{(\sum_{s=0}^{k}{b_{s}a_{k-s}})x^k} = (\sum_{k=0}^{r}{b_kx^k})(\sum_{k=0}^{n}{a_kx^k}) = ba$
+\\Therefore, because $ab = ba$, then $R[x]$ is a commutative ring.
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 8}
+\textbf{Problem statement}: If $R$ has multiplicative inverse $1_R$, show that $1_R$ is also the multiplicative inverse of $R[x]$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose $R$ is a ring with multiplicative inverse $1_R$ and that there is an associated polynomial ring $R[x]$.
+\\Let $a \in R[x]$
+\\First note that $1_R = 1_R + \sum_{k=1}^{\infty}{0_Rx^k} \in R[x]$
+\\Thus, $1_R \in R[x]$
+\\In addition, $1_Ra = (1_R)(\sum_{k=0}^{\infty}{a_kx^k}) = \sum_{k=0}^{\infty}{1_Ra_kx^k} = \sum_{k=0}^{\infty}{a_kx^k} = a$
+\\Here I used the fact that only the term of order $0$ is nonzero in the first polynomial and therefore the sum simplifies to one term in the multiplication.
+\\Identically, $a1_R = (\sum_{k=0}^{\infty}{a_kx^k})(1_R) = \sum_{k=0}^{\infty}{a_k1_Rx^k} = \sum_{k=0}^{\infty}{a_kx^k} = a$
+\\Thus, $1_R = 1_{R[x]}$
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 10}
+\textbf{Problem statement}: If $F$ is a field, show that $F[x]$ is not a field.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and $F[x]$ be an associated polynomial ring.
+\\Then $x, f(x) \in F[x]$.
+\\However, $xf(x) = \sum_{n=0}^{\infty}a_nx^{n+1}$
+\\But, as shown previously, the identity element in $F[x]$ is the identity element in $F$, which is a 0$^th$ degree polynomial and $xf(x)$ is at least a first or undefined degree polynomial.
+\\Thus $xf(x) \neq 1_{F[x]}$ and $x$ is not a unit of $F[x]$.
+\\Therefore, $F[x]$ is not a field.
+\end{proof}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 13}
+\textbf{Problem statement}: Let $R$ be a commutative ring.  If $a_n \neq 0_R$ and $f(x) = a_0 + a_1x + a_2x^2 + ... + a_nx^n$ (with $a_n \neq 0_R$)is a zero divisor in $R[x]$, prove that $a_n$ is a zero divisor in $R$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $R$ is a commutative ring and $f(x) \in R[x]$ is a zero divisor
+\\Let $f(x) = a_0 + a_1x + a_2x^2 + ... + a_nx^n$ with $a_n \neq 0_R$
+\\If $f(x)$ is a zero divisor, then there is a nonzero $g(x) \in R[x]$ such that $f(x)g(x) = 0_{R[x]}$
+\\Thus $f(x)g(x) = (\sum_{k=0}^{n}{a_kx^k})(\sum_{k=0}^{m}{b_kx^k}) = \sum_{k=0}^{n+m}{(\sum_{r=0}^{k}{a_rb_{k-r}})x^k}$
+\\The inner sum only has a single term when $k = 0$ and when $k = n+m$
+\\In the second case, the element is $a_nb_m$
+\\However, this term must be zero because $f(x)$ is a zero divisor, but $a_n$ and $b_m$ are both nonzero but have a zero product.
+\\Thus, $a_n$ is a zero divisor in $R$
+\end{proof}
+\end{addmargin}
+\newpage
+\----------------------------------------------------------------------------------------
+\section*{Problem 16}
+\textbf{Problem statement}: Let $R$ be a commutative ring with identity and $a \in R$.  If $1_R + ax$ is a unit in $R[x]$, show that $a^n = 0_R$ for some integer $n > 0$ [\textit{Hint:} Suppose that the inverse of $1_R + ax$ is $b_0 + b_1x + b_2x^2 + ... + b_kx^k$.  Since their product is $1_R, b_0 = 1_R$ and all the other coefficients are all $0_R$]
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $R$ be a commutative ring with identity and $a \in R$
+\\Suppose $1_R + ax$ is a unit in $R[x]$
+\\Then there exists an inverse, $f(x)$ such that $(1_R + ax)(f(x)) = 1_{R}$
+\\So $(1_R+ax)(\sum_{k=0}^{n}{b_kx^k}) =1_Rb_0 + \sum_{k=1}^{n+1}{(1_Rb_k + ab_{k-1})x^k}$
+\\This must equal $1_R$, so $b_0 = 1_R$ and $b_k + ab_{k-1} = 0_R$
+\\Thus, $b_1 = -a$ and $b_2 = a^2$ and $b_3 = -a^3$
+\\Thus, $b_k = (-a)^k$
+\\However, after the n$^th$ term, $b_{n+1} = 0_R = (-a)^{n+1} \implies a^{n+1} = 0_R$
+\\Thus redefining, $n = n+1$, $a^n = 0_R$ for some $n > 0$.
+\end{proof}
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 17}
+\textbf{Problem statement}: Let $R$ be an integral domain.  Assume that the Division Algorithm always holds in $R[x]$.  Prove that $R$ is a field.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $R$ be an integral domain with an associated polynomial ring $R[x]$.
+\\Suppose the division algorithm always holds in $R[x]$.
+\\Suppose $b \in R$
+\\Let $B = b + \sum_{k=1}^{\infty}{0_Rx^k}$
+\\Then by the division algorithm,  $\exists q, r \in R[x]$ such that $1 = bq + r$
+\\Because $0 \leq deg(r) < deg(1) = 0$ or is undefined.
+\\However, this first option is impossible, so $deg(r)$ is undefined and $r = 0_R$
+\\Thus, $bq = 1$ and $b$ is a unit in $R$
+\\Therefore, $R$ is a field.
+\end{proof}
+\end{addmargin}
+
+
+\end{document}
