@@ -111,7 +111,75 @@ Suppose $a,b,c,d \in \mathbb{R}$ and $[ax + b], [cx + d] \in \mathbb{R}[x]/(x^2+
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Let $F$ be a field and $p(x) \in F[x]$ be nonconstant.
+\\In order to show $F[x]/(p(x))$ is a commutative ring with identity, we must show it follows all ring axioms and is commutative over multiplication, and contains a multiplicative identity.
+\\ \textbf{Closed under addition}
+\begin{addmargin}[1em]{0em}
+Let $[a], [b] \in F[x]/(p(x))$ 
+\\Then $[a] + [b] = [a + b]$
+\\Because $F$ is a ring, it is closed under addition.
+\\Thus, $[a + b] \in F[x]/(p(x))$
+\end{addmargin}
+\textbf{Associative over addition}
+\begin{addmargin}[1em]{0em}
+Let $[a],[b],[c] \in F[x]/(p(x))$
+\\Then $([a] + [b]) + [c] = [a + b] + [c] = [(a + b) + c] = [a + (b + c)] = [a] + [b + c] = [a] + ([b] + [c])$
+\\This holds because $F$ is a ring.
+\end{addmargin}
+\textbf{Commutative over addition}
+\begin{addmargin}[1em]{0em}
+Let $[a][b] \in F[x]/(p(x))$
+\\Then $[a] + [b] = [a + b] = [b + a] = [b] + [a]$
+\\This holds because $F$ is a ring.
+\end{addmargin}
+\textbf{Closed under multiplication}
+\begin{addmargin}[1em]{0em}
+Let $[a],[b] \in F[x]/(p(x))$
+\\Then $[a][b] = [ab]$
+\\Because $F$ is a ring, $ab \in F$
+\\Thus, $[ab] \in F[x]/(p(x))$
+\end{addmargin}
+\textbf{Associative over multiplication}
+\begin{addmargin}[1em]{0em}
+Let $[a], [b], [c] \in F[x]/(p(x))$
+\\Then $([a][b])[c] = [ab][c] = [(ab)c] = [a(bc)] = [a][bc] = [a]([b][c])$
+\\This holds because $F$ is a ring.
+\end{addmargin}
+\textbf{Existence of Additive Identity}
+\begin{addmargin}[1em]{0em}
+Let $[a]$ be in $F[x]/(p(x))$
+\\Because $F$ is a ring, it has an additive identity $0_F$
+\\Thus, $[a] + [0] = [a + 0] = [a]$
+\\Therefore $[0] \in F[x]/(p(x))$ is the additive identity.
+\end{addmargin}
+\textbf{Existence of Additive Inverse}
+\begin{addmargin}[1em]{0em}
+Because $F$ is a field, $-a \in F$, so take $[-a] \in F[x]/(p(x))$
+\\Also, $[a] + [-a] = [a + (-a)] = [0]$
+\\Thus, $[-a]$ is the additive inverse of $[a]$
+\end{addmargin}
+\textbf{Distributivity of Multiplication over Addition}
+\begin{addmargin}[1em]{0em}
+Let $[a], [b], [c] \in F[x]/(p(x))$
+\\Then $[a]([b] + [c]) = [a][b + c] = [a(b + c)] = [ab + ac] = [ab] + [ac] = [a][b] + [a][c]$
+\\Also, $([a] + [b])[c] = [a + b][c] = [(a + b)c] = [ac + bc] = [ac] + [bc] = [a][c] + [b][c]$
+\\This holds because $F[x]$ is a ring.
+\end{addmargin}
+\textbf{Commutative over Multiplication}
+\begin{addmargin}[1em]{0em}
+Let $[a],[b] \in F[x]/(p(x))$
+\\Then $[a][b] = [ab] = [ba] = [b][a]$
+\\This holds because $F[x]$ is commutative
+\end{addmargin}
+\textbf{Existence of Multiplicative Identity}
+\begin{addmargin}[1em]{0em}
+Let $[a] \in F[x]/(p(x))$
+\\Note that $1_{F[x]} \in F[x]$ is the multiplicative identity of $F[x]$
+\\This exists because $F$ is a field
+\\Thus $[a][1] = [a1] = [a]$ and $[1][a] = [1a] = [a]$
+\\Therefore $[1]$ is the multiplicative identity of $F[x]/(p(x))$
+\end{addmargin}
+Thus, because $F[x]/(p(x))$ follows the ring axioms and is commutative and has an identity, it is a commutative ring with identity.
 \end{proof}
 \end{addmargin}
 
