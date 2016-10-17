@@ -1,0 +1,209 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 4.3: 2, 5, 10*, 14, 19, 24 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+\reversemarginpar
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 2}
+
+
+\textbf{Problem statement}: Prove that every nonzero $f(x) \in F[x]$ has a unique monic associate in $F[x]$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and suppose $0 \neq f(x) \in F[x]$ is an $n$ degree polynomial
+\\Suppose that $a \in F$ is the leading coefficient of $f(x)$.
+\\Then $g(x) = a^{-1}f(x) = a^{-1}\sum_{k=0}^{n}{f_kx^k}=a^{-1}(ax^n + \sum_{k=0}^{n-1}{f_kx^k} = x^n + \sum_{k=0}^{n-1}{a^{-1}f_kx^k} \in F[x]$
+\\Thus because $f(x) = ag(x)$ and $g(x)$ is monic, $g(x)$ is a monic associate of $f(x)$
+\\Suppose for the sake of contradiction that $h(x)$ is another monic associate of $f(x)$ such that $f(x) = bh(x)$ with $a \neq b \in F$
+\\Then $g(x) - h(x) = a^{-1}f(x) - b^{-1}f(x) = (a^{-1} - b^{-1})\sum_{k=0}^{n}{f_kx^k}$ and because $a \neq b,$ this is an $n$ degree polynomial.
+\\However, $g(x) - h(x) = (x^n + \sum_{k=0}^{n-1}{g_kx^k}) - (x^n + \sum_{k=0}^{n-1}{h_kx^k}) = \sum{k=0}^{n-1}{(g_k-h_k)x^k}$ which is at most an $n-1$ degree polynomial.
+\\Thus, this leads to a contradiction, and so $a = b$, which implies that $h(x) = g(x)$ and thus, $g(x)$ is unique.
+\end{proof}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 5}
+
+\textbf{Problem statement}: Prove that $f(x)$ and $g(x)$ are associates in $F[x]$ if and only if $f(x)|g(x)$ and $g(x)|f(x)$
+\\
+
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose that $F$ is a field and that $f(x), g(x) \in F[x]$
+\\ \marginpar{$\Rightarrow$}
+Suppose that $f(x)$ and $g(x)$ are associates
+\\Then there exists $a(x) \in F[x]$ is a monic polynomial such that $f(x) = a(x)g(x)$
+\\Thus, for $a \in F$, $a(x) = ax^0$
+\\So $f(x) = ag(x)$ and $g(x) = a^{-1}f(x)$
+\\Thus $g(x)|f(x)$ and $f(x)|g(x)$
+\\ \marginpar{$\Leftarrow$}
+Suppose $f(x)|g(x)$ and $g(x)|f(x)$
+\\Then there exist $a(x),b(x) \in F[x]$ such that $g(x) = a(x)f(x)$ and $f(x) = b(x)g(x)$
+\\Thus $g(x) = af(x) = a(x)(b(x)g(x)) = (a(x)b(x))g(x) \implies deg(ab) = 0 \implies deg(a) + deg(b) = 0 \implies deg(a) = deg(b) = 0$
+\\Thus $a(x)$, $b(x)$ are constant polynomials which implies $f(x)$ and $g(x)$ are associates.
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 10*}
+
+
+\textbf{Problem statement}: Is the given polynomial irreducible
+\\
+
+\textbf{(a): }$x^2 - 3$ in $\mathbb{Q}[x]$? In $\mathbb{R}[x]$
+\begin{addmargin}[1em]{0em}
+$\mathbb{Q}[x]$
+\begin{addmargin}[1em]{0em}
+Because $x^2 - 3$ is of second degree, then it must reduce into terms of less than 2$^{nd}$ degree.
+\\Thus suppose for $a,b,c,d,e,f,g,h \in \mathbb{Z}$ with $b,d,f,h \neq 0$, $(\frac{a}{b}x + \frac{c}{d})(\frac{e}{f}x + \frac{g}{h}) = (x^2 - 3)$
+\\So $\frac{ae}{bf}x^2 + (\frac{ec}{df} + \frac{ag}{bf})x + \frac{cg}{dh} = x^2 - 3$
+\\Thus $ae = bf, \quad cg = -3dh, \quad bech = -agdf$
+\\This implies $be\frac{-3dh}{g}h = -\frac{bf}{e}gdf \implies 3e^2h^2 = g^2f^2 \implies 3 = (\frac{gf}{eh})^2$
+\\However, because 3 is not a perfect square, there do not exist $g,g,e,h$ to satisfy this equality.
+\\Thus, $x^2 - 3$ is irreducible in $\mathbb{Q}[x]$
+\end{addmargin}
+$\mathbb{R}[x]$
+\begin{addmargin}[1em]{0em}
+Note that $x - \sqrt{3}, x + \sqrt{3} \in \mathbb{R}[x]$
+\\Also, $(x - \sqrt{3})(x + \sqrt(3)) = x^2 + (\sqrt{3} - \sqrt{3})x - sqrt{3}^2 = x^2 - \sqrt{3}$
+\\Thus, $x^2 - 3$ is reducible in $\mathbb{R}[x]$
+\end{addmargin}
+\end{addmargin}
+
+
+\textbf{(b): }$x^2 + x - 2$ in $\mathbb{Z}_3[x]$? In $\mathbb{Z}_7[x]$
+\begin{addmargin}[1em]{0em}
+Note that $x-1, x+2 \in \mathbb{Z}_3[x], \mathbb{Z}_7[x]$
+\\In both of these, $(x-1)(x+2) = x^2 + (2 - 1)x - 2 = x^2 + x - 2$
+\\Thus $x^2 + x - 2$ is reducible in $\mathbb{Z}_3[x]$ and $\mathbb{Z}_7[x]$
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 14}
+
+
+\textbf{Problem statement}:Show that $x^2 + x$ can be factored in two ways in $\mathbb{Z}_6[x]$ as the product of nonconstant polynomials that are not units and not associates of $x$ or $x + 1$
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+First note that $(x + 3)(x+4) = x^2 + 7x + 12 = x^2 + x$ and $(5x + 2)(5x + 3) = 25x^2 + 25x + 6 = x^2 + x$
+\\Thus these are two factorizations.
+\\Note that $(5x + 2) = (5x + 20) = 5(x+4)$ and $(5x + 3) = (5x + 15) = 5(x + 3)$
+\\These are obviously not associates of $x$ and $x+1$
+\\Also, $x(x+3) = x^2 + 3x \neq 1$, $x(x+4) = x^2 + 4x \neq 1$, $(x+1)(x+3) = x^2 + 4x + 3 \neq 1$, and $(x+1)(x+4) = x^2 + 5x + 4 \neq 1$
+\\Thus, the factors are not units of $\mathbb{Z}_6[x]$
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 19}
+
+
+\textbf{Problem statement}: Prove that if $F$ is a field and $p(x)$ is an irreducable polynomial in $F[x]$.  Then if $p(x)|a_1(x)a_2(x)...a_n(x)$, then $p(x)$ divides at least one of the $ a_i(x)$.
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and $p(x)$ be an irreducible polynomial in $F[x]$.
+\\Suppose $a_1(x),a_2(x),...,a_n(x) \in F[x]$ such that $p(x)|a_1(x)a_2(x)...a_n(x)$
+\\Then $p(x)|a_1(x)(a_2(x)...a_n(x))$ and by Theoresm 4.12, $p(x)|a_1(x)$ or $p(x)|a_2(x)...a_n(x)$
+\\In the first case, the proposition is proven.
+\\Otherwise, repeat the procedure $n-1$ times and in each step, $p(x)|a_i(x)(a_{i+1}(x)...a_n(x)) \implies p(x)|a_i(x)$ or $p(x)|a_{i+1}(x)...a_n(x)$ for $0< i < n$
+\\After $n$ steps, we are left with $p(x)|a_n(x)$ and the proposition is proven.
+\\Thus, $p(x)$ divides at least one of the $a_i(x)$
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 24*}
+
+
+\textbf{Problem statement}: Prove the following statement: Let $F$ be a field.  Every nonconstant polynomial $f(x)$ in $F[x]$ is a product of irreducible polynomials in $F[x]$.  This factoriazation is unique in the following sense: If \[f(x) = p_1(x)p_2(x)...p_r(x) \qquad \text{and} \qquad f(x) = q_1(x)q_2(x)...q_s(x)\] with each $p_i(x)$ and $q_j(x)$ irreducible, then r=s.  After the $q_j(x)$ are reordered and relabeled, if necessary, \[p_i(x) \text{ is an associate of } q_i(x)  \qquad (i = 1,2,3,...,r)\]
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $F$ be a field and $f(x) \in F[x]$ be a nonconstant polnomial.
+\\Note that an irreducilbe polynomial $h(x) \in F[x]$ can be expressed as $1_{F[x]}h(x)$ and thus $h(x)$ can be expressed as a product of irreducible primes.
+\\In order to show existance of factorization, for the sake of contradiction, $S$ be the set of all nonconstant reducible polynomials which cannot be expressed as irreducible polynomials and $R$ be the degree of each polynomial in $S$.
+\\Suppose $S$ is nonempty and let $g(x) \in S$ be such that $deg(g(x)) \in R$ is the smallest element of $R$ by the well ordering principle
+\\Because $g(x)$ is reducible, it can be expressed as the prodcut of two nonconstant polynomials, $a(x),b(x)$ such that $g(x) = a(x)b(x)$.
+\\However, this implies $deg(g(x)) = deg(a(x)) + deg(b(x)) \implies deg(a(x)) < deg(g(x)), deg(b(x)) < deg(g(x))$ because $a(x)$ and $b(x)$ are nonconstant and thus have degrees of at least 1.
+\\This implies that $a(x), b(x) \not\in S$ and thus $a(x), b(x)$ can be expressed as the prodcut of irreducibles, say $a(x) = a_1(x)a_2(x)...a_m(x)$ and $b(x) = b_1(x)b_2(x)...b_n(x)$ with $a_1(x),...,a_m(x),b_1(x),...,b_n(x) \in F[x]$ are irreducible polynomials.
+\\However, this implies $g(x) = a_1(x)...a_m(x)b_1(x)...b_n(x) \implies g(x) \not\in S$
+\\Thus, $R$ has no smallest element, which implies that $S = \emptyset$
+\\Therefore, every nonconstant polynomial can be written as the product of irreducibles
+\\In order to show uniqueness up to reordering, suppose $p_1(x),p_2(x), ... ,p_r(x) \in F[x]$ and $q_1(x),q_2(x), ... ,q_s(x) \in F[x]$ such that  $f(x) = p_1(x)p_2(x) ... p_r(x)$ and $f(x) = q_1(x)q_2(x) ... q_s(x) $
+\\Thus, $p_1(x)p_2(x)...p_r(x) = q_1(x)q_2(x)...q_s(x)$
+\\This implies that $p_1(x)|q_1(x)q_2(x)...q_s(x)$
+\\Because $p_1(x)$ is irreducible, then for one of the $q_i(x)$ for $0< i \leq s$, $p_1(x)|q_i(x)$.
+\\If necessary relabel the right hand side terms so that $p_1(x)|q_1(x) \implies q_1(x) = u_1(x)p_1(x)$ for $u_1(x) \in F[x]$ is a constant polynomial because $q_1(x)$ is irreducible.
+\\ So $p_1(x)p_2(x)...p_r(x) = q_1(x)q_2(x)...q_s(x) \implies p_1(x)p_2(x)...p_r(x) = u_1(x)p_1(x)q_2(x)...q_s(x) \implies p_2(x)...p_r(x) = u_1(x)q_2(x)...q_s(x)$
+\\Repeating this process $min(r,s)$ times:
+\\ \textbf{\underline{Case 1:} $r > s$}
+\begin{addmargin}[1em]{0em}
+So $p_{s+1}(x)...p_r(x) = u_1(x)u_2(x)...u_s(x)$
+\\However the degree of the left hand side is $(r - s)(1) = r - s$ and the degree of the right hand side is $(s)(0) = 0$
+\\Because $r > s$, the degrees are not equal and this case is impossible
+\end{addmargin}
+\textbf{\underline{Case 2:} $r < s$}
+\begin{addmargin}[1em]{0em}
+So $1_{F[x]} = u_1(x)u_2(x)...u_s(x)q_{r+1}(x)...q_s(x)$
+\\However the degree of the left hand side is $0$ and the degree of the right hand side is $(s - r)(1) = s-r$
+\\Because $s > r$, the degrees are not equal and this case is impossible
+\end{addmargin}
+\textbf{\underline{Case 3:} $r = s$}
+\begin{addmargin}[1em]{0em}
+So $1_{F[x]} = u_1(x)u_2(x)...u_r(x)$
+\\Because these degrees are both $0$, this case is possible
+\end{addmargin}
+Therefore, $r = s$
+\\Thus, because for each $p_i(x)$ there is a distinct $q_i(x)$ after rearrangement such that $p_i(x) = u_i(x)q_i(x)$ with $u_i(x) \in F[x]$ a constant polynomial for $1 \leq i \leq r$, $p_i(x)$ is an associate of $q_i(x)$.
+\end{proof}
+\end{addmargin}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,170 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 5.2: 2, 7*, 9, 13, 14a*, 15 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 2}
+
+
+\textbf{Problem statement}: Write out the addition and multiplication tables for the congruence clas ring $\mathbb{Z}_3[x]/(x^2+1)$.  Is $\mathbb{Z}_3/(x^2+1)$ a field?
+\\
+
+\underline{Solution}: 
+\\
+\begin{tabular}{l}
+\begin{tabular}{l | c c c c c c c c c}
++               & 0            & 1             &     2        & [x]           & [x+1]     &[x+2]      & [2x]        & [2x+1] & [2x+2] \\ \hline
+0                & 0            & 1             &     2        & [x]           & [x+1]     &[x+2]      & [2x]        & [2x+1] & [2x+2] \\
+1                & 1            & 2             & 0            & [x+1]       & [x+2]    & [x]          & [2x+1]   & [2x+2] & [2x]      \\
+2                & 2            & 0             & 1            & [x+2]       & [x]         & [x+1]     & [2x+2]   & [2x]     & [2x + 1] \\
+{[}x]           & [x]         & [x+1]     & [x+2]     & [2x]         & [2x+1]  & [2x+2]    & 0            & 1          & 2            \\
+{[}x+1]      & [x+1]     & [x+2]     & [x]         & [2x+1]     & [2x+2]  & [2x]        & 1            & 2           & 0           \\
+{[}x+2]     & [x+2]      & [x]        & [x+1]     & [2x+2]    & [2x]       & [2x+1]   & 2            & 0          & 1            \\
+{[}2x]         & [2x]       & [2x+1]    & [2x+2]   & 0             & 1           & 2             & [x]         & [x+1]   & [x+2]     \\
+{[}2x+1]    & [2x+1]   & [2x+2]   & [2x]        & 1             & 2           & 0             & [x+1]     & [x+2]  & [x]          \\
+{[}2x+2]  & [2x+2]     & [2x]        & [2x+1]   & 2             & 0           & 1             & [x+2]     & [x]       & [x+1]     \\
+\end{tabular}  
+\\ \\ \hline \\
+\begin{tabular}{l | c c c c c c c c c}
+*                & 0            & 1             &     2        & [x]           & [x+1]     &[x+2]      & [2x]        & [2x+1] & [2x+2] \\ \hline
+0                & 0            & 0             &     0        & 0              & 0    &0      & 0          & 0 & 0 \\
+1                 & 0            & 1             &     2        & [x]           & [x+1]     &[x+2]      & [2x]        & [2x+1] & [2x+2]      \\
+2                & 0            & 2             & 1            & [2x]         & [2x+2]    & [2x+1]   & [x]   & [x+2]     & [x+1] \\
+{[}x]          & 0           & [x]          & [2x]         & 2             & [x+2]      & [2x+2]   & 1            & [x+1]          & [2x+1]            \\
+{[}x+1]     & 0            & [x+1]      & [2x+2]   &[x+2]        & [2x]       & 1             & [2x+1]            & 2           & [x]           \\
+{[}x+2]     &0             & [x+2]      & [2x+1]    &[2x+2]     & 1            & [x]           & [x+1]            & [2x]          & 2            \\
+{[}2x]        & 0            & [2x]         & [x]          & 1              & [2x+1]  & [x+1]     & 2         & [2x+2]   & [x+2]     \\
+{[}2x+1]   & 0            & [2x+1]     & [x+2]       & [x+1]     & 2           & [2x]        & [2x+2]     & [x]  & 1         \\
+{[}2x+2]   &0             & [2x+2]    & [x+1]       & [2x+1]   & [x]           & 2             & [x+2]     & 1       & [2x]     \\
+\end{tabular}  
+\end{tabular}
+\\Thus every element of $\mathbb{Z}_3[x]/(x^2+1)$ has an inverse and thus this is a field.
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 7*}
+
+\textbf{Problem statement}: For $\mathbb{Q}[x]/(x^2-3)$, elements call be written as $[ax+b]$.  Find the rules for multiplication and addition of congruence classes
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose for $a,b,c,d \in \mathbb{Q}$, $[ax + b], [cx + d] \in \mathbb{Q}[x]/(x^2 - 3)$
+\\$[ax + b] + [cx + d] = [(a+c)x + (b+d)]$
+\\$[ax+b][cx+d] = [(ac)x^2 + (ad + bc)x + (bd)] = [(ac - ac)x^2 + (ad + bc)x + (bd + 3ac)] = [(ad + bc)x + (bd + 3ac)]$
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 9}
+
+
+\textbf{Problem statement}: Show that $\mathbb{R}[x]/(x^2+1)$ is a field by veryfying that every nonzero congruence class $[ax + b]$ is a unit.  [\textit{Hint: } Show that the inverse of $[ax + b]$ is $[cx + d]$, where $c = \frac{-a}{a^2 + b^2}$ and $d = \frac{b}{a^2 + b^2}$.]
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+Suppose $a,b,c,d \in \mathbb{R}$ and $[ax + b], [cx + d] \in \mathbb{R}[x]/(x^2+1)$
+\\Then $[ax + b][cx + d] = [(ac)x^2 + (ad + bc)x + (bd)] = [(ac - ac)x^2 + (ad + bc)x + (bd - ac)] = [(ad + bc)x + (bd - ac)]$
+\\Suppose $c = \frac{-a}{a^2 + b^2}$ and $d = \frac{b}{a^2 + b^2}$
+\\Thus we have $[(a\frac{b}{a^2 + b^2} + b\frac{-a}{a^2 + b^2})x + (b\frac{b}{a^2 + b^2} - a\frac{-a}{a^2 + b^2})] = [(\frac{ab - ab}{a^2 + b^2})x + (\frac{a^2 + b^2}{a^2 + b^2})] = [0x + 1] = [1]$
+\\Thus $[ax + b]$ is a unit and thus $\mathbb{R}[x]/(x^2 + 1)$ is a field.
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 13}
+
+
+\textbf{Problem statement}: Prove the following: Let $F$  be a field and $p(x)$ a nonconstant polynomial in $F[x]$.  Then the set $F[x]/(p(x))$ of congruence classes modulo $p(x)$ is a commutative ring with identity.
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 14a*}
+
+
+\textbf{Problem statement}: Explain why $[2x-3]$ is a unit in $\mathbb{Q}[x]/(x^2-2)$ and find its inverse
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+$[2x-3]$ is a unit of $\mathbb{Q}[x]/(x^2 - 2)$ because $2x - 3$ and $x^2 - 2$ are relatively prime.
+\\The inverse of this is $[-2x - 3]$ as $[-2x - 3][2x-3] = [-4x^2 -6x + 6x + 9] = [-4x^2 + 9] = [(-4x^2 + 9) - 4(x^2 - 2)] = [1]$
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 15}
+
+
+\textbf{Problem statement}: Find a fourth-degree polynomial in $\mathbb{Z}_2[x]$ whose roots are the four elements of the field $\mathbb{Z}_2[x]/(x^2 + x + 1)$, whose tables are given below: \\
+\begin{tabular}{c c c}
+\begin{tabular}{l | c c c c }
++       & 0        & 1         & [x]      & [x+1] \\ \hline
+0        & 0        & 1         & [x]      & [x+1] \\
+1        & 1        & 0         & [x+1] & [x]      \\
+{[}x]     & [x]      & [x+1] & 0         & 1         \\
+{[}x+1] & [x+1] & [x]     & 1         & 0         \\
+\end{tabular}
+& \quad &
+\begin{tabular}{l | c c c c }
+*       & 0        & 1         & [x]      & [x+1] \\ \hline
+0        & 0        &0        & 0      & 0 \\
+1        & 0        & 1         & [x] & [x+1]      \\
+{[}x]     & 0     & [x] & [x+1]         & 1         \\
+{[}x+1] & 0& [x+1]     & 1         & [x]         \\
+\end{tabular}
+\end{tabular}
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+For the sake of simplicity the polynomial with have variable $y$ instead of $x$.
+\\So we have $(y-[0])(y-[1])(y-[x])(y-[x+1]) = (y^2 - ([0] + [1])y + [0][1])(y^2 - ([x] + [x+1])y + [x][x+1]) = (y^2 - [1]y + [0])(y^2 - [1]y + [1]) = (y^4 - ([1] + [1])y^3 + ([0] + [1] + [1][1])y^2 - ([1][1]+[1][0])y + ([0][1])) = (y^4 - [0]y^3 + [0]y^2 - [1]y + [0]) = y^4 - y$
+\\Thus, the polynomial is $y^4 - y$
+\end{proof}
+\end{addmargin}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
