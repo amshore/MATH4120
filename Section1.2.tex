@@ -66,7 +66,7 @@ Suppose that $b|a$.
 \\Thus by definition, $(-b)|a$.
 \\ \marginpar{$\Leftarrow$}
 Suppose that $(-b)|a$
-\\Then there exists $k \in \mathbb{Z}$ such that $a = bk$.
+\\Then there exists $k \in \mathbb{Z}$ such that $a = (-b)k$.
 \\Furthermore, $a = (-b)k = (-(-b))(-k) = b(-k) = bt$ where $t = -k$, which is an integer.
 \\Thus by definition, $b|a$.
 \end{proof}
@@ -107,11 +107,11 @@ Let $a, b$ be nonzero integers such that $a|b$ and $b|a$
 \\ \hfill \break
 \textit{Hint:} For some integers $s$ and $t$, we have $a = cs$ and $b = ct$.  Substitute these results into $a = bq + r$ and show that $c|r$.
 \\ \hfill \break
-\underline{Soution}:
+\underline{Solution}:
 \begin{addmargin}[1em]{0em}
 \begin{proof}
 Let $a, b, q, r, c \in \mathbb{Z}$ be such that $a = bq + r$ and $c|a$ and $c|b$.
-\\Then there exist $m, n \in \mathbb{Z}$ such that $a = cm$ and $b = cn$.
+\\Then there exists $m, n \in \mathbb{Z}$ such that $a = cm$ and $b = cn$.
 \\By substituting, $cm = cnq + r \implies c(m-nq) = r$.
 \\But $m,n,q \in \mathbb{Z}$, so this implies, $c|r$.
 \end{proof}
@@ -123,7 +123,7 @@ Let $a, b, q, r, c \in \mathbb{Z}$ be such that $a = bq + r$ and $c|a$ and $c|b$
 \begin{addmargin}[1em]{0em}
 \textbf{(b)}: Every common divisor of $b$ and $r$ is also a common divisor of $a$ and $b$.
 \\ \hfill \break
-\underline{Soution}:
+\underline{Solution}:
 \begin{addmargin}[1em]{0em}
 \begin{proof}
 Let $a, b, q, r, c \in \mathbb{Z}$ be such that $a = bq + r$ and $c|b$ and $c|r$.
@@ -153,11 +153,10 @@ Let $a, b, q, r \in \mathbb{Z}$ be such that $a = bq + r$.
 \\Because $g$ is a divisor of $b$ and $r$ and $h$ is the greatest common divisor of $b$ and $r$, $h \geq g$.
 \\However, because $h$ is a divisor of $b$ and $r$, by part (b), $h$ is a divisor of $a$ and $b$.
 \\Thus, because $h$ is a divisor of $a$ and $b$ and $g$ is the greatest common divisor of $a$ and $b$, $g \geq h$.
-\\Therefore, because $g \geq h$ and $h \geq g$, $g = h$, or in equivalent notation, $(a,b) = (b,r)$.
+\\Therefore, $g \geq h \geq g \implies g = h$, or in equivalent notation, $(a,b) = (b,r)$.
 \end{proof}
 \end{addmargin}
 \end{addmargin}
-\hfill \break
 
 \newpage
 %----------------------------------------------------------------------------------------
@@ -173,7 +172,7 @@ Let $a, b, q, r \in \mathbb{Z}$ be such that $a = bq + r$.
 (1): $1003 = (2)(456) + 91$
 \\(2): $456 = (5)(91) + 1$
 \\(3): $91 = (1)(91) + 0$
-\\Thus, by the Euclidean Algorithm, $(1003, 456) = 91$
+\\Thus, by the Euclidean Algorithm, $(1003, 456) = 1$
 \end{addmargin}
 
 \newpage
@@ -187,7 +186,12 @@ Let $a, b, q, r \in \mathbb{Z}$ be such that $a = bq + r$.
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-(1): $ $
+First solve for the remainder of each step
+\\(1): $91 = (2)(456) - 1003$
+\\(2): $1 = (5)(91) - 456$
+\\Substituting (1) into (2):
+\\$1 = (5)((2)(456) - 1003) - 456 = (9)(456) - (5)(1003)$
+\\Thus, $1 = (9)*456 + (-5)*1003$
 \end{addmargin}
 
 \newpage
