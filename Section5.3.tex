@@ -136,6 +136,18 @@ Therefore, $\mathbb{Q}(\sqrt{2})$ is a subfield of $\mathbb{R}$
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
+Suppose we have a map $f: \mathbb{Q}(\sqrt{2}) \rightarrow \mathbb{Q}[x]/(x^2-2)$ defined as $f(a+b\sqrt{2}) = a + bx$
+\\Looking at this as an extension field, $K = \mathbb{Q}[x]/(x^2-2)$, then this has a root $u = [x]$
+\\Namely, $u^2 - 2  = 0 \implies u^2 = 2 \implies u = \sqrt{2}$
+\\Thus every element of $K$ is $[a + bx] = [a] + [b][x] = [a] + [b]\sqrt{2}$
+\\In this case, $[a], [b] \in \mathbb{Q}$, so thus $f$ is surjective
+\\In addition, if we have two elements $r_a + s_a\sqrt{2}, r_b+s_b\sqrt{2}$ that both map to $[a + bx] = [a] + [b]\sqrt{2}$, then because $\sqrt{2}$ is irrational, $r_a = a, r_b = a$ and $s_a = b, s_b = b$.
+\\Thus, by the transitivity of equality, $r_a = r_b$ and $s_a = s_b$ and thus these two elements are the same and $f$ is injective
+\\In addition, if we take two elements $r_a + s_a\sqrt{2}, r_b+s_b\sqrt{2}$, then:
+\\$f((r_a + s_a\sqrt{2})+(r_b + s_b\sqrt{2})) = f((r_a + r_b) + (s_a + s_b)\sqrt{2}) = (r_a + r_b) + (s_a + s_b)x = (r_a + s_ax) + (r_b + s_bx) = f(r_a + s_a\sqrt{2}) + f(r_b + s_b\sqrt{2})$
+\\And $f((r_a + s_a\sqrt{2})(r_b + s_b\sqrt{2})) = f((r_ar_b + 2s_as_b) + (r_as_b + r_bs_a)\sqrt{2}) = (r_ar_b + 2s_as_b) + (r_as_b + r_bs_a)x = (r_a + s_ax)(r_b+s_bx) = f(r_a+s_ax)f(r_b+s_bx)$
+\\Thus $f$ is a homomorphism
+\\Because $f$ is a bijective homomorphism, $f$ is an isomorphism.
 \end{addmargin}
 
 \newpage
