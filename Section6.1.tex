@@ -7,6 +7,7 @@
 \usepackage{scrextend, tikz, amssymb}
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+\reversemarginpar
 
 %----------------------------------------------------------------------------------------
 %   TITLE SECTION
@@ -38,7 +39,9 @@
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+No
+\\Suppose $\left( \begin{array}{c c} 0 & 0 \\ 0 & r\end{array}\right) \in J$ and $\left( \begin{array}{c c} a & b \\ c & d\end{array}\right) \in M(\mathbb{R})$
+\\Then $\left( \begin{array}{c c} 0 & 0 \\ 0 & r\end{array}\right)\left( \begin{array}{c c} a & b \\ c & d\end{array}\right) = \left( \begin{array}{c c} 0 & 0 \\ rc & rd\end{array}\right) \not\in J$
 \end{addmargin}
 
 \newpage
@@ -51,7 +54,16 @@
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Suppose $R$ and $S$ are rings and $I \unlhd R$ and $J \unlhd S$
+\\First note that because $I \subseteq R$ and $J \subseteq S$, $I \times J \subseteq R \times S$
+\\Also, because $I$ and $J$ are nonempty, $\exists a \in I, b \in J \implies (a,b) \in I \times J \neq \O$
+\\Thus, suppose $(a,b), (c,d) \in I \times J$, then $(a,b) - (c,d) = (a-c,b-d) \in I \times J$ because $I$ and $J$ are ideals
+\\Suppose $(r,s) \in R \times S$, then:
+\\$(r,s)(a,b) = (ra, sb) \in I \times J$ because $I$ and $J$ are ideals
+\\Also, $(a,b)(r,s) = (ar, bs) \in I \times J$ because $I$ and $J$ are ideals
+\\Thus, $I \times J \unlhd R \times S$
+\end{proof}
 \end{addmargin}
 
 \newpage
@@ -60,22 +72,32 @@
 \section*{Problem 11}
 
 
-\textbf{Problem statement}: List the distinct principal ideals in each ring \textbf{(a):} $\mathbb{Z}_5$, \textbf{(b):} $\mathbb{Z}_9$, \textbf{(c):} $\mathbb{Z}_12$
+\textbf{Problem statement}: List the distinct principal ideals in each ring \textbf{(a):} $\mathbb{Z}_5$, \textbf{(b):} $\mathbb{Z}_9$, \textbf{(c):} $\mathbb{Z}_{12}$
 \\
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
 \textbf{(a)}
 \begin{addmargin}[1em]{0em}
-
+$([0]) = \{[0]\}$
+\\$([1]) = ([2]) = ([3]) = ([4]) = \{[0], [1], [2], [3], [4]\}$
 \end{addmargin}
+
 \textbf{(b)}
 \begin{addmargin}[1em]{0em}
-
+$([0]) = \{[0]\}$
+\\$([1]) = ([2]) = ([4]) = ([5]) = ([7]) = ([8]) = \{[0], [1], [2], [3], [4], [5], [6], [7], [8]\}$
+\\$([3]) = ([6]) = \{[0], [3], [6]\}$
 \end{addmargin}
+
 \textbf{(c)}
 \begin{addmargin}[1em]{0em}
-
+$([0]) = \{[0]\}$
+\\$([1]) = ([5]) = ([7]) = ([11]) = \{[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11]\}$
+\\$([2]) = ([10]) = \{[0], [2], [4], [6], [8], [10]\}$
+\\$([3]) = ([9]) = \{[0], [3], [6], [9]\}$
+\\$([4]) = ([8]) = \{[0], [4], [8]\}$
+\\$([6]) = \{[0], [6]\}$
 \end{addmargin}
 \end{addmargin}
 
@@ -90,7 +112,20 @@
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Suppose $R$ is a commutative ring with identiy and $c_1,c_2,...,c_n \in R$
+\\Let $I = \{r_1c_1 + r_2c_2 + ... + r_nc_n|r_1,r_2,...,r_n \in R\}$
+\\First note that $0 \in R$, so thus $0c_1 + 0c_2 + ... 0c_n = 0 \in I \neq \O$
+\\Also note that because $r_i,c_i \in R$ for $0 \geq i \geq n$, $I \subseteq R$
+\\Then suppose for $a_i,b_i,d \in R$ for $ 1 \leq i \leq n$ that:
+\\ $a = a_1c_1 + a_2c_2 + ... + a_nc_n \in I, b = b_1c_1 + b_2c_2 + ... + b_nc_n \in I$
+\\So $a - b = (a_1c_1 + a_2c_2 + ... + a_nc_n) - (b_1c_1 + b_2c_2 + ... + b_nc+n) = (a_1 - b_1)c_1 + (a_2 - b_2)c_2 + ... (a_n - b_n)c_n \in I$
+\\This holds because $R$ is a ring, so $(a_i - b_i) \in R$
+\\Also, $ad = (a_1c_1 + a_2c_2 + ... + a_nc_n)d = (a_1c_1)d + (a_2c_2)d + ... + (a_nc_n)d = (a_1d)c_1 + (a_2d)c_2 + ... + (a_nd)c_n \in I$
+\\This holds because $R$ is a commutative rings, so $(a_ic_i)d = (a_id)c_1$ and $a_1d \in R$
+\\Therefore, because $R$ is a commutative rings with identity, then $da \in I$
+\\Thus, by definition $I \unlhd R$
+\end{proof}
 \end{addmargin}
 
 \newpage
@@ -104,7 +139,16 @@
 \begin{addmargin}[1em]{0em}
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Suppose that $R$ is a ring and $I \unlhd R$ and $J \unlhd R$
+\\First note that every ideal contains $0_R$, so $0_R \in I \cap J \implies I \cap J \neq \O$
+\\Suppose $a, b \in I \cap J \implies a,b \in I$ and $a,b \in J$
+\\Then $a - b \in I$ because $a, b \in I$ and $a-b \in J$ because $a,b \in J$
+\\Thus, $a-b \in I \cap J$
+\\In addition, suppose $d \in R$
+\\Then $ad,da \in I$ and $ad,da \in J \implies ad,da \in I \cap J$
+\\Therefore $I \cap J \unlhd R$
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 
@@ -113,7 +157,15 @@
 \begin{addmargin}[1em]{0em}
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+In order to prove this, I will use induction on the number of ideals in $R$, defined as $n$, that are intersected.
+\\ \marginpar{Base Case} For a single ideal ($n = 1$), it is obviously an ideal by definition.
+\\ \marginpar{Induct. Hypo.} Let $\cap_{k=1}^{n}I_k \unlhd R$
+\\ \marginpar{Induct. Step} Define $\cap_{k=1}^{n}I_k = J$
+\\Then $J \cap I_{n+1} \unlhd R$ because of part (a) since $J, I_{n+1} \unlhd R$
+\\Therefore, $\cap_{k=1}^{n+1}I_k \unlhd R$
+\\Thus, by induction, the original proposition is proven.
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 \newpage
@@ -127,7 +179,16 @@
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Let $R,S$ be rings and $f:R \rightarrow S$ be a homomorphism
+\\Suppose $K = \{r \in R|f(r) = 0_S\}$
+\\First note that if $r \in R$, then $f(0_R) = f(r-r) = f(r)-f(r) = 0_S - 0_S = 0_S \implies 0_R \in K \neq \O$
+\\Take $a, b \in K$ and $c \in R$
+\\Then note that for $a - b, f(a-b) = f(a) - f(b) = 0_S - 0_S = 0_S \implies a-b \in K$
+\\In addition, $f(ac) = f(a)f(c) = 0_Sf(c) = 0_S \implies ac \in K$
+\\And $f(ca) = f(c)f(a) = f(c)0_S = 0_S \implies ca \in K$
+\\Therefore $K \unlhd R$
+\end{proof}
 \end{addmargin}
 
 \newpage
@@ -141,16 +202,33 @@
 \begin{addmargin}[1em]{0em}
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Let $S = \left( \begin{array}{c c} a & b \\ 0 & c \end{array} \right)$ with $a,b,c \in \mathbb{R}$
+\\Then because for $a,b,c = 0, \left( \begin{array}{c c} 0 & 0 \\ 0 & 0 \end{array} \right) \in S$, so $\O \neq S \subseteq M(\mathbb{R})$
+\\Thus, suppose $a = \left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right), b = \left( \begin{array}{c c} b_1 & b_2 \\ 0 & b_3 \end{array} \right) \in S$
+\\So $a - b =  \left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right) - \left( \begin{array}{c c} b_1 & b_2 \\ 0 & b_3 \end{array} \right) = \left( \begin{array}{c c} a_1 - b_1 & a_2 - b_2 \\ 0 & a_3 - b_3 \end{array} \right) \in S$
+\\Also,  $ab =  \left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right) \left( \begin{array}{c c} b_1 & b_2 \\ 0 & b_3 \end{array} \right) = \left( \begin{array}{c c} a_1 b_1 &a_1b_2 + a_2b_3 \\ 0 & a_3 b_3 \end{array} \right) \in S$
+\\Because $a,b$ were chosen arbitrarily, $ba \in S$ also.
+\\Thus, $S$ is a subring of $M(\mathbb{R})$
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 
-\textbf{(b): }Prove that the set $I$ of matricies of the form $\left( \begin{array}{c c} 0 & b \\ 0 & 0 \end{array} \right)$ with $b \in \mathbb{R}$ is an ideal of $M(\mathbb{R})$
+\textbf{(b): }Prove that the set $I$ of matricies of the form $\left( \begin{array}{c c} 0 & b \\ 0 & 0 \end{array} \right)$ with $b \in \mathbb{R}$ is an ideal of $S$
 \\
 \begin{addmargin}[1em]{0em}
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Let $I = \left( \begin{array}{c c} 0 & b \\ 0 & 0 \end{array} \right)$ with $b \in \mathbb{R}$ and $S$ as described in part (a).
+\\Note that when $b = 0, \left( \begin{array}{c c} 0 & 0 \\ 0 & 0 \end{array} \right) \in I$
+\\Thus, $\O \neq I \subseteq S$
+\\Suppose $b = \left( \begin{array}{c c} 0 & b_1 \\ 0 & 0 \end{array} \right), c = \left( \begin{array}{c c} 0& c_1 \\ 0 & 0 \end{array} \right) \in I$, $a = \left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right) \in S$
+\\Then $b - c = \left( \begin{array}{c c} 0 & b_1 \\ 0 & 0 \end{array} \right) - \left( \begin{array}{c c} 0& c_1 \\ 0 & 0 \end{array} \right) = \left( \begin{array}{c c} 0& b_1 - c_1 \\ 0 & 0 \end{array} \right) \in I$
+\\Also, $ab = \left( \begin{array}{c c} a_1& a_2 \\ 0 & a_3 \end{array} \right) \left( \begin{array}{c c} 0& b_1 \\ 0 & 0 \end{array} \right) = \left( \begin{array}{c c} 0& a_2b_1\\ 0 & 0 \end{array} \right) \in I$
+\\And $ba =  \left( \begin{array}{c c} 0& b_1 \\ 0 & 0 \end{array} \right) \left( \begin{array}{c c} a_1& a_2 \\ 0 & a_3 \end{array} \right) = \left( \begin{array}{c c} 0& b_1a_3\\ 0 & 0 \end{array} \right) \in I$
+\\Therefore $I \unlhd S$
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 
@@ -159,7 +237,15 @@
 \begin{addmargin}[1em]{0em}
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+First note that $\mathbb{R} \times \mathbb{R} = \{(a,b)|a,b \in \mathbb{R}\}$ is an infinite set.
+\\Suppose that $\left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right), \left( \begin{array}{c c} b_1 & b_2 \\ 0 & b_3 \end{array} \right) \in S$
+\\In order to compare the cosets, take the difference of the two matricies and compare it to multiples of elements of I
+\\So $\left( \begin{array}{c c} a_1 & a_2 \\ 0 & a_3 \end{array} \right) - \left( \begin{array}{c c} b_1 & b_2 \\ 0 & b_3 \end{array} \right) =  \left( \begin{array}{c c} a_1 - b_1 & a_2 - b_2 \\ 0 & a_3 - b_3 \end{array} \right)$
+\\Thus for an arbitrary element $ \left( \begin{array}{c c} 0 & c_1 \\ 0 & 0 \end{array} \right) \in I$, with $k \in \mathbb{R}$,
+\\If the cosets are equal, $\left( \begin{array}{c c} a_1 - b_1 & a_2 - b_2 \\ 0 & a_3 - b_3 \end{array} \right) = k\left( \begin{array}{c c} 0 & c_1 \\ 0 & 0 \end{array} \right)$
+\\Thus $a_1 - b_1 = 0 \implies a_1 = b_1$, $a_3 - b_3 = 0 \implies a_3 = b_3$, $a_2 - b_2 = kc_1 \implies k = \frac{a_2-b_2}{c_1}$
+\\Therefore, each distnice choice of $a_1, a_3$ will give a distinct coset and the choice of $a_2$ can be anything for any coset
+\\Thus each pair $(a_1, a_3) \in \mathbb{R} \times \mathbb{R}$ will give a distinct coset and because this is an infinite set, there are infinitely many cosets.
 \end{addmargin}
 \end{addmargin}
 \newpage
@@ -173,7 +259,30 @@
 
 \underline{Solution}
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Let $F$ be a field with an associated polynomial ring $F[x]$
+\\Suppose that $I \unlhd F[x]$
+\\ \underline{Case 1: ($I = \{0\}$)}
+\begin{addmargin}[1em]{0em}
+In this case, $I = (0)$ and this is principal
+\end{addmargin}
+\underline{Case 2: ($I \neq \{0\}$)}
+\begin{addmargin}[1em]{0em}
+In this case, $\{0\} \subset I$
+\\Define $S = \{deg(f(x)) | 0 \neq f(x); f(x) \in I\}$
+\\In this case, $S \neq \O$ because $S \subseteq \mathbb{N} \cup \{0\}$
+\\By the well ordering principle, there exists a smallest $d \in S$
+\\Also, by the definition of S, $\exists g(x) \in I$ with $deg(g(x)) = d$
+\\ \marginpar{$\supseteq$} By definition, $g(x) \in I \implies h(x)g(x) \in I, \forall h(x) \in F[x] \implies (g(x)) \subseteq I$
+\\ \marginpar{$\subseteq$} Suppose $f(x) \in I$
+\\ Then $f(x) = g(x)q(x) + r(x) \implies r(x) = f(x) - g(x)q(x)$ where $r(x) = 0$ or $deg(r(x)) < deg(g(x))$
+\\Since $g(x) \in I \implies g(x)q(x) \in I \implies f(x) - g(x)q(x) = r(x) \in I$
+\\However, $d = deg(g(x)) > deg(r(x))$, so this implies that $r(x) = 0$
+\\Thus, $f(x) = g(x)q(x) \implies f(x) \in g(x) \implies I \subseteq (g(x))$
+\\Thus, $I = (g(x))$
+\\Thus, every ideal $F[x]$ is principal.
+\end{addmargin}
+\end{proof}
 \end{addmargin}
 
 \newpage
