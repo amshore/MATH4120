@@ -1,0 +1,218 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb, tabularx}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 7.1: 1, 4, 9*, 16, 21, 30 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1}
+
+
+\textbf{Problem statement}: Find the inverse of each permutation in $S_3$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{tabular}{c@\quad |@\quad c}
+Permutation & Inverse \\ \hline \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 1 & 2 & 3 \end{matrix} \right)$ & $\left( \begin{matrix}1 & 2 & 3 \\ 1 & 2 & 3 \end{matrix} \right)$ \\ \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{matrix} \right)$ & $\left( \begin{matrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{matrix} \right)$ \\ \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix} \right)$ & $\left( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix} \right)$ \\ \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{matrix} \right)$ & $\left( \begin{matrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{matrix} \right)$ \\ \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{matrix} \right)$ & $\left( \begin{matrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{matrix} \right)$ \\ \rule{0pt}{5ex}
+$\left( \begin{matrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{matrix} \right)$ & $\left( \begin{matrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{matrix} \right)$ 
+\end{tabular}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 4}
+
+\textbf{Problem statement}: Determine whether the set $G$ is a group under the operation *
+\\
+
+\textbf{(a): } $G = \{2,4,6,8\}$ in $\mathbb{Z}_{10}; a*b = ab$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+\textbf{(b): } $G = \mathbb{Z}; a * b = a - b$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+\textbf{(c): } $G = \{n \in \mathbb{Z}| n$ is odd$\}; a * b = a + b$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+\textbf{(d): } $G = \{2^x| x \in \mathbb{Q}\}; a * b = ab$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 9*}
+
+
+\textbf{Problem statement}: Write out the operation table for the group $D_3$ consisting of counterclockwise rotations $(r_0, r_1, r_2)$ and reflections about verticies $(s, t, u)$ defined as:
+\[r_0:  \left( \begin{matrix} 1 & 2 & 3 \\ 1 & 2 & 3 \end{matrix} \right), 
+  r_1:  \left( \begin{matrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{matrix} \right), 
+  r_2:  \left( \begin{matrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{matrix} \right),
+  s:      \left( \begin{matrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{matrix} \right), 
+  t:       \left( \begin{matrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{matrix} \right), 
+  u:      \left( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix} \right) \]
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{tabular}{c | c c c c c c}
+* & $r_0$ & $r_1$ & $r_2$ & $s$ & $t$ & $u$ \\ \hline
+$r_0$ & $r_0$ & $r_1$ & $r_2$ & $s$ & $t$ & $u$ \\
+$r_1$ & $r_1$ & $r_2$ & $r_0$ & $t$ & $u$ & $s$\\
+$r_2$ & $r_2$ & $r_0$ & $r_1$ & $u$ & $s$ & $t$\\
+$s$    & $s$ & $u$ & $t$ & $r_0$ & $r_2$ & $r_1$\\
+$t$     & $t$ & $s$ & $u$ & $r_1$ & $r_0$ & $r_2$\\
+$u$    & $u$ & $t$ & $s$ & $r_2$ & $r_1$ & $r_0$
+\end{tabular}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 16}
+
+
+\textbf{Problem statement}: Let \textbf{1, i, j, k} be the following matricies with complex entries:
+\[ \textbf{1} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right),
+    \textbf{i} = \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right),
+    \textbf{j} = \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right),
+    \textbf{k} = \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) \]
+\\
+
+\textbf{(a):} Prove that :
+\[ \textbf{i$^2$}  = \textbf{j$^2$} = \textbf{k$^2$} = \textbf{-1} \qquad \textbf{ij} = \textbf{-ji} = \textbf{k} \]
+\[ \textbf{jk} = \textbf{-kj} = \textbf{i} \qquad \textbf{ki} = \textbf{-ik} = \textbf{j}\]
+\begin{addmargin}[1em]{0em}
+\underline{Solution: }
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $H = \{\textbf{1} = \left( \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right),
+                          \textbf{i} = \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right),
+                           \textbf{j} = \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right),
+                            \textbf{k} = \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) \}$
+\\First note that $H \subset \mathbb{M}_2(\mathbb{C})$.
+\\So, $\textbf{i}^2 =  \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right)\left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right)  = \left( \begin{matrix} -1 & 0 \\ 0 & -1 \end{matrix} \right) = \textbf{-1}$
+\\ $\textbf{j}^2 = \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right)\left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right) = \left( \begin{matrix} -1 & 0 \\ 0 & -1 \end{matrix} \right) = \textbf{-1}$
+\\ $\textbf{k}^2 = \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)  = \left( \begin{matrix} -1 & 0 \\ 0 & -1 \end{matrix} \right) = \textbf{-1}$
+\\Also, $\textbf{i}\textbf{j} = \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right) = \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) = \textbf{k}$
+\\ $-\textbf{j}\textbf{i} = -\left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right) \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) = - \left( \begin{matrix} 0 & -i \\ -i & 0 \end{matrix} \right) = -(\textbf{-k}) = \textbf{k}$
+\\And, $\textbf{j}\textbf{k} = \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right)\left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) = \left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) = \textbf{i}$
+\\ $-\textbf{k}\textbf{j} = -\left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)\left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right) = -\left( \begin{matrix} -i & 0 \\ 0 & i \end{matrix} \right) = -(\textbf{-i}) = \textbf{i}$
+\\Finally, $\textbf{k}\textbf{i} = \left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right)\left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right) = \left( \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right) = \textbf{j}$
+\\ $-\textbf{i}\textbf{k} = -\left( \begin{matrix} i & 0 \\ 0 & -i \end{matrix} \right)\left( \begin{matrix} 0 & i \\ i & 0 \end{matrix} \right) = -\left( \begin{matrix} 0 & -1 \\ 1 & 0 \end{matrix} \right) = -(\textbf{-j}) = \textbf{j}$
+\end{proof}
+\end{addmargin}
+\end{addmargin}
+
+\newpage
+
+\textbf{(b):} Show that the set $Q = \{\textbf{1}, \textbf{i}, \textbf{-1}, \textbf{-i}, \textbf{j}, \textbf{k}, \textbf{-j}, \textbf{-k}\}$ is a group under matrix multiplication by writing out its multiplication table.  $Q$ is called the \textbf{quaternion group}.
+\begin{addmargin}[1em]{0em}
+\underline{Solution: }
+\begin{addmargin}[1em]{0em}
+\begin{tabular}{c | c c c c c c c c}
+*                & \textbf{1} & \textbf{i} & \textbf{-1} & \textbf{-i} & \textbf{j} & \textbf{k} & \textbf{-j} & \textbf{-k} \\ \hline
+\textbf{1} & \textbf{1} & \textbf{i} & \textbf{-1} & \textbf{-i} & \textbf{j} & \textbf{k} & \textbf{-j} & \textbf{-k} \\
+\textbf{i} & \textbf{i} & \textbf{-1} & \textbf{-i} & \textbf{1} & \textbf{k} & \textbf{-j} & \textbf{-k} & \textbf{j} \\
+\textbf{-1} & \textbf{-1} & \textbf{-i} & \textbf{1} & \textbf{i} & \textbf{-j} & \textbf{-k} & \textbf{j} & \textbf{k} \\
+\textbf{-i} & \textbf{-i} & \textbf{1} & \textbf{i} & \textbf{-1} & \textbf{-k} & \textbf{j} & \textbf{k} & \textbf{-j} \\
+\textbf{j} & \textbf{j} & \textbf{k} & \textbf{-j} & \textbf{-k} & \textbf{-1} & \textbf{i} & \textbf{1} & \textbf{-i} \\
+\textbf{k} & \textbf{k} & \textbf{-j} & \textbf{-k} & \textbf{j} & \textbf{-i} & \textbf{-1} & \textbf{i} & \textbf{1} \\
+\textbf{-j} & \textbf{-j} & \textbf{-k} & \textbf{j} & \textbf{k} & \textbf{1} & \textbf{-i} & \textbf{-1} & \textbf{i} \\
+\textbf{-k} & \textbf{-k} & \textbf{j} & \textbf{k} & \textbf{-j} & \textbf{i} & \textbf{1} & \textbf{-i} & \textbf{-1}
+
+\end{tabular}
+\end{addmargin}
+\end{addmargin}
+
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 21}
+
+
+\textbf{Problem statement}: Suppose $G$ is a group with operation *.  Define a new operation $\#$ on $G$ by $a \# b = b * a$.  Prove that $G$ is a group under $\#$.
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+
+\end{proof}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 30}
+
+
+\textbf{Problem statement}: Fill in the below table completely (initial entries are bolded)
+\\
+
+Solution: 
+\begin{addmargin}[1em]{0em}
+\begin{tabular} {c | c c c c c c}
+                  & \textbf{e} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{f} \\ \hline
+\textbf{e} & \textbf{e} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{f} \\
+\textbf{a} & \textbf{a} & \textbf{b} & \textbf{e} & \textbf{d} &        f         &        c       \\
+\textbf{b} & \textbf{b} &         e         &       a          &         f         &        c          &       d       \\
+\textbf{c} & \textbf{c} & \textbf{f}  &        d          &         e         &        b          & \textbf{a} \\
+\textbf{d} & \textbf{d} &          c        &       f          &          a        &         e         &       b         \\
+\textbf{f} & \textbf{f} &          d        &        c         &            b      &           a       &       e        \\
+\end{tabular}
+\end{addmargin}
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}
