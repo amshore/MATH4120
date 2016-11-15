@@ -38,7 +38,15 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Suppose $n$ is a composite integer and that $(n) \unlhd \mathbb{Z}$
+\\Because $n$ is a composite integer, $n \geq 4$, so $(n) \subset \mathbb{Z}$
+\\Also, for some $1 \neq a, b \in \mathbb{Z}, n = ab$
+\\Thus note that $a \in (a)$ and $b \in (b)$
+\\However, because $a, b < n, a, b \not\in (n)$
+\\Also, $ab = n \in (n)$
+\\Therefore, because $ab \in (n)$ and $a \not\in (n)$ and $b \not\in (n), (n)$ is not a prime ideal.
+\end{proof}
 \end{addmargin}    
 
 \newpage
@@ -51,8 +59,13 @@
 
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-\textbf{(a)}:
+\textbf{$\mathbb{Z}_{6}$}
 \begin{addmargin}[1em]{0em}
+$(2),(3)$
+\end{addmargin}
+\textbf{$\mathbb{Z}_{12}$}
+\begin{addmargin}[1em]{0em}
+$(2),(3)$
 \end{addmargin}
 \end{addmargin}
 
@@ -68,7 +81,12 @@
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $R$ is an integral domain in which all ideals are principal.
+\\Suppose $(p)$ is a nonzero prime ideal in $R$ in which $p = cd$
+\\Then because $cd = p \in (p), c \in (p)$ or $d \in (p)$
+\\If $c \in (p)$ then $c = pk \implies c = cdk \implies dk = 1 \implies d$ is a unit.
+\\Otherwise, if $d \in (p)$ then $d = pk = cdk \implies 1 = ck \implies c$ is a unit.
+\\Thus in either case, either $c$ or $d$ is a unit.
 \end{proof}
 \end{addmargin}
 
@@ -84,7 +102,34 @@ Solution:
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $R$ is a ring and $I \unlhd R$.
+\\Note that $I \times I \unlhd R \times R$
+\\In order to show that $(R \times R)/(I \times I) \cong R/I \times R/I$, I need to show that $f:R\times R \rightarrow R/I \times R/I$ defined as $f((a,b)) = (a + I, b+I)$ is a surjective homomorphism with $Ker(f) = I \times I$
+\\ \textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose we have $(a + I, b +I) \in R/I \times R/I$
+\\Then by definition $(a,b) \in R \times R$ is such that $f((a,b)) = (a+I,b+I)$
+\\Therefore, $f$ is surjective.
+\end{addmargin}
+\textbf{Homomorphism}
+\begin{addmargin}[1em]{0em}
+Suppose $(a,b), (c,d) \in R \times R$
+\\Then $f((a,b)(c,d))= f((ac,bd)) = (ac + I, bd +I) = (a+I,b+I)(c+I,d+I)=f((a,b))f((c,d))$
+\\Also, $f((a,b)+(c,d))=f((a+c,b+d)) = (a+c + I, b+d+I) = (a+I,b+I) + (c+I,d+I) = f((a,b)) + f((c,d))$
+\\Therefore $f$ is a homomorphism
+\end{addmargin}
+\underline{$Ker(f) = I \times I$}
+\begin{addmargin}[1em]{0em}
+First let $(a+I, b+I) \in Ker(f)$
+\\Then $(a + I, b + I) = (0,0) \implies a \in I, b \in I$
+\\Thus $(a+I,b+I) \in I \times I \implies Ker(f) \subseteq I \times I$
+Secondly, let $(a+I, b+I) \in I \times I$
+\\Then $a + I \in I, b + I \in I \implies a \in I, b \in I$
+\\Thus, $(a + I, b + I) = (0, 0) \in Ker(f)$
+\\Therefore, $I \times I \subseteq Ker(f)$
+\\Thus, $Ker(f) = I \times I$
+\end{addmargin}
+Therefore, $f$ is an isomorphism from $(R \times R)/(I \times I)$ to $R/I \times R/I$
 \end{proof}
 \end{addmargin}
 
@@ -100,7 +145,16 @@ Solution:
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $R$ is a commutative ring and that $P$ is a prime ideal in $R$
+\\Then first note that for $(a_1,a_2),(b_1,b_2) \in P \times P, (r_1,r_2) \in R \times R$:
+\\$(a_1,a_2)-(b_1,b_2) = (a_1 - b_1, a_2-b_2) \in P \times P$ because $a_1 - b_1 \in P, a_2 - b_2 \in P$ because $P$ is an ideal.
+\\And: $(a_1,a_2)(r_1,r_2) = (a_1r_1, a_2r_2) \in P \times P$ because $a_1r_1 \in P, a_2r_2 \in P$ because $P$ is an ideal.
+\\Thus, $I \times I \unlhd R \times R$
+\\Suppose $(a_1,a_2)(b_1,b_2) \in P \times P$
+\\Then $(a_1b_1, a_2b_2) \in P \times P$
+\\Because $a_1b_1 \in P$, then $a_1 \in P$ or $b_1 \in P$ and because $a_2b_2 \in P$, then $a_2 \in P$ or $b_2 \in P$.
+\\If $a_1 \in P$ and $b_2 \in P$ but $a_2 \not\in P$ and $b_1 \not\in P$, then $(a_1,a_2),(b_1,b_2) \not\in P \times P$
+\\Therefore, $P \times P$ is not a prime ideal in $R \times R$
 \end{proof}
 \end{addmargin}
 
@@ -115,9 +169,16 @@ Solution:
 
 Solution: 
 \begin{addmargin}[1em]{0em}
-\begin{proof}
-
-\end{proof}
+Let $I = \{(n,0)|n \in \mathbb{Z}$ and is prime$\}$
+\\Thus, $I$ is a prime ideal in $\mathbb{Z} \times \mathbb{Z}$
+\\Suppose $f: (\mathbb{Z} \times \mathbb{Z})/I \rightarrow \mathbb{Z}$ is defined such that $f((m,n)) = n$
+\\This is obviously a surjective homomorphism with kernel $I$ because:
+\\ $\forall n \in \mathbb{Z}, f((m,n)) = n$
+\\ $f((n,a) + (m,b)) = f((n + m,a+b)) = a+b = f((n,a)) + f((m,b))$
+\\ $f((n,a)(m,b)) = f((nm,ab)) = ab = f((n,a))f((m,b))$
+\\ $f(m,0) = 0 \implies Ker(f) = I$
+\\Thus, because $\mathbb{Z} \times \mathbb{Z}$ is a commutative ring with identity, but is isomorphic to an integral domain, but not a field.
+\\Thus, $I$ is prime, but not maximal.
 \end{addmargin}
 
 \newpage

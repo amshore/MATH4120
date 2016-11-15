@@ -39,7 +39,31 @@
 \\
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+\begin{proof}
+Suppose $f: \mathbb{Z}_{12} \rightarrow \mathbb{Z}_4$ is defined as $f([a]_{12}) = [a]_4$
+\\ \textbf{Well-Defined}
+\begin{addmargin}[1em]{0em}
+Suppose for $[a]_{12}, [b]_{12} \in \mathbb{Z}_{12}$ where $[a]_{12} = [b]_{12}$ that we have $f([a]_{12}) = [a]_{4}, f([b]_{12}) = [b]_4$
+\\Then $[a]_{12} - [b]_{12} = 0 \implies [a - b]_{12} = 0 \implies a - b = 12k \implies a - b = 4(3k) \implies 4|(a-b) \implies [a]_4 = [b]_4$
+\\Therefore, $f$ is well defined
+\end{addmargin}
+\textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose $[a]_4 \in \mathbb{Z}_4$
+\\Then $a = 4k + r$ with $r = 0, 1, 2, 3$
+\\Note that $a - r = 4k \implies [a]_4 = [r]_4$
+\\So take $f([r]_12) = [r]_4 = [a]_4$ because $r = 0, 1, 2, 3$
+\\Thus, $f$ is surjective.
+\end{addmargin}
+\textbf{Homomorphism}
+\begin{addmargin}[1em]{0em}
+Suppose $[a]_{12}, [b]_{12} \in \mathbb{Z}_{12}$
+\\Then $f([a]_{12}[b]_{12}) = f([ab]_{12}) = [ab]_{4} = [a]_4[b]_4 = f([a]_{12})f([b]_{12})$
+\\And $f([a]_{12} + [b]_{12}) = f([a + b]_{12}) = [a + b]_4 = [a]_4 + [b]_4 = f([a]_{12}) + f([b]_{12})$
+\\Thus, $f$ is a homomorphism.
+\end{addmargin}
+Therefore, $f$ is a well-defined surjective homomorphism.
+\end{proof}
 \end{addmargin}
 
 
@@ -47,7 +71,8 @@
 \\
 \underline{Solution}: 
 \begin{addmargin}[1em]{0em}
-
+For the kernel, we want $[a]_{12}$ such that $[a]_4 = 0 \implies a = 4k \implies k = 0, 1, 2$
+\\Therefore $Ker(f) = \{[0], [4], [8]\}$
 \end{addmargin}    
 
 \newpage
@@ -63,6 +88,13 @@
 \begin{addmargin}[1em]{0em}
 \textbf{(a)}:
 \begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $f: R \rightarrow S$ is a surjective homomorphism and $I \unlhd R$
+\\Take $a, b \in I$ and $c \in R$
+\\Then $a-b \in I$ and $f(a - b) = f(a) - f(b) \in S$
+\\In addition, $ac, cb \in I$ and $f(ac) = f(a)f(c) \in S$ and $f(cb) = f(c)f(b) \in S$
+\\Therefore, $f(I) \unlhd S$
+\end{proof}
 \end{addmargin}
 \end{addmargin}
 
@@ -72,13 +104,18 @@
 \section*{Problem 12}
 
 
-\textbf{Problem statement}: Let $I$ be an ideal in a noncommutatie ring $R$ such that $ab - ba \in I$ for all $a, b \in R$.  Prove that $R/I$ is commutative.
+\textbf{Problem statement}: Let $I$ be an ideal in a noncommutative ring $R$ such that $ab - ba \in I$ for all $a, b \in R$.  Prove that $R/I$ is commutative.
 \\
 
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose that $R$ is a noncommutative ring and $I \unlhd R$ such that $I = \{ab - ba|a,b \in R\}$
+\\ Suppose $x+I,y+I \in R/I$
+\\ Then $(x+I)(y+I) - (y+I)(x+I) = (xy - yx) + I$
+\\ However, because $x,y \in R, xy - yx \in I$
+\\ Thus, $(xy - yx) + I = 0 \implies (x+I)(y+I) - (y+I)(x+I) = 0 \implies (x+I)(y+I) = (y+I)(x+I)$
+\\ Thus, because $x,y$ are general, $R/I$ is commutative.
 \end{proof}
 \end{addmargin}
 
@@ -94,7 +131,23 @@ Solution:
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $f:R \rightarrow S$ is a homomorphism with kernel $K$.
+\\Let $I \unlhd R$ with $I \subseteq K$
+\\Take $\bar{f}:R/I \rightarrow S$ be defined as $\bar{f}(r + I) = f(r)$
+\\ \textbf{Well-Defined}
+\begin{addmargin}[1em]{0em}
+Suppose we have $a + I, b + I \in R/I$ so that $\bar{f}(a+I) = f(a)$ and $\bar{f}(b + I) = f(b)$ and $a + I = b + I$
+\\Then $f(a) - f(b) = f(a - b) = \bar{f}((a-b) + I) = \bar{f}((a+I) - (b + I)) = \bar{f}(0) = \bar{f}(0 + I) = f(0)$
+\\Because $f$ is a homomorphism, $f(0_R) = 0_S$, so then $f(a) - f(b) = 0 \implies f(a) = f(b)$
+\\Therefore, $f$ is well defined.        
+\end{addmargin}
+\textbf{Homomorphism}
+\begin{addmargin}[1em]{0em}
+Suppose $a + I, b + I \in R/I$
+\\Then $\bar{f}((a+I)(b+I)) = \bar{f}((ab)+I) = f(ab) = f(a)  f(b) = \bar{f}(a+I)\bar{f}(b+I)$
+\\And $\bar{f}((a+I) + (b+I)) = \bar{f}((a + b) + I) = f(a + b) = f(a) + f(b) = \bar{f}(a+I) + \bar{f}(b+I)$
+\\Therefore $f$ is a homomorphism.
+\end{addmargin}
 \end{proof}
 \end{addmargin}
 
@@ -110,7 +163,32 @@ Solution:
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $S = \left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) \subseteq \mathbb{M}_2(\mathbb{R})$ and $I = \left( \begin{matrix} 0 & b \\ 0 & 0 \end{matrix} \right)$
+\\Let $f: S \rightarrow \mathbb{R} \times \mathbb{R}$ such that $f( \left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) ) = (a,c)$
+\\ \textbf{Well-Defined}
+\begin{addmargin}[1em]{0em}
+Note if $\left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) = \left( \begin{matrix} e & d \\ 0 & g \end{matrix} \right)$, then $(a,c) - (e,g) = (a-e,c-g) = f( \left( \begin{matrix} a-e & b - d \\ 0 & e - g \end{matrix} \right) ) = f(\left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) - \left( \begin{matrix} d & e \\ 0 & g \end{matrix}\right)) = f(0) = 0 \implies (a,c) = (e,g)$
+\\Thus $f$ is well-defined.
+\end{addmargin}
+\textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose we have $(a,c) \in \mathbb{R} \times \mathbb{R}$
+\\Then $f( \left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) ) = (a,c)$
+\\Therefore $f$ is surjective
+\end{addmargin}
+\textbf{Homomorphism}
+\begin{addmargin}[1em]{0em}
+Suppose $\left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right), \left( \begin{matrix} e & d \\ 0 & g \end{matrix} \right) \in S$
+\\Then $f(\left(\begin{matrix} a & b \\ 0 & c \end{matrix} \right) + \left( \begin{matrix} e & d \\ 0 & g\end{matrix} \right)) = f( \left( \begin{matrix} a + e & b + d \\ 0 & c + g \end{matrix} \right) ) = (a + e, c + g) = (a,c) + (e,g) = f( \left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) ) + f(\left(  \begin{matrix}  e & d \\ 0 & g\end{matrix} \right) )$
+\\And $f(\left(\begin{matrix} a & b \\ 0 & c \end{matrix} \right) \left( \begin{matrix} e & d \\ 0 & g\end{matrix} \right)) = f(\left( \begin{matrix} ae & ad + bg \\ 0 & cg \end{matrix} \right) ) = (ae, cg) = (a,c)(e,g) = f( \left( \begin{matrix} a & b \\ 0 & c \end{matrix} \right) )  f(\left(  \begin{matrix}  e & d \\ 0 & g\end{matrix} \right) )$
+\\Therefore, $f$ is a homomorphism.
+\end{addmargin}
+\textbf{Kernel}
+\begin{addmargin}[1em]{0em}
+Note that $Ker(f)$ is the set of all matricies that map to $(0,0)$
+\\Thus because $f( \left( \begin{matrix} 0 & b \\ 0 & 0\end{matrix}  \right) ) = (0,0)$ then $Ker(f) = I$
+\end{addmargin}
+Thus $S/I \cong \mathbb{R} \times \mathbb{R}$
 \end{proof}
 \end{addmargin}
 
@@ -126,7 +204,33 @@ Solution:
 Solution: 
 \begin{addmargin}[1em]{0em}
 \begin{proof}
-
+Suppose $R$ is a ring and $I,J \unlhd R$
+\\Then $I \cap J \unlhd I$ and $J \unlhd I + J$
+\\Suppose $f: I \rightarrow (I + J)/J$ such that $f(a) = a + J$
+\\ \textbf{Surjective}
+\begin{addmargin}[1em]{0em}
+Suppose $i \in I, j \in J$
+\\Then $f(i) = i + J = i + (j + J) = (i + j) + J \in (I + J)/J$
+\\Thus, because $i, j$ are chosen arbitrarily, $f$ is surjective
+\end{addmargin}
+\textbf{Homomorphism}
+\begin{addmargin}[1em]{0em}
+Suppose $a,b \in I$
+\\Then $f(a + b) = (a + b) + J = (a + J) + (b + J) = f(a) + f(b)$
+\\And $f(ab) = (ab) + J = (a + J)(b + J) = f(a)f(b)$
+\\These steps are valid because $I$ is an ideal and thus has closure.
+\\Therefore $f$ is a homomorphism.
+\end{addmargin}
+\textbf{Kernel}
+\begin{addmargin}[1em]{0em}
+Suppose $x \in Ker (f)$
+\\Then $J = f(x) = x + J \implies x \in J$
+\\Now suppose $x \in I \cap J$
+\\Then $f(x) = x + J = J$ because $x \in J$
+\\Thus, $x \in Ker(f)$
+\\Therefore $Ker(f) = I \cap J$
+\end{addmargin}
+Thus, by the first isomorphism theorem, $I/(I \cap J) \cong (I + J)/J$
 \end{proof}
 \end{addmargin}
 
