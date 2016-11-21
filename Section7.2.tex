@@ -1,0 +1,312 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb, tabularx}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 7.2: 1,2,7,9b,19,20*,33 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 1}
+
+
+\textbf{Problem statement}: If $c^2 = c$ in a group, prove that $c = e$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $G$ is a group and $c \in G$ such that $c^2 = c$
+\\Then $c^2 = c*c$ and $c = e*c$
+\\Thus, $c*c = e*c \implies c = e$ because of cancellation in groups.
+\end{proof}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 2}
+
+
+\textbf{Problem statement}: Let $a = \left( \begin{matrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{matrix}\right)$ and $b = \left( \begin{matrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{matrix}\right)$ in $S_3$.  Verify that $(ab)^{-1} \neq a^{-1}b^{-1}$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+First note that $ab = \left( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix} \right) \implies (ab)^{-1} = \left( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3\end{matrix} \right)$
+\\Also, $a^{-1} = \left( \begin{matrix} 1 & 2 & 3 \\ 2 & 3 & 1 \end{matrix} \right), b^{-1} = \left( \begin{matrix} 1 & 2 & 3 \\ 1 & 3 & 2 \end{matrix}\right) \implies a^{-1}b^{-1} = \left( \begin{matrix} 1 & 2 & 3 \\ 3 & 2 & 1 \end{matrix} \right)$
+\\Thus, $(ab)^{-1} \neq a^{-1}b^{-1}$
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 7}
+
+
+\textbf{Problem statement}: Find the order of the given element
+\\
+
+\textbf{(a): } 5 in $U_8$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$5^2 = 25 = 1$
+\\Thus $5$ has order 1 in $U_8$
+\end{addmargin}
+\end{addmargin}    
+
+\textbf{(b): } $\left(\begin{matrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 2 & 3 & 7 & 5 & 1 & 4 & 6\end{matrix}\right)$ in $S_7$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^2 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+3 & 7 & 6 & 1 & 2 & 5 & 4
+\end{matrix}\right)$
+\\$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^3 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+7 & 6 & 4 & 2 & 3 & 1 & 5
+\end{matrix}\right)$
+\\$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^4 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+6 & 4 & 5 & 3 & 7 & 2 & 1
+\end{matrix}\right)$
+\\$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^5 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+4 & 5 & 1 & 7 & 6 & 3 & 2
+\end{matrix}\right)$
+\\$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^6 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+5 & 1 & 2 & 6 & 4 & 7 & 3
+\end{matrix}\right)$
+\\$\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)^7 = 
+\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+1 & 2 & 3 & 4 & 5 & 6 & 7
+\end{matrix}\right)$
+\\Thus $\left(\begin{matrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 7 & 5 & 1 & 4 & 6
+\end{matrix}\right)$ has order 7 in $S^7$
+\end{addmargin}
+\end{addmargin} 
+
+\textbf{(c): } $\left( \begin{matrix} 0 & -1 \\ 1 & 1\end{matrix}\right)$ in $GL(2,\mathbb{R})$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$\left( \begin{matrix} 
+0 & -1 \\ 
+1 & 1
+\end{matrix}\right)^2 = 
+\left( \begin{matrix}
+ -1 & -1 \\ 
+ 1 & 0
+ \end{matrix}\right)$
+\\$\left( \begin{matrix} 
+0 & -1 \\ 
+1 & 1
+\end{matrix}\right)^3 = 
+\left( \begin{matrix}
+ -1 & 0 \\
+ 0 & -1
+ \end{matrix}\right)$
+\\$\left( \begin{matrix} 
+0 & -1 \\ 
+1 & 1
+\end{matrix}\right)^4 = 
+\left( \begin{matrix}
+ 0 & 1 \\
+ -1 & -1
+ \end{matrix}\right)$
+\\$\left( \begin{matrix} 
+0 & -1 \\ 
+1 & 1
+\end{matrix}\right)^5 = 
+\left( \begin{matrix}
+ 1 & 1 \\
+ -1 & 0
+ \end{matrix}\right)$
+\\$\left( \begin{matrix} 
+0 & -1 \\ 
+1 & 1
+\end{matrix}\right)^6 = 
+\left( \begin{matrix}
+ 1 & 0 \\
+ 0 & 1
+ \end{matrix}\right)$
+\\Thus, $\left(\begin{matrix}0&-1\\1&1\end{matrix}\right)$ has order 6 in $GL(2, \mathbb{R})$
+\end{addmargin}
+\end{addmargin} 
+
+\textbf{(d): } $\left( \begin{matrix} -\frac{1}{2} & \frac{1}{2} \\ -\frac{3}{2} & -\frac{1}{2} \end{matrix} \right)$ in $GL(2,\mathbb{R})$
+\begin{addmargin}[1em]{0em}
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$\left( \begin{matrix}
+ -\frac{1}{2} & \frac{1}{2} \\
+ -\frac{3}{2} & -\frac{1}{2} 
+\end{matrix} \right)^2 = 
+\left( \begin{matrix} 
+ -\frac{1}{2} & -\frac{1}{2} \\
+ \frac{3}{2} & -\frac{1}{2}
+\end{matrix} \right)$
+\\$\left( \begin{matrix}
+ -\frac{1}{2} & \frac{1}{2} \\
+ -\frac{3}{2} & -\frac{1}{2} 
+\end{matrix} \right)^3 = 
+\left( \begin{matrix} 
+ 1 & 0 \\
+ 0 & 1
+\end{matrix} \right)$
+\\Thus, $\left( \begin{matrix}
+ -\frac{1}{2} & \frac{1}{2} \\
+ -\frac{3}{2} & -\frac{1}{2} 
+\end{matrix} \right)$ has order 3 in $GL(2, \mathbb{R})$
+\end{addmargin}
+\end{addmargin} 
+
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 9b}
+
+
+\textbf{Problem statement}: List the order of each element of the group $U_{20}$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{tabular}{c | c | c}
+Number & Order & Proof \\ \hline
+$1$ & $1$ & $1 = e$ \\
+$3$ & $4$ & $3 * 3 = 9 * 3 = 7 * 3 = 1$\\
+$7$ & $2$ & $7 * 7 = 1$\\
+$9$ & $2$ & $9 * 9 = 1$\\
+$11$ & $2$ & $11 * 11 = 1$\\
+$13$ & $4$ & $13 * 13 = 9 * 13 = 17 * 13 = 1$ \\
+$17$ & $4$ & $17 * 17 = 9 * 17 = 3 * 17 = 1$\\
+$19$ & $2$ & $19 * 19 = 1$ \\
+\end{tabular}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 19}
+
+
+\textbf{Problem statement}: If $a,b \in G$, prove that $|bab^{-1}| = |a|$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose $a,b \in G$ and $k = |bab^{-1}|$
+\\Then $(bab^{-1})^{k} = b^ka^kb^{-k} = e \implies b^ka^kb^{-k}b^k = eb^k \implies b^ka^k = eb^k \implies a^k = b \implies |a| = k$
+\\Thus, $|bab^{-1}| = |a|$
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 20*}
+
+
+\textbf{(a): }Show that $a = \left(\begin{matrix} 0 & 1 \\  -1 & -1 \end{matrix} \right)$ has order 3 in $GL(2,\mathbb{R})$ and $b = \left( \begin{matrix} 0 & -1 \\ 1 & 0\end{matrix} \right)$ has order 4.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$a = \left(\begin{matrix} 0 & 1 \\  -1 & -1 \end{matrix} \right)$
+\\$a^2 = \left(\begin{matrix} -1 & -1 \\ 1 & 0 \end{matrix} \right)$
+\\$a^3 = \left(\begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right)$
+\\$b = \left( \begin{matrix} 0 & -1 \\ 1 & 0\end{matrix} \right)$
+\\$b^2 = \left( \begin{matrix} -1 & 0 \\ 0 & -1\end{matrix} \right)$
+\\$b^3 = \left( \begin{matrix} 0 & 1 \\ -1 & 0\end{matrix} \right)$
+\\$b^4 = \left( \begin{matrix} 1 & 0 \\ 0 & 1\end{matrix} \right)$
+\end{addmargin}    
+
+
+\textbf{(b): }Show that $ab$ has infinite order
+\\
+
+\underline{Solution}:
+\begin{addmargin}[1em]{0em}
+Note that $ab = \left( \begin{matrix} 1 & 0 \\ -1 & 0\end{matrix}\right)$
+\\So $(ab)^2 = \left( \begin{matrix} 1 & 0 \\ -2 & 0\end{matrix}\right)$
+\\And $(ab)^3 = \left( \begin{matrix} 1 & 0 \\ -3 & 0\end{matrix}\right)$
+\\Continuing the pattern, $(ab)^n = \left( \begin{matrix} 1 & 0 \\ -n & 0\end{matrix}\right) \neq I$ for $n > 0$
+\\Thus, $ab$ has infinite order.
+\end{addmargin}
+\newpage
+%----------------------------------------------------------------------------------------
+\section*{Problem 33}
+
+
+\textbf{Problem statement}: Assume that $a,b \in G$ and $ab = ba$.  If $|a|$ and $|b|$ are relatively prime, prove that $ab$ has order $|a||b|$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $G$ be a group and $a,b \in G$ such that $ab = ba$ and $(|a|,|b|) = 1$
+\\Suppose that $n = |a|$ and $m = |b|$
+\\Then first note that $(ab)(ab) = (ab)(ba) = ab^2a \implies (ab^2a)(ab) = (ab^2a)(ba) = a(b^2)(ba)a = ab^3a^2$
+\\After $m$ iterations of this, $(ab)^m = ab^ma^{m-1} = aea^{m-1} = a^m$
+\\Thus, $(ab)^{mn} = ((ab)^m)^n = (a^m)^n = (a^n)^m = e^m = e$
+\\Therefore, note that $(ab)^{|a||b|} = e$
+\\So, suppose $r = |ab|$.
+\\Then $(ab)^r = e \implies (ab)^{rm} = e \implies a^{rm}b^{rm} = e \implies a^{rm} = e \implies n|rm \implies n|r$ (because $n$ and $m$ are coprime so $n \not| m$)
+\\Also, $(ab)^r = e \implies (ab)^{rn} = e \implies a^{rn}b^{rn} = e \implies b^{rn} = e \implies m|rn \implies m|r$ (because $n$ and $m$ are coprime so $m \not| n$)
+\\Thus $n|r$ and $m|r$ so $nm|r$ because $n$ and $m$ are coprime.
+\\However, because $(ab)^{nm} = e, r|nm$
+\\Therefore $r = nm \implies |ab| = |a||b|$
+\end{proof}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}
