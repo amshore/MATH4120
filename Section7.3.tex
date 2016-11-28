@@ -1,0 +1,200 @@
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article} % paper and 12pt font size
+
+\usepackage{scrextend, tikz, amssymb, tabularx}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%   TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{ 
+\normalfont \normalsize 
+\textsc{MATH 4120-001 --- Abstract Algebra} \\
+\horrule{0.5pt} \\[0cm] % Thin top horizontal rule
+\huge Section 7.2: 1,2,7,9b,19,20*,33 \\ % The assignment title
+\horrule{2pt} \\[0cm] % Thick bottom horizontal rule
+}
+\author{Andrew Shore} % Your name
+\date{\normalsize\today} % Today's date or a custom date
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+\section*{Problem 2}
+
+$r_0 = \left( \begin{matrix} 1&2&3&4\\1&2&3&4 \end{matrix} \right)$,
+$r_1 = \left( \begin{matrix} 1&2&3&4\\2&3&4&1 \end{matrix} \right)$,
+$r_2 = \left( \begin{matrix} 1&2&3&4\\3&4&1&2 \end{matrix} \right)$,
+$r_3 = \left( \begin{matrix} 1&2&3&4\\4&1&2&3 \end{matrix} \right)$ \\
+$u   = \left( \begin{matrix} 1&2&3&4\\1&4&3&2 \end{matrix} \right)$,
+$w   = \left( \begin{matrix} 1&2&3&4\\4&3&2&1 \end{matrix} \right)$,
+$v   = \left( \begin{matrix} 1&2&3&4\\3&2&1&4 \end{matrix} \right)$,
+$t   = \left( \begin{matrix} 1&2&3&4\\2&1&4&3 \end{matrix} \right)$ \\
+\textbf{(a): } List all the cyclic subgroups of $D_4$ 
+\\
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$<r_0> = \{r_0\}$\\
+$<r_1> = <r_3> = \{r_0, r_1, r_2, r_3\}$\\
+$<r_2> = \{r_0, r_2\}$\\
+$<u> = \{r_0, u\}$\\
+$<w> = \{r_0, w\}$\\
+$<v> = \{r_0, v\}$\\
+$<t> = \{r_0, t\}$
+\end{addmargin} 
+
+\textbf{(b): } List at least one subgroup of $D_4$ that is not cyclic.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$D_4 \leq D_4$ because this is a trivial subgroup.\
+\\However, in part $(a)$ I listed all of the cyclic subgroups and this is not one of them.
+\\Therefore this is a subgroup that is not cyclic.
+\end{addmargin}   
+
+\newpage
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\section*{Problem 7}
+
+
+\textbf{Problem statement}: List the elements of $<2>$ in the multiplicative group $\mathbb{Q}^*$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+$\{2^n | 0 \neq n \in \mathbb{Z} \}$
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\section*{Problem 13}
+
+
+\textbf{Problem statement}: Let $H$ be a subgroup of a group $G$.  If $e_G$ is the identity element of $G$ and $e_H$ is the identity element of $H$, prove that $e_G = e_H$
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $G$ is a group and $H \leq G$
+\\Let $e_G$ be the identity element of $G$ and $e_H$ be the identity element of $H$.
+\\Suppose $a \in H \implies a^{-1} \in H$.
+\\Because $H \leq G$ then $a, a^{-1} \in G$
+\\Thus, in $a*a^{-1} = e_G \in H$
+\\However, because identities are unique, then $e_G = e_H$
+\end{proof}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\section*{Problem 14a}
+
+
+\textbf{Problem statement}: Let $H$ and $K$ be subgroups of a group $G$.  Show by example that $H \cup K$ need not be a subgroup of $G$.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+Suppose $G = D_4$ and $H = <u>, K = <v>$ as defined in problem 1
+\\Then $H \cup K = \{r_0, u, v\}$
+\\However, $u \in H \cup K$ and $v \in H \cup K$, but $u*v = r_2 \not\in H \cup K$
+\\Thus, because $H \cup K$ is not closed under the group operation, $H \cup K \not\leq G$
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\section*{Problem 26*}
+
+
+\textbf{(a): }Let $H$ and $K$ be subgroups of an abelian group $G$ and let $HK = \{ab|a \in H, b \in K\}$.  Prove that $HK$ is a subgroup of $G$. 
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $G$ is an abelian group and $H, K \leq G$
+\\Let $HK = \{ab|a \in H, b \in K \}$.
+\\For $HK \leq G$, I must show that $HK$ is closed under the group operation and that if $a \in HK$, then $a^{-1} \in HK$
+\\Firstly, suppose $x,y \in HK$ such that $x = a_1b_1, y = a_2b_2$ for $a_1,a_2 \in H, b_1,b_2 \in K$
+\\Then $xy = (a_1b_1)(a_2b_2) = (b_1a_1)(a_2b_2) = b_1(a_1a_2)b_2 = (a_1a_2)(b_1b_2) \in HK$
+\\This holds because $G$ is abelian.
+\\In addition, note that if we define $x^{-1} = a_1^{-1}b_1^{-1} \in HK$
+\\ $xx^{-1} = (a_1b_1)(a_1^{-1}b_1^{-1}) = (b_1a_1)(a_1^{-1}b_1^{-1})=b_1(a_1a_1^{-1})b_1^{-1}=b_1eb_1^{-1}=b_1b_1^{-1}=e$
+\\And $x^{-1}x = (a_1^{-1}b_1^{-1})(a_1b_1) = (b_1^{-1}a_1^{-1})(a_1b_1)=b_1^{-1}(a_1^{-1}a_1)b_1=b_1^{-1}eb_1=b_1^{-1}b_1=e$
+\\Therefore, $x^{-1}$ is in fact the inverse of $x$
+\\Thus $HK \leq G$
+\end{proof}
+\end{addmargin}    
+
+\textbf{(b): } Show that part $(a)$ may be false if $G$ is not abelian.
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+In the above proof, I used the fact that $G$ was abelian so that $a_1b_1 = b_1a_1$
+\\If this does not hold then $a_1b_1a_2$ might not be in $HK$ as required for closure.
+\end{addmargin} 
+
+\newpage
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\section*{Problem 38}
+
+
+\textbf{(a): } Let $p$ be prime and let $b$ be a nonzero element of $\mathbb{Z}_p$.  Show that $b^{p-1} = 1$ [\textit{Hint:} Let $F$ be any one of $\mathbb{Q}, \mathbb{R}, \mathbb{C},$ or $\mathbb{Z}_p$ (with $p$ prime), and let $F^*$ be the multiplicative group of nonzero elements of $F$.  If $G$ is a finite subgroup of $F^*$, then $G$ is cyclic.]
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Let $p$ be prime and $0 \neq b \in \mathbb{Z}_p$
+\\Then $b \in \mathbb{Z}_p^*$
+\\Note that $|\mathbb{Z}_p^*| = p - 1$ and $|b| = k$ for some $0 < k < p$
+\\Thus, define, $B = \{b^n | n \in \mathbb{Z}, 0 \leq n < k\}$
+\\So for some $0 \leq n,m < k$ first note that:
+\\$(b^n)(b^{k-n}) = b^{n+k-n} = b^k = 1$ and $(b^{k-n})(b^n) = b^{k-n+n} = b^k = 1$
+\\So because, $k-n > 0$, $b^{k-n} \in B$ and $B$ has an inverse for each element.
+\\In addition $b^nb^m=b^{n+m}$
+\\Now, rewrite $n + m = zk + r$ for some $z,r \in \mathbb{Z}$ and $r < k$
+\\so $b^{n+m}=b^{zk+r}=b^{zk}b^r=(b^k)^zb^r=1^zb^rb^r$
+\\Thus, because $r < k$ then $B$ is closed under multiplication.
+\\Therefore, $B \leq \mathbb{Z}_p^*$
+\\Now, from a previous theorem, we know $k|p-1$, so lets write $p-1 = ck$ for some $k \in \mathbb{Z}$
+\\Thus, $b^{p-1}=b^ck = (b^k)^c=1^c = 1$
+\\Therefore, $b^{p-1}=1$
+\end{proof}
+\end{addmargin} 
+
+\textbf{(b): } Prove \textbf{Fermat's Little Theorem:} If $p$ is a prime and $a$ is any integer, then $a^p \equiv a ($mod $p)$ [\textit{Hint:} Let $b$ be the congruence class of $a$ in $\mathbb{Z}_p$ and use part (a)]
+\\
+
+\underline{Solution}: 
+\begin{addmargin}[1em]{0em}
+\begin{proof}
+Suppose $p$ is prime and $a \in \mathbb{Z}$
+\\Then $b = pq+r$ such that $[b] = [r] \in \mathbb{Z}_p$
+\\Because $r < p$, then by part (a), $r^{p-1} = 1$
+\\Or equivalently, $b^{p-1} \equiv 1 ($mod $p)$
+\\Thus, multiplying both sides by $b$, which will hold equality, results in, $b^p \equiv b($mod $p)$
+\end{proof}
+\end{addmargin}    
+
+\newpage
+%----------------------------------------------------------------------------------------
+
+\end{document}
